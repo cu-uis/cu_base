@@ -317,13 +317,14 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
     'title' => t('Modal Block'),
     'type' => 'checkboxes',
     'description' => t('Define a block as Modal. Requieres button to trigger.'),
+    'scripts' => array('barrio_default.js'),
     'theme hooks' => array('block'),
     'group' => 'box',
-    'default status' => TRUE,
+    'default status' => FALSE,
     'options' => array(
       'bootstrap_barrio_modal' => array(
         'title' => t('Set as modal.'),
-        'class' => array('modal fade hide'),
+        'class' => array('modal', 'fade', 'hide', 'barrio-modal'),
       ),
     ),
   );
@@ -334,7 +335,7 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
     'description' => t('Define Navigation Bar characteristics.'),
     'theme hooks' => array('block_menu'),
     'group' => 'box',
-    'default status' => TRUE,
+    'default status' => FALSE,
     'options' => array(
       'option_1' => array(
         'title' => t('Visible Phone'),
@@ -357,11 +358,11 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
     'description' => t('Define a menu as responsive collapsible. Needs to define navbar toggle button, .btn-navbar.'),
     'theme hooks' => array('block_menu'),
     'group' => 'box',
-    'default status' => TRUE,
+    'default status' => FALSE,
     'options' => array(
       'bootstrap_barrio_collapse_menu' => array(
         'title' => t('Set as collapsible.'),
-        'class' => array('nav-collapse collapse'),
+        'class' => array('nav-collapse', 'collapse'),
       ),
     ),
   );

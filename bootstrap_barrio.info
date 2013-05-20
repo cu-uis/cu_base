@@ -20,6 +20,7 @@ regions[page_top]       = 'Page top'
 regions[page_bottom]    = 'Page bottom'
 
 stylesheets[all][] = css/style.css
+scripts[] = js/script.js
 
 ; --------------------------------------------------------------------------------
 ; Enable Skinr integration.
