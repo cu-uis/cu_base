@@ -4,20 +4,21 @@ version = 7.1
 core = 7.x
 base theme = bootstrap
 
+regions[top]            = 'Top Header'
+regions[header]         = 'Header'
 regions[navigation]     = 'Navigation'
-regions[header]         = 'Top Bar'
 regions[slider]         = 'Slider'
 regions[highlighted]    = 'Highlighted'
 regions[help]           = 'Help'
 regions[preface]        = 'Preface'
+regions[sidebar_first]  = 'Primary Column'
+regions[sidebar_second] = 'Secondary Column'
+regions[content_top]    = 'Content Top'
 regions[content]        = 'Content'
+regions[content_bottom] = 'Content Bottom'
 regions[postcript_top]  = 'Postcript Top'
 regions[postcript_bottom] = 'Postcript Bottom'
-regions[sidebar_first]  = 'Primary'
-regions[sidebar_second] = 'Secondary'
 regions[footer]         = 'Footer'
-regions[page_top]       = 'Page top'
-regions[page_bottom]    = 'Page bottom'
 
 stylesheets[all][] = css/style.css
 scripts[] = js/script.js
