@@ -1,10 +1,9 @@
 <?php
-
 /**
- * @file orange.skinr.inc
+ * @file barrio_default.inc
  * Implementation of a Skinr plugin.
  */
- 
+
 /**
  * Implements hook_skinr_group_info().
  *
@@ -121,11 +120,11 @@ function bootstrap_barrio_skinr_group_info() {
  * implementing it, followed by the plugin name, e.g.
  * THEMENAME_PLUGINNAME_skinr_skin_info(), or
  * MODULENAME_PLUGINNAME_skinr_skin_info().
- * 
+ *
  */
 function bootstrap_barrio_skinr_skin_barrio_default_info() {
   $skins = array();
-  
+
   $skins['bootstrap_barrio_span'] = array(
     'title' => t('Bootstrap Column Span'),
     'description' => t('Define the SPAN value for Bootstrap Columns.'),
@@ -258,7 +257,7 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
       ),
     ),
   );
-  
+
   $skins['bootstrap_barrio_container'] = array(
     'title' => t('Bootstrap Container'),
     'type' => 'select',
@@ -277,7 +276,7 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
       ),
     ),
   );
-  
+
   $skins['bootstrap_barrio_responsive_utility'] = array(
     'title' => t('Bootstrap Responsive Utility Classes'),
     'type' => 'select',
@@ -312,15 +311,15 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
       ),
     ),
   );
-  
+
   $skins['bootstrap_barrio_modal'] = array(
     'title' => t('Modal Block'),
     'type' => 'checkboxes',
-    'description' => t('Define a block as Modal. Requieres button to trigger.'),
-    'scripts' => array('barrio_default.js'),
+    'description' => t('Define a block as Modal. Replace block by button with block title as text.'),
+    'js' => array('barrio_default.js'),
     'theme hooks' => array('block'),
     'group' => 'box',
-    'default status' => FALSE,
+    'default status' => 1,
     'options' => array(
       'bootstrap_barrio_modal' => array(
         'title' => t('Set as modal.'),
@@ -328,14 +327,14 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
       ),
     ),
   );
-  
+
   $skins['bootstrap_barrio_navbar'] = array(
     'title' => t('Navigation Bar'),
     'type' => 'checkboxes',
     'description' => t('Define Navigation Bar characteristics.'),
     'theme hooks' => array('block_menu'),
     'group' => 'box',
-    'default status' => FALSE,
+    'default status' => 1,
     'options' => array(
       'option_1' => array(
         'title' => t('Visible Phone'),
@@ -351,14 +350,14 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
       ),
     ),
   );
-  
+
   $skins['bootstrap_barrio_collapse'] = array(
     'title' => t('Collapsible responsive menu'),
     'type' => 'checkboxes',
     'description' => t('Define a menu as responsive collapsible. Needs to define navbar toggle button, .btn-navbar.'),
     'theme hooks' => array('block_menu'),
     'group' => 'box',
-    'default status' => FALSE,
+    'default status' => 1,
     'options' => array(
       'bootstrap_barrio_collapse_menu' => array(
         'title' => t('Set as collapsible.'),
@@ -366,6 +365,6 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
       ),
     ),
   );
-  
+
   return $skins;
 }

@@ -1,3 +1,10 @@
+<?php
+
+/**
+ * @file
+ * Override of Bootstrap html.tpl.php.
+ */
+?>
 <header id="navbar" class="<?php print $nav_style; ?>" role="banner">
   <div class="navbar-inner">
     <div class="<?php print $container; ?>">

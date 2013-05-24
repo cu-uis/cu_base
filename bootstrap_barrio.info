@@ -1,6 +1,5 @@
 name = Bootstrap Barrio
 description = Built to use Bootstrap, a sleek, intuitive, and powerful front-end framework for faster and easier web development.
-version = 7.1
 core = 7.x
 base theme = bootstrap
 

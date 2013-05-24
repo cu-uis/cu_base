@@ -1,3 +1,10 @@
+<?php
+
+/**
+ * @file
+ * Override of Bootstrap block.tpl.php.
+ */
+?>
 <section id="<?php print $block_html_id; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
 
   <?php print render($title_prefix); ?>

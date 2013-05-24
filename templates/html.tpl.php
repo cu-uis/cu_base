@@ -1,3 +1,10 @@
+<?php
+
+/**
+ * @file
+ * Override of Bootstrap html.tpl.php.
+ */
+?>
 <!DOCTYPE html>
 <html lang="<?php print $language->language; ?>">
 <head>

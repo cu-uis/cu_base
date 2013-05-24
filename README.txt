@@ -1,8 +1,32 @@
-Bootstrap theme for Drupal
+Bootstrap sub-theme for Drupal
 
-1. Download the Bootstrap library v2 (http://twitter.github.com/bootstrap/), make sure the resulting folder is named "bootstrap." If you are using the Github master branch, you will need to also find a way to compile the LESS and JS files since this module looks for bootstrap.css and bootstrap.js. 
-2. Place the bootstrap folder inside the bootstrap theme folder or your subtheme folder: [path_to_themes]/bootstrap/bootstrap/js…
-3. Put any plugin files into [path_to_themes]/bootstrap/bootstrap/js/
-4. Make sure you have jQuery 1.7, which is available through the jQuery Update module (http://drupal.org/project/jquery_update/) 7.x-2.x-dev version. You need to make sure the 1.7 version is selected on the configuration page for it to work.
+Bootstrap Barrio is a sub-theme of the Bootstrap Theme, theme based on Twitter Bootstrap, 
+a sleek, intuitive, and powerful front-end framework for faster and easier web development.
+While Bootstrap Theme add Twitter Bootstrap functionallity, Bootstrap Barrio focus on layout flexibility 
+and customization using theme parameters and the Skinr module.
 
-Author: http://drupal.org/node/259843/committers
+- Layout is handle by Bootstrap.
+- Two columns, with configurable widths.
+- Fixed and fluid layouts.
+- Responsive features turn on and off.
+- Fixed and fluid layouts.
+- Configurable header behavior, using Bootstrap "fixed to top".
+- Any block could be defined as "modal" with one click using Skinr.
+- Full screen width slider region.
+- Skinr controlled, collapse, fixed, row, content and span over blocks.
+- Flexible blocks layout using span over row defined regions.
+
+Following modules and themes are requiered:
+
+- Bootstrap Theme
+- Skinr
+
+Installation
+
+Unpack and upload Bootstrap Theme as usual within your site's themes folder 
+(usually sites/all/themes).
+ Unpack and upload Bootstrap Barrio within your default's themes folder 
+(usually sites/default/themes).
+Dowload latest version of Twitter Bootstrap, copy bootstrap files into Bootstrap Theme directory, 
+css files should be usually under sites/all/themes/bootstrap/bootstrap/css. js under sites/all/themes/bootstrap/bootstrap/js and img under sites/all/themes/bootstrap/bootstrap/img.
+Download and enable the Skinr module, set permissions if you're not uid 1
