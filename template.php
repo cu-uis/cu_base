@@ -1,10 +1,11 @@
 <?php
 /**
  * @file
-*/
+ */
 
 /**
  * Override or insert variables into the page template for HTML output.
+ * 
  * For taxonomy page, insert vocabulary id class.
  * Define the variable to activate responsive behaivor.
  */
@@ -40,7 +41,8 @@ function bootstrap_barrio_preprocess_page(&$variables) {
   }
   if (theme_get_setting('collapse')) {
     $variables['collapse'] = 'nav-collapse collapse';
-  } else {
+  } else 
+  {
     $variables['collapse'] = 'not-collapse';
   }
   if (theme_get_setting('fluid') || (arg(0) == 'admin')) {
