@@ -1,6 +1,6 @@
 <?php
 /**
- * @file barrio_default.inc
+ * @file
  * Implementation of a Skinr plugin.
  */
 
@@ -120,7 +120,6 @@ function bootstrap_barrio_skinr_group_info() {
  * implementing it, followed by the plugin name, e.g.
  * THEMENAME_PLUGINNAME_skinr_skin_info(), or
  * MODULENAME_PLUGINNAME_skinr_skin_info().
- *
  */
 function bootstrap_barrio_skinr_skin_barrio_default_info() {
   $skins = array();

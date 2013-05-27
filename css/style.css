@@ -118,15 +118,15 @@ body.admin-menu .navbar-fixed-top {
 }
 
 /* System base fix */
-.container-inline div, 
+.container-inline div,
 .container-inline label {
   display: block;
 }
 
 /* Default form fields to auto */
-input, 
-textarea, 
-select, 
+input,
+textarea,
+select,
 .uneditable-input {
   width: auto;
 }
