@@ -42,7 +42,7 @@ function bootstrap_barrio_preprocess_page(&$variables) {
   }
   if (theme_get_setting('collapse')) {
     $variables['collapse'] = 'nav-collapse collapse';
-  } 
+  }
   else {
     $variables['collapse'] = 'not-collapse';
   }
