@@ -56,7 +56,7 @@
 </header>
 
 <?php if (!empty($page['slider'])): ?>
-  <div id="slider">
+  <div id="slideshow_container">
     <?php print render($page['slider']); ?>
   </div>
 <?php endif; ?>
@@ -135,7 +135,7 @@
     <?php endif; ?>
 
     <?php if (!empty($page['postcript_top'])): ?>
-      <div id="postcript_top" class="<?php print $row; ?>">
+      <div id="postcript_top" class="<?php print $container; ?>">
         <?php print render($page['postcript_top']); ?>
       </div>  <!-- /#preface -->
     <?php endif; ?>  
@@ -147,7 +147,7 @@
     <?php endif; ?>  
 
   </div>
-  <footer class="footer <?php print $container; ?>">
+  <footer class="footer <?php print $row; ?>">
     <?php print render($page['footer']); ?>
   </footer>
 </div>

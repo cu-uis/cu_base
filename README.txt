@@ -25,13 +25,9 @@ Following modules and themes are requiered:
 
 Installation
 
-Unpack and upload Bootstrap Theme as usual within your site's themes folder 
-(usually sites/all/themes).
+Unpack and upload Bootstrap Theme on sites/all/themes.
+Installing Boostrap Theme in default will throw errors.
  Unpack and upload Bootstrap Barrio within your default's themes folder 
 (usually sites/default/themes).
-Dowload latest version of Twitter Bootstrap, copy bootstrap files into 
-Bootstrap Theme directory, 
-css files should be usually under sites/all/themes/bootstrap/bootstrap/css. 
-js under sites/all/themes/bootstrap/bootstrap/js and 
-img under sites/all/themes/bootstrap/bootstrap/img.
+No need to dowload Twitter Bootstrap, could be load via CVN. 
 Download and enable the Skinr module, set permissions if you're not uid 1
