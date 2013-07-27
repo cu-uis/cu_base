@@ -18,7 +18,7 @@ and customization using theme parameters and the Skinr module.
 - Skinr controlled, collapse, fixed, row, content and span over blocks.
 - Flexible blocks layout using span over row defined regions.
 
-Following modules and themes are requiered:
+Following modules and themes are required:
 
 - Bootstrap Theme
 - Skinr
