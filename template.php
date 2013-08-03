@@ -30,7 +30,7 @@ function bootstrap_barrio_preprocess_html(&$variables) {
  * Sets the widths of the main columns of the page.
  */
 function bootstrap_barrio_preprocess_page(&$variables) {
-  $variables['content_width'] = 'span' . _bootstrap_barrio_content_width();
+  $variables['content_width'] = _bootstrap_barrio_content_width();
   $variables['sidebar_first_width'] = 'span' . theme_get_setting('sidebar_first_width');
   $variables['sidebar_second_width'] = 'span' . theme_get_setting('sidebar_second_width');
   $variables['nav_style'] = _bootstrap_barrio_nav_style(theme_get_setting('nav_style'));
@@ -65,6 +65,7 @@ function _bootstrap_barrio_content_width() {
   $sidebar_first_width = (_bootstrap_barrio_block_list('sidebar_first')) ? theme_get_setting('sidebar_first_width') : 0;
   $sidebar_second_width = (_bootstrap_barrio_block_list('sidebar_second')) ? theme_get_setting('sidebar_second_width') : 0;
   $content_width = 12 - $sidebar_first_width - $sidebar_second_width;
+  $content_width = ($content_width == 12) ? "container" : "span_" . $content_width;
   return $content_width;
 }
 
