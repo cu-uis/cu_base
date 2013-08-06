@@ -9,5 +9,6 @@ jQuery(document).ready(function() {
   jQuery('.barrio-modal h2').wrap('<div class="modal-header" />');
   jQuery('.barrio-modal .modal-header').prepend('<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>');
   jQuery('.barrio-modal').append('<div class="modal-footer"><button class="btn" data-dismiss="modal" aria-hidden="true">' + Drupal.t('Close') + '</button></div>');
+  jQuery('.barrio-modal').appendTo('body');
   // End of modal block definition
 });
