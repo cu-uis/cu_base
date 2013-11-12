@@ -2,41 +2,55 @@
 
 /**
  * @file
- * Override of Bootstrap html.tpl.php.
+ * Override of Bootstrap page.tpl.php.
  */
 ?>
-<header id="navbar" class="<?php print $nav_style; ?>" role="banner">
+<header id="navbar" class="<?php print $navbar_classes; ?>" role="banner">
   <div class="navbar-inner">
-    <div class="<?php print $container; ?>">
-      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <?php if (!empty($secondary_nav) || !empty($page['top'])): ?>
-      <div id="top" class="row">
-         <div class="<?php print $container; ?>">
-           <?php print render($secondary_nav); ?>
-           <?php print render($page['top']); ?>
-         </div>
+    <div class="container">
+      <div class="navbar-header">
+        <?php if (!empty($logo)): ?>
+          <a class="logo pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+          </a>
+        <?php endif; ?>
+
+        <?php if (!empty($site_name)): ?>
+          <h1 id="site-name">
+            <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="brand"><?php print $site_name; ?></a>
+          </h1>
+        <?php endif; ?>
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <?php if (!empty($secondary_nav) || !empty($page['top'])): ?>
+        <div id="top" class="row">
+           <div class="container">
+             <?php print render($secondary_nav); ?>
+             <?php print render($page['top']); ?>
+           </div>
+        </div>
+        <?php endif; ?>
       </div>
-      <?php endif; ?>
       
       <div id="header">
-        <div class="<?php print $container; ?>">
-          <?php if (!empty($logo)): ?>
-            <a class="logo pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-              <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-            </a>
-          <?php endif; ?>
-
-          <?php if (!empty($site_name)): ?>
-            <h1 id="site-name">
-              <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="brand"><?php print $site_name; ?></a>
-            </h1>
-          <?php endif; ?>
+        <div class="container">
           <?php print render($page['header']); ?>
+          <?php if (!empty($page['yamm'])): ?>
+          <div class="navbar yamm">
+            <a class="brand" href="#"> Yamm Megamenu </a>
+            <div class="nav-collapse" id="navyamm">
+              <ul class="nav">
+                <!-- Classic list -->
+                <?php print render($page['yamm']); ?>
+              </ul>
+            </div>
+          </div>
+          <?php endif; ?>
           <?php if (!empty($primary_nav) || !empty($page['navigation'])): ?>
             <div id="main-nav" class="<?php print $collapse; ?>">
               <nav role="navigation">
@@ -61,18 +75,20 @@
   </div>
 <?php endif; ?>
 
-<div class="main-container <?php print $container; ?>">
+<div class="main-container container">
 
   <header role="banner" id="page-header">
     <?php if (!empty($site_slogan)): ?>
       <p class="lead"><?php print $site_slogan; ?></p>
     <?php endif; ?>
+
+    <?php print render($page['header']); ?>
   </header> <!-- /#header -->
 
-  <div class="<?php print $row; ?>">
+  <div class="row">
 
     <?php if (!empty($page['preface'])): ?>
-      <div id="preface" class="<?php print $row; ?>">
+      <div id="preface" class="row">
         <?php print render($page['preface']); ?>
       </div>  <!-- /#preface -->
     <?php endif; ?>  
@@ -109,7 +125,7 @@
       <?php endif; ?>
       
       <?php if (!empty($page['content_top'])): ?>
-      <div id="page-top" class="<?php print $row; ?>">
+      <div id="page-top" class="container">
         <?php print render($page['content_top']); ?>
       </div>  <!-- /#sidebar-second -->
       <?php endif; ?>
@@ -121,7 +137,7 @@
       <?php endif; ?>
       
       <?php if (!empty($page['content_bottom'])): ?>
-      <div id="page-bottom" class="<?php print $row; ?>">
+      <div id="page-bottom" class="container">
         <?php print render($page['content_bottom']); ?>
       </div>  <!-- /#sidebar-second -->
       <?php endif; ?>
@@ -135,19 +151,19 @@
     <?php endif; ?>
 
     <?php if (!empty($page['postcript_top'])): ?>
-      <div id="postcript_top" class="<?php print $container; ?>">
+      <div id="postcript_top" class="row">
         <?php print render($page['postcript_top']); ?>
       </div>  <!-- /#preface -->
     <?php endif; ?>  
 
     <?php if (!empty($page['postcript_bottom'])): ?>
-      <div id="postcript_top" class="<?php print $row; ?>">
+      <div id="postcript_bottom" class="row">
         <?php print render($page['postcript_bottom']); ?>
       </div>  <!-- /#preface -->
     <?php endif; ?>  
 
   </div>
-  <footer class="footer <?php print $row; ?>">
+  <footer class="footer container">
     <?php print render($page['footer']); ?>
   </footer>
 </div>

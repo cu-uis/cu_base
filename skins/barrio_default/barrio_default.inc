@@ -124,9 +124,9 @@ function bootstrap_barrio_skinr_group_info() {
 function bootstrap_barrio_skinr_skin_barrio_default_info() {
   $skins = array();
 
-  $skins['bootstrap_barrio_span'] = array(
-    'title' => t('Bootstrap Column Span'),
-    'description' => t('Define the SPAN value for Bootstrap Columns.'),
+  $skins['bootstrap_barrio_col-sm'] = array(
+    'title' => t('Bootstrap Column Small'),
+    'description' => t('Define the value for Bootstrap Columns small screen devices.'),
     'type' => 'select',
     'theme hooks' => array('block','region'),
     'group' => 'layout',
@@ -134,58 +134,174 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
     'options' => array(
       'option_1' => array(
         'title' => t('Span 1'),
-        'class' => array('span1'),
+        'class' => array('col-sm-1'),
       ),
       'option_2' => array(
         'title' => t('Span 2'),
-        'class' => array('span2'),
+        'class' => array('col-sm-2'),
       ),
       'option_3' => array(
         'title' => t('Span 3'),
-        'class' => array('span3'),
+        'class' => array('col-sm-3'),
       ),
       'option_4' => array(
         'title' => t('Span 4'),
-        'class' => array('span4'),
+        'class' => array('col-sm-4'),
       ),
       'option_5' => array(
         'title' => t('Span 5'),
-        'class' => array('span5'),
+        'class' => array('col-sm-5'),
       ),
       'option_6' => array(
         'title' => t('Span 6'),
-        'class' => array('span6'),
+        'class' => array('col-sm-6'),
       ),
       'option_7' => array(
         'title' => t('Span 7'),
-        'class' => array('span7'),
+        'class' => array('col-sm-7'),
       ),
       'option_8' => array(
         'title' => t('Span 8'),
-        'class' => array('span8'),
+        'class' => array('col-sm-8'),
       ),
       'option_9' => array(
         'title' => t('Span 9'),
-        'class' => array('span9'),
+        'class' => array('col-sm-9'),
       ),
       'option_10' => array(
         'title' => t('Span 10'),
-        'class' => array('span10'),
+        'class' => array('col-sm-10'),
       ),
       'option_11' => array(
         'title' => t('Span 11'),
-        'class' => array('span11'),
+        'class' => array('col-sm-11'),
       ),
       'option_12' => array(
         'title' => t('Span 12'),
-        'class' => array('span12'),
+        'class' => array('col-sm-12'),
+      ),
+    ),
+  );
+  $skins['bootstrap_barrio_col-md'] = array(
+    'title' => t('Bootstrap Column Medium'),
+    'description' => t('Define the value for Bootstrap Columns medium screen devices.'),
+    'type' => 'select',
+    'theme hooks' => array('block','region'),
+    'group' => 'layout',
+    'default status' => 1,
+    'options' => array(
+      'option_1' => array(
+        'title' => t('Span 1'),
+        'class' => array('col-md-1'),
+      ),
+      'option_2' => array(
+        'title' => t('Span 2'),
+        'class' => array('col-md-2'),
+      ),
+      'option_3' => array(
+        'title' => t('Span 3'),
+        'class' => array('col-md-3'),
+      ),
+      'option_4' => array(
+        'title' => t('Span 4'),
+        'class' => array('col-md-4'),
+      ),
+      'option_5' => array(
+        'title' => t('Span 5'),
+        'class' => array('col-md-5'),
+      ),
+      'option_6' => array(
+        'title' => t('Span 6'),
+        'class' => array('col-md-6'),
+      ),
+      'option_7' => array(
+        'title' => t('Span 7'),
+        'class' => array('col-md-7'),
+      ),
+      'option_8' => array(
+        'title' => t('Span 8'),
+        'class' => array('col-md-8'),
+      ),
+      'option_9' => array(
+        'title' => t('Span 9'),
+        'class' => array('col-md-9'),
+      ),
+      'option_10' => array(
+        'title' => t('Span 10'),
+        'class' => array('col-md-10'),
+      ),
+      'option_11' => array(
+        'title' => t('Span 11'),
+        'class' => array('col-md-11'),
+      ),
+      'option_12' => array(
+        'title' => t('Span 12'),
+        'class' => array('col-md-12'),
+      ),
+    ),
+  );
+  $skins['bootstrap_barrio_col-lg'] = array(
+    'title' => t('Bootstrap Column Large'),
+    'description' => t('Define the value for Bootstrap Columns large screen devices.'),
+    'type' => 'select',
+    'theme hooks' => array('block','region'),
+    'group' => 'layout',
+    'default status' => 1,
+    'options' => array(
+      'option_1' => array(
+        'title' => t('Span 1'),
+        'class' => array('col-lg-1'),
+      ),
+      'option_2' => array(
+        'title' => t('Span 2'),
+        'class' => array('col-lg-2'),
+      ),
+      'option_3' => array(
+        'title' => t('Span 3'),
+        'class' => array('col-lg-3'),
+      ),
+      'option_4' => array(
+        'title' => t('Span 4'),
+        'class' => array('col-lg-4'),
+      ),
+      'option_5' => array(
+        'title' => t('Span 5'),
+        'class' => array('col-lg-5'),
+      ),
+      'option_6' => array(
+        'title' => t('Span 6'),
+        'class' => array('col-lg-6'),
+      ),
+      'option_7' => array(
+        'title' => t('Span 7'),
+        'class' => array('col-lg-7'),
+      ),
+      'option_8' => array(
+        'title' => t('Span 8'),
+        'class' => array('col-lg-8'),
+      ),
+      'option_9' => array(
+        'title' => t('Span 9'),
+        'class' => array('col-lg-9'),
+      ),
+      'option_10' => array(
+        'title' => t('Span 10'),
+        'class' => array('col-lg-10'),
+      ),
+      'option_11' => array(
+        'title' => t('Span 11'),
+        'class' => array('col-lg-11'),
+      ),
+      'option_12' => array(
+        'title' => t('Span 12'),
+        'class' => array('col-lg-12'),
       ),
     ),
   );
 
-  $skins['bootstrap_barrio_offset'] = array(
-    'title' => t('Bootstrap Column Offset'),
-    'description' => t('Define the OFFSET value for Bootstrap Columns.'),
+  $skins['bootstrap_barrio_col-sm-offset'] = array(
+    'title' => t('Bootstrap Column Offset Small'),
+    'description' => t('Define the OFFSET value for Bootstrap Columns Small.'),
     'type' => 'select',
     'theme hooks' => array('block','region'),
     'group' => 'layout',
@@ -193,47 +309,155 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
     'options' => array(
       'option_1' => array(
         'title' => t('Offset 1'),
-        'class' => array('offset1'),
+        'class' => array('col-sm-offset-1'),
       ),
       'option_2' => array(
         'title' => t('Offset 2'),
-        'class' => array('offset2'),
+        'class' => array('col-sm-offset-2'),
       ),
       'option_3' => array(
         'title' => t('Offset 3'),
-        'class' => array('offset3'),
+        'class' => array('col-sm-offset-3'),
       ),
       'option_4' => array(
         'title' => t('Offset 4'),
-        'class' => array('offset4'),
+        'class' => array('col-sm-offset-4'),
       ),
       'option_5' => array(
         'title' => t('Offset 5'),
-        'class' => array('offset5'),
+        'class' => array('col-sm-offset-5'),
       ),
       'option_6' => array(
         'title' => t('Offset 6'),
-        'class' => array('offset6'),
+        'class' => array('col-sm-offset-6'),
       ),
       'option_7' => array(
         'title' => t('Offset 7'),
-        'class' => array('offset'),
+        'class' => array('col-sm-offset-'),
       ),
       'option_8' => array(
         'title' => t('Offset 8'),
-        'class' => array('offset8'),
+        'class' => array('col-sm-offset-8'),
       ),
       'option_9' => array(
         'title' => t('Offset 9'),
-        'class' => array('offset9'),
+        'class' => array('col-sm-offset-9'),
       ),
       'option_10' => array(
         'title' => t('Offset 10'),
-        'class' => array('offset10'),
+        'class' => array('col-sm-offset-10'),
       ),
       'option_11' => array(
         'title' => t('Offset 11'),
-        'class' => array('offset11'),
+        'class' => array('col-sm-offset-11'),
+      ),
+    ),
+  );
+  $skins['bootstrap_barrio_col-md-offset'] = array(
+    'title' => t('Bootstrap Column Offset Medium'),
+    'description' => t('Define the OFFSET value for Bootstrap Columns Medium.'),
+    'type' => 'select',
+    'theme hooks' => array('block','region'),
+    'group' => 'layout',
+    'default status' => 1,
+    'options' => array(
+      'option_1' => array(
+        'title' => t('Offset 1'),
+        'class' => array('col-md-offset-1'),
+      ),
+      'option_2' => array(
+        'title' => t('Offset 2'),
+        'class' => array('col-md-offset-2'),
+      ),
+      'option_3' => array(
+        'title' => t('Offset 3'),
+        'class' => array('col-md-offset-3'),
+      ),
+      'option_4' => array(
+        'title' => t('Offset 4'),
+        'class' => array('col-md-offset-4'),
+      ),
+      'option_5' => array(
+        'title' => t('Offset 5'),
+        'class' => array('col-md-offset-5'),
+      ),
+      'option_6' => array(
+        'title' => t('Offset 6'),
+        'class' => array('col-md-offset-6'),
+      ),
+      'option_7' => array(
+        'title' => t('Offset 7'),
+        'class' => array('col-md-offset-'),
+      ),
+      'option_8' => array(
+        'title' => t('Offset 8'),
+        'class' => array('col-md-offset-8'),
+      ),
+      'option_9' => array(
+        'title' => t('Offset 9'),
+        'class' => array('col-md-offset-9'),
+      ),
+      'option_10' => array(
+        'title' => t('Offset 10'),
+        'class' => array('col-md-offset-10'),
+      ),
+      'option_11' => array(
+        'title' => t('Offset 11'),
+        'class' => array('col-md-offset-11'),
+      ),
+    ),
+  );
+  $skins['bootstrap_barrio_col-lg-offset'] = array(
+    'title' => t('Bootstrap Column Offset Large'),
+    'description' => t('Define the OFFSET value for Bootstrap Columns Large.'),
+    'type' => 'select',
+    'theme hooks' => array('block','region'),
+    'group' => 'layout',
+    'default status' => 1,
+    'options' => array(
+      'option_1' => array(
+        'title' => t('Offset 1'),
+        'class' => array('col-lg-offset-1'),
+      ),
+      'option_2' => array(
+        'title' => t('Offset 2'),
+        'class' => array('col-lg-offset-2'),
+      ),
+      'option_3' => array(
+        'title' => t('Offset 3'),
+        'class' => array('col-lg-offset-3'),
+      ),
+      'option_4' => array(
+        'title' => t('Offset 4'),
+        'class' => array('col-lg-offset-4'),
+      ),
+      'option_5' => array(
+        'title' => t('Offset 5'),
+        'class' => array('col-lg-offset-5'),
+      ),
+      'option_6' => array(
+        'title' => t('Offset 6'),
+        'class' => array('col-lg-offset-6'),
+      ),
+      'option_7' => array(
+        'title' => t('Offset 7'),
+        'class' => array('col-lg-offset-'),
+      ),
+      'option_8' => array(
+        'title' => t('Offset 8'),
+        'class' => array('col-lg-offset-8'),
+      ),
+      'option_9' => array(
+        'title' => t('Offset 9'),
+        'class' => array('col-lg-offset-9'),
+      ),
+      'option_10' => array(
+        'title' => t('Offset 10'),
+        'class' => array('col-lg-offset-10'),
+      ),
+      'option_11' => array(
+        'title' => t('Offset 11'),
+        'class' => array('col-lg-offset-11'),
       ),
     ),
   );
@@ -241,7 +465,7 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
   $skins['bootstrap_barrio_row'] = array(
     'title' => t('Bootstrap Row'),
     'type' => 'select',
-    'description' => t('Define a DIV as row or row fluid.'),
+    'description' => t('Define a DIV as row.'),
     'theme hooks' => array('block', 'region'),
     'group' => 'layout',
     'default status' => 1,
@@ -250,17 +474,13 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
         'title' => t('Row'),
         'class' => array('row'),
       ),
-      'option_2' => array(
-        'title' => t('Row Fluid'),
-        'class' => array('row-fluid'),
-      ),
     ),
   );
 
   $skins['bootstrap_barrio_container'] = array(
     'title' => t('Bootstrap Container'),
     'type' => 'select',
-    'description' => t('Define a DIV as container or container fluid.'),
+    'description' => t('Define a DIV as container.'),
     'theme hooks' => array('block', 'region'),
     'group' => 'layout',
     'default status' => 1,
@@ -268,10 +488,6 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
       'option_1' => array(
         'title' => t('Container'),
         'class' => array('container'),
-      ),
-      'option_2' => array(
-        'title' => t('Container Fluid'),
-        'class' => array('container-fluid'),
       ),
     ),
   );
@@ -286,27 +502,35 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
     'options' => array(
       'option_1' => array(
         'title' => t('Visible Phone'),
-        'class' => array('visible-phone'),
+        'class' => array('visible-xs'),
       ),
       'option_2' => array(
         'title' => t('Visible Tablet'),
-        'class' => array('visible-tablet'),
+        'class' => array('visible-sm'),
       ),
       'option_3' => array(
         'title' => t('Visible Desktop'),
-        'class' => array('visible-desktop'),
+        'class' => array('visible-md'),
       ),
       'option_4' => array(
-        'title' => t('Hidden Phone'),
-        'class' => array('hidden-phone'),
+        'title' => t('Visible Large Screen'),
+        'class' => array('visible-lg'),
       ),
       'option_5' => array(
-        'title' => t('Hidden Tablet'),
-        'class' => array('hidden-tablet'),
+        'title' => t('Hidden Phone'),
+        'class' => array('hidden-xs'),
       ),
       'option_6' => array(
+        'title' => t('Hidden Tablet'),
+        'class' => array('hidden-sm'),
+      ),
+      'option_7' => array(
         'title' => t('Hidden Desktop'),
-        'class' => array('hidden-desktop'),
+        'class' => array('hidden-md'),
+      ),
+      'option_8' => array(
+        'title' => t('Hidden Large Screen'),
+        'class' => array('hidden-lg'),
       ),
     ),
   );
@@ -322,7 +546,7 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
     'options' => array(
       'bootstrap_barrio_modal' => array(
         'title' => t('Set as modal.'),
-        'class' => array('modal', 'fade', 'hide', 'barrio-modal'),
+        'class' => array('modal', 'fade', 'barrio-modal'),
       ),
     ),
   );
@@ -336,15 +560,15 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
     'default status' => 1,
     'options' => array(
       'option_1' => array(
-        'title' => t('Visible Phone'),
+        'title' => t('Fixed Top'),
         'class' => array('navbar-fixed-top'),
       ),
       'option_2' => array(
-        'title' => t('Visible Tablet'),
+        'title' => t('Fixed Bottom'),
         'class' => array('navbar-fixed-bottom'),
       ),
       'option_3' => array(
-        'title' => t('Visible Desktop'),
+        'title' => t('Static Top'),
         'class' => array('navbar-static-top'),
       ),
     ),
@@ -360,7 +584,7 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
     'options' => array(
       'bootstrap_barrio_collapse_menu' => array(
         'title' => t('Set as collapsible.'),
-        'class' => array('nav-collapse', 'collapse'),
+        'class' => array('nav-collapse'),
       ),
     ),
   );

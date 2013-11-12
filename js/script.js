@@ -3,12 +3,23 @@ jQuery(document).ready(function() {
   // This triggers block as modal.
   jQuery('.barrio-modal').each(function () {
     var title = jQuery(this).children('h2').text();
-    jQuery(this).after('<section id="btn-' + jQuery(this).attr('id') + '" class="sideral-corner after"><a href="#' + jQuery(this).attr('id') + '" role="button" class="btn" data-toggle="modal">' + title + '</a></section>');
+    jQuery(this).after('<section id="btn-' + jQuery(this).attr('id') + '" class="sideral-corner after"><a class="btn btn-primary btn-lg" data-target="#' + jQuery(this).attr('id') + '" data-toggle="modal">' + title + '</a></section>');
   });
-  jQuery('.barrio-modal .block-content').addClass('modal-body');
+  jQuery('.barrio-modal').attr("tabindex", "-1");
+  jQuery('.barrio-modal').attr("role", "dialog");
+  jQuery('.barrio-modal').attr("aria-hidden", "true");
   jQuery('.barrio-modal h2').wrap('<div class="modal-header" />');
   jQuery('.barrio-modal .modal-header').prepend('<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>');
+  jQuery('.barrio-modal .block-content').addClass('modal-body');
   jQuery('.barrio-modal').append('<div class="modal-footer"><button class="btn" data-dismiss="modal" aria-hidden="true">' + Drupal.t('Close') + '</button></div>');
+  jQuery('.barrio-modal div').wrapAll('<div class="modal-dialog" />');
+  jQuery('.modal-dialog div').wrapAll('<div class="modal-content" />');
   jQuery('.barrio-modal').appendTo('body');
   // End of modal block definition
+
+  // Yamm code
+  jQuery(document).on('click', '.yamm .dropdown-menu', function(e) {
+    e.stopPropagation()
+  })
+
 });

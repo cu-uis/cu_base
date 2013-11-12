@@ -38,27 +38,11 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, $form_state, 
     '#default_value' => theme_get_setting('toggle_responsive'),
     '#description'   => t('Insert meta viewport to make site responsive'),
   );
-  $form['responsive']['nav_style'] = array(
-    '#type'          => 'select',
-    '#title'         => t('Header behaivor'),
-    '#default_value' => theme_get_setting('nav_style'),
-    '#options' => array(
-      0 => t('Scroll with page'),
-      1 => t('Fixed on top'),
-    ),
-    '#description'   => t('Define the behaivor of the page header'),
-  );
   $form['responsive']['collapse'] = array(
     '#type'          => 'checkbox',
     '#title'         => t('Collapse main menu'),
     '#default_value' => theme_get_setting('collapse'),
     '#description'   => t('When responsive, make the main menu collapse.'),
-  );
-  $form['responsive']['fluid'] = array(
-    '#type'          => 'checkbox',
-    '#title'         => t('Makes layout fluid or fixed'),
-    '#default_value' => theme_get_setting('fluid'),
-    '#description'   => t('The default state is fixed, if you check it will make fluid layout.'),
   );
 
   $form['span'] = array(

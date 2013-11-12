@@ -6,6 +6,7 @@ base theme = bootstrap
 regions[top]            = 'Top Header'
 regions[header]         = 'Header'
 regions[navigation]     = 'Navigation'
+regions[yamm]           = 'Yamm'
 regions[slider]         = 'Slider'
 regions[highlighted]    = 'Highlighted'
 regions[help]           = 'Help'
@@ -20,6 +21,7 @@ regions[postcript_bottom] = 'Postcript Bottom'
 regions[footer]         = 'Footer'
 
 stylesheets[all][] = css/style.css
+stylesheets[all][] = css/yamm.css
 scripts[] = js/script.js
 
 ; --------------------------------------------------------------------------------
