@@ -13,7 +13,7 @@ jQuery(document).ready(function() {
   jQuery('.barrio-modal .block-content').addClass('modal-body');
   jQuery('.barrio-modal').append('<div class="modal-footer"><button class="btn" data-dismiss="modal" aria-hidden="true">' + Drupal.t('Close') + '</button></div>');
   jQuery('.barrio-modal div').wrapAll('<div class="modal-dialog" />');
-  jQuery('.modal-dialog div').wrapAll('<div class="modal-content" />');
+  jQuery('.barrio-modal .modal-dialog div').wrapAll('<div class="modal-content" />');
   jQuery('.barrio-modal').appendTo('body');
   // End of modal block definition
 
