@@ -56,7 +56,7 @@ function _bootstrap_barrio_content_width() {
   $sidebar_first_width = (_bootstrap_barrio_block_list('sidebar_first')) ? theme_get_setting('sidebar_first_width') : 0;
   $sidebar_second_width = (_bootstrap_barrio_block_list('sidebar_second')) ? theme_get_setting('sidebar_second_width') : 0;
   $content_width = 12 - $sidebar_first_width - $sidebar_second_width;
-  $content_width = ($content_width == 12) ? "row" : "col-md-" . $content_width;
+  $content_width = "col-md-" . $content_width;
   return $content_width;
 }
 

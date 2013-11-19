@@ -8,6 +8,14 @@
 <header id="navbar" class="<?php print $navbar_classes; ?>" role="banner">
   <div class="navbar-inner">
     <div class="container">
+        <?php if (!empty($secondary_nav) || !empty($page['top'])): ?>
+        <div id="top" class="row">
+           <div class="container">
+             <?php print render($secondary_nav); ?>
+             <?php print render($page['top']); ?>
+           </div>
+        </div>
+        <?php endif; ?>
       <div class="navbar-header">
         <?php if (!empty($logo)): ?>
           <a class="logo pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
@@ -27,25 +35,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <?php if (!empty($secondary_nav) || !empty($page['top'])): ?>
-        <div id="top" class="row">
-           <div class="container">
-             <?php print render($secondary_nav); ?>
-             <?php print render($page['top']); ?>
-           </div>
-        </div>
-        <?php endif; ?>
       </div>
       
       <div id="header">
-        <div class="container">
+        <div class="row">
           <?php print render($page['header']); ?>
           <?php if (!empty($page['yamm'])): ?>
           <div class="navbar yamm">
-            <a class="brand" href="#"> Yamm Megamenu </a>
             <div class="nav-collapse" id="navyamm">
-              <ul class="nav">
-                <!-- Classic list -->
+              <ul class="nav navbar-nav">
                 <?php print render($page['yamm']); ?>
               </ul>
             </div>
