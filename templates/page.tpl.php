@@ -29,25 +29,25 @@
           </h1>
         <?php endif; ?>
         <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
-        </a>
+        </button>
       </div>
       
       <div id="header">
         <div class="row">
           <?php print render($page['header']); ?>
           <?php if (!empty($page['yamm'])): ?>
-          <div class="navbar yamm">
-            <div class="nav-collapse" id="navyamm">
-              <ul class="nav navbar-nav">
-                <?php print render($page['yamm']); ?>
-              </ul>
+            <div class="navbar yamm">
+              <div id="navyamm" class="nav-collapse">
+                <ul class="nav navbar-nav">
+                  <?php print render($page['yamm']); ?>
+                </ul>
+              </div>
             </div>
-          </div>
           <?php endif; ?>
           <?php if (!empty($primary_nav) || !empty($page['navigation'])): ?>
             <div id="main-nav" class="<?php print $collapse; ?>">
@@ -86,7 +86,7 @@
   <div class="row">
 
     <?php if (!empty($page['preface'])): ?>
-      <div id="preface" class="row">
+      <div id="preface">
         <?php print render($page['preface']); ?>
       </div>  <!-- /#preface -->
     <?php endif; ?>  
@@ -123,7 +123,7 @@
       <?php endif; ?>
       
       <?php if (!empty($page['content_top'])): ?>
-      <div id="page-top" class="container">
+      <div id="page-top">
         <?php print render($page['content_top']); ?>
       </div>  <!-- /#sidebar-second -->
       <?php endif; ?>
@@ -135,7 +135,7 @@
       <?php endif; ?>
       
       <?php if (!empty($page['content_bottom'])): ?>
-      <div id="page-bottom" class="container">
+      <div id="page-bottom">
         <?php print render($page['content_bottom']); ?>
       </div>  <!-- /#sidebar-second -->
       <?php endif; ?>
@@ -149,13 +149,13 @@
     <?php endif; ?>
 
     <?php if (!empty($page['postcript_top'])): ?>
-      <div id="postcript_top" class="row">
+      <div id="postcript_top">
         <?php print render($page['postcript_top']); ?>
       </div>  <!-- /#preface -->
     <?php endif; ?>  
 
     <?php if (!empty($page['postcript_bottom'])): ?>
-      <div id="postcript_bottom" class="row">
+      <div id="postcript_bottom">
         <?php print render($page['postcript_bottom']); ?>
       </div>  <!-- /#preface -->
     <?php endif; ?>  

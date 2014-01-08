@@ -34,7 +34,7 @@ function bootstrap_barrio_preprocess_page(&$variables) {
   $variables['sidebar_first_width'] = 'col-md-' . theme_get_setting('sidebar_first_width');
   $variables['sidebar_second_width'] = 'col-md-' . theme_get_setting('sidebar_second_width');
   if (theme_get_setting('collapse')) {
-    $variables['collapse'] = 'nav-collapse';
+    $variables['collapse'] = 'collapse navbar-collapse';
   }
   else {
     $variables['collapse'] = 'not-collapse';

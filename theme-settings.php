@@ -13,10 +13,19 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, $form_state, 
     return;
   }
 
+  $form['bootstrap_barrio'] = array(
+    '#type' => 'vertical_tabs',
+    '#prefix' => '<h2><small>' . t('Bootstrap Barrio Settings') . '</small></h2>',
+    '#weight' => -10,
+  );
+
+  // Components.
+
   $form['front'] = array(
     '#type'          => 'fieldset',
     '#title'         => t('Print content on front page'),
     '#description'   => t('Let you decide to print or not the content in the front page. This avoid the message no front content has been created and let handle front page information thru Blocks or Boxes.'),
+    '#group' => 'bootstrap_barrio',
   );
 
   $form['front']['print_content'] = array(
@@ -30,6 +39,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, $form_state, 
     '#type'          => 'fieldset',
     '#title'         => t('Theme responsive settings'),
     '#description'   => t('Activates the Twitter Bootstrap responsive functions.'),
+    '#group' => 'bootstrap_barrio',
   );
 
   $form['responsive']['toggle_responsive'] = array(
@@ -49,28 +59,29 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, $form_state, 
     '#type'          => 'fieldset',
     '#title'         => t('Column width settings'),
     '#description'   => t('Define the width of primary and secondary columns based on Twitter Bootstrap Span. The page is divided into 12 columns, main content width is automatically calculated.'),
+    '#group' => 'bootstrap_barrio',
   );
   $form['span']['sidebar_first_width'] = array(
     '#type'          => 'select',
     '#title'         => t('First column width'),
     '#default_value' => theme_get_setting('sidebar_first_width'),
     '#options' => array(
-      2 => t('Span2'),
-      3 => t('Span3'),
-      4 => t('Span4'),
+      2 => t('col-2'),
+      3 => t('col-3'),
+      4 => t('col-4'),
     ),
-    '#description'   => t('Define the width of the first column based on Span grid system'),
+    '#description'   => t('Define the width of the first column based on column grid system'),
   );
   $form['span']['sidebar_second_width'] = array(
     '#type'          => 'select',
     '#title'         => t('Second column width'),
     '#default_value' => theme_get_setting('sidebar_second_width'),
     '#options' => array(
-      2 => t('Span2'),
-      3 => t('Span3'),
-      4 => t('Span4'),
+      2 => t('col-2'),
+      3 => t('col-3'),
+      4 => t('col-4'),
     ),
-    '#description'   => t('Define the width of the second column based on Span grid system'),
+    '#description'   => t('Define the width of the second column based on column grid system'),
   );
 
 }

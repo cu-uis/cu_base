@@ -551,6 +551,22 @@ function bootstrap_barrio_skinr_skin_barrio_default_info() {
     ),
   );
 
+  $skins['bootstrap_barrio_dropdown'] = array(
+    'title' => t('Dropdown Block'),
+    'type' => 'checkboxes',
+    'description' => t('Define a block as Dropdown. Replace block by button with block title as text.'),
+    'js' => array('barrio_default.js'),
+    'theme hooks' => array('block'),
+    'group' => 'box',
+    'default status' => 1,
+    'options' => array(
+      'bootstrap_barrio_dropdown' => array(
+        'title' => t('Set as dropdown.'),
+        'class' => array('dropdown', 'barrio-dropdown'),
+      ),
+    ),
+  );
+
   $skins['bootstrap_barrio_navbar'] = array(
     'title' => t('Navigation Bar'),
     'type' => 'checkboxes',
