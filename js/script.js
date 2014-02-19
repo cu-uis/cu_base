@@ -36,6 +36,11 @@ Drupal.behaviors.jquery_ajax_load = {
     });
     // End of modal block definition
 
+  // Prevent dropdown from closing when form inside
+  $('.dropdown-menu').find('form').click(function (e) {
+    e.stopPropagation();
+  });
+
   // Yamm code
     jQuery(document).on('click', '.yamm .dropdown-menu', function(e) {
       e.stopPropagation()

@@ -21,6 +21,7 @@ function bootstrap_barrio_preprocess_html(&$variables) {
   }
   else {
     $variables['mobile_friendly'] = FALSE;
+    drupal_add_css(drupal_get_path('theme', 'bootstrap_barrio') . '/css/no-responsive.css', array('group' => CSS_DEFAULT, 'every_page' => TRUE));
   }
 }
 
