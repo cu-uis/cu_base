@@ -161,7 +161,7 @@
     <?php endif; ?>  
 
   </div>
-  <footer class="footer container">
+  <footer class="footer row">
     <?php print render($page['footer']); ?>
   </footer>
 </div>
