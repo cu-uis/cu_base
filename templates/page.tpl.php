@@ -5,18 +5,18 @@
  * Override of Bootstrap page.tpl.php.
  */
 ?>
+<?php if (!empty($secondary_nav) || !empty($page['top'])): ?>
+<header role="banner">
+  <div id="top" class="container">
+    <?php print render($secondary_nav); ?>
+    <?php print render($page['top']); ?>
+  </div>
+</header>
+<?php endif; ?>
 <header id="navbar" class="<?php print $navbar_classes; ?>" role="banner">
   <div class="navbar-inner">
-    <div class="container">
-        <?php if (!empty($secondary_nav) || !empty($page['top'])): ?>
-        <div id="top" class="row">
-           <div class="container">
-             <?php print render($secondary_nav); ?>
-             <?php print render($page['top']); ?>
-           </div>
-        </div>
-        <?php endif; ?>
-      <div class="navbar-header">
+     <div id="main-nav">
+       <div class="navbar-header">
         <?php if (!empty($logo)): ?>
           <a class="logo pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
             <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
@@ -35,10 +35,10 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-      </div>
+       </div>
       
-      <div id="header">
-        <div class="row">
+       <div id="header" class="row">
+         <div>
           <?php print render($page['header']); ?>
           <?php if (!empty($page['yamm'])): ?>
             <div class="navbar yamm">
