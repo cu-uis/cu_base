@@ -41,3 +41,10 @@ settings[nav_style] = 0
 settings[collapse] = 1
 settings[container] = 0
 settings[row] = 0
+
+; Information added by Drupal.org packaging script on 2014-04-16
+version = "7.x-3.4"
+core = "7.x"
+project = "bootstrap_barrio"
+datestamp = "1397690362"
+

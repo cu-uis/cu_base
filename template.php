@@ -16,6 +16,9 @@ function bootstrap_barrio_preprocess_html(&$variables) {
     $taxonomy = taxonomy_term_load($tid);
     $variables['classes_array'][] = 'vid-' . $taxonomy->vid;
   }
+  if (theme_get_setting('is_one') && drupal_is_front_page()) {
+    $variables['classes_array'][] = 'one-page';
+  }
   if (theme_get_setting('toggle_responsive')) {
     $variables['mobile_friendly'] = TRUE;
   }
@@ -34,6 +37,9 @@ function bootstrap_barrio_preprocess_page(&$variables) {
   $variables['content_width'] = _bootstrap_barrio_content_width();
   $variables['sidebar_first_width'] = 'col-md-' . theme_get_setting('sidebar_first_width');
   $variables['sidebar_second_width'] = 'col-md-' . theme_get_setting('sidebar_second_width');
+  if (theme_get_setting('is_one') && drupal_is_front_page()) {
+    $variables['theme_hook_suggestions'][] = 'page__one';
+  }
   if (theme_get_setting('collapse')) {
     $variables['collapse'] = 'collapse navbar-collapse';
   }

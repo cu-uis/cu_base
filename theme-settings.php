@@ -84,4 +84,17 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, $form_state, 
     '#description'   => t('Define the width of the second column based on column grid system'),
   );
 
+  $form['one'] = array(
+    '#type'          => 'fieldset',
+    '#title'         => t('One Page'),
+    '#description'   => t('Settings if decide to use the One Page.'),
+    '#group' => 'bootstrap_barrio',
+  );
+  $form['one']['is_one'] = array(
+    '#type'          => 'checkbox',
+    '#title'         => t('Set front page as One Page.'),
+    '#default_value' => theme_get_setting('is_one'),
+    '#description'   => t('Decide if you wish front page to behaive as One Page.'),
+  );
+
 }
