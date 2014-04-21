@@ -4,6 +4,10 @@
   }
 }
 
+.navbar-fixed-top .logo img{
+  height:40px;
+}
+
 .navbar .logo {
   margin-top: 5px;
   margin-right: 10px;
@@ -237,4 +241,8 @@ e.g. multipage*/
 /* Override Dropdown  Menu to allow on-hover behaviour */
 .dropdown-menu {
   margin:0;
+}
+
+.navbar-is-fixed-top .logo pull-left img {
+  max-height:40px;
 }
