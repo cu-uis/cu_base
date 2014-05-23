@@ -15,7 +15,7 @@
 <?php endif; ?>
 <header id="navbar" class="<?php print $navbar_classes; ?>" role="banner">
   <div class="navbar-inner">
-     <div id="main-nav">
+     <div id="main-nav-wrap">
        <div class="navbar-header">
         <?php if (!empty($logo)): ?>
           <a class="logo pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
@@ -79,8 +79,6 @@
     <?php if (!empty($site_slogan)): ?>
       <p class="lead"><?php print $site_slogan; ?></p>
     <?php endif; ?>
-
-    <?php print render($page['header']); ?>
   </header> <!-- /#header -->
 
   <div class="row">
