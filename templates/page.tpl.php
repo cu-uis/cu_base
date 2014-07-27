@@ -15,7 +15,8 @@
 <?php endif; ?>
 <header id="navbar" class="<?php print $navbar_classes; ?>" role="banner">
   <div class="navbar-inner">
-     <div id="main-nav-wrap">
+     <div id="main-navs">
+       <div class="container">
        <div class="navbar-header">
         <?php if (!empty($logo)): ?>
           <a class="logo pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
@@ -37,7 +38,7 @@
         </button>
        </div>
       
-       <div id="header" class="row">
+       <div id="header" class="header">
          <div>
           <?php print render($page['header']); ?>
           <?php if (!empty($page['yamm'])): ?>
@@ -63,7 +64,7 @@
           <?php endif; ?>
         </div>
       </div>
-    </div>
+    </div></div>
   </div>
 </header>
 
@@ -145,21 +146,28 @@
         <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
+  </div>
 
     <?php if (!empty($page['postcript_top'])): ?>
-      <div id="postcript_top">
+      <div id="postcript_top" class="clearfix row">
+        <div class="content">
         <?php print render($page['postcript_top']); ?>
+        </div>
       </div>  <!-- /#preface -->
     <?php endif; ?>  
 
     <?php if (!empty($page['postcript_bottom'])): ?>
-      <div id="postcript_bottom">
+      <div id="postcript_bottom" class="clearfix row">
+        <div class="content">
         <?php print render($page['postcript_bottom']); ?>
+        </div>
       </div>  <!-- /#preface -->
     <?php endif; ?>  
 
-  </div>
-  <footer class="footer row">
-    <?php print render($page['footer']); ?>
-  </footer>
 </div>
+
+<footer class="footer">
+    <div id="footer-inner" class="container">
+    <?php print render($page['footer']); ?>
+    </div>
+  </footer>

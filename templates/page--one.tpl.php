@@ -15,7 +15,8 @@
 <?php endif; ?>
 <header id="navbar" class="<?php print $navbar_classes; ?>" role="banner">
   <div class="navbar-inner">
-     <div id="main-nav">
+     <div id="main-navs">
+      <div class="container">
        <div class="navbar-header">
         <?php if (!empty($logo)): ?>
           <a class="logo pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
@@ -37,7 +38,7 @@
         </button>
        </div>
       
-       <div id="header" class="row">
+       <div id="header" class="header">
          <div>
           <?php print render($page['header']); ?>
           <?php if (!empty($page['yamm'])): ?>
@@ -62,7 +63,7 @@
             </div>
           <?php endif; ?>
         </div>
-      </div>
+      </div></div>
     </div>
   </div>
 </header>
@@ -79,8 +80,6 @@
     <?php if (!empty($site_slogan)): ?>
       <p class="lead"><?php print $site_slogan; ?></p>
     <?php endif; ?>
-
-    <?php print render($page['header']); ?>
   </header> <!-- /#header -->
 
     <?php if (!empty($page['preface'])): ?>
@@ -143,9 +142,9 @@
     </div>
     <?php endif; ?>  
 
-  <footer class="footer">
+</div>
+<footer class="footer">
     <div id="footer-inner" class="container">
     <?php print render($page['footer']); ?>
     </div>
   </footer>
-</div>
