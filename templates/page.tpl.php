@@ -131,6 +131,10 @@
         <div id="content-inner">
           <?php print render($page['content']); ?>
         </div>
+      <?php else: ?>
+        <?php
+          render($pagemetatag);
+        ?>
       <?php endif; ?>
       
       <?php if (!empty($page['content_bottom'])): ?>
