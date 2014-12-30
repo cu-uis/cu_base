@@ -116,6 +116,10 @@
           <?php print render($page['content']); ?>
         </div>
     </div>
+     <?php else: ?>
+        <?php
+          render($pagemetatag);
+        ?>
       <?php endif; ?>
       
       <?php if (!empty($page['content_bottom'])): ?>
