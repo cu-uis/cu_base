@@ -92,3 +92,29 @@ function _bootstrap_barrio_block_list($region) {
   return $drupal_list;
 }
 
+/**
+ * Implements hook_element_info_alter().
+ */
+function bootstrap_barrio_element_info_alter(&$elements) {
+    // Element mail of module webform
+    if (module_exists('webform')) {
+        if (!empty($elements["webform_email"])) {
+              $elements["webform_email"]['#process'][] = '_bootstrap_barrio_process_input';
+        }
+    }
+}
+/**
+ * Add class form-control in fields
+ */
+function _bootstrap_barrio_process_input(&$element, &$form_state) {
+  // Only add the "form-control" class for specific element input types.
+  $types = array(
+    // Elements module.
+    'webform_email',
+  );
+  if (!empty($element['#type']) && (in_array($element['#type'], $types) || ($element['#type'] === 'file' && empty($element['#managed_file'])))) {
+    $element['#attributes']['class'][] = 'form-control';
+  }
+  return $element;
+}
+
