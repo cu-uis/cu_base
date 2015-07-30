@@ -7,7 +7,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces;?>>
-<head profile="<?php print $grddl_profile; ?>">
+<head>
   <meta charset="utf-8">
   <?php if ($mobile_friendly): ?>    
   <meta name="viewport" content="width=device-width, initial-scale=1.0">

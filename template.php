@@ -26,6 +26,18 @@ function bootstrap_barrio_preprocess_html(&$variables) {
     $variables['mobile_friendly'] = FALSE;
     drupal_add_css(drupal_get_path('theme', 'bootstrap_barrio') . '/css/no-responsive.css', array('group' => CSS_DEFAULT, 'every_page' => TRUE));
   }
+  $prefixes = array();
+  $namespaces = explode("\n", trim($variables['rdf_namespaces']));
+  foreach ($namespaces as $name) {
+    list($key,$url) = explode('=', $name, 2);
+    list($xml,$space) = explode(':',$key, 2);
+    $url = trim($url, '"');
+    if (!empty($space) && !empty($url)) {
+      $prefixes[] = $space . ': ' . $url;
+    }
+  }
+  $prefix = implode(" ", $prefixes);
+  $variables['rdf_namespaces'] = ' xmlns="http://www.w3.org/1999/xhtml" prefix="' . $prefix . '"';
 }
 
 /**
