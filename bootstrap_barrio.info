@@ -23,6 +23,7 @@ regions[footer]         = 'Footer'
 stylesheets[all][] = css/custom.css
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/yamm.css
+stylesheets[print][] = css/print.css
 scripts[] = js/script.js
 
 ; --------------------------------------------------------------------------------
