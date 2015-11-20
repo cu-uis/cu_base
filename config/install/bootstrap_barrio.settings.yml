@@ -19,6 +19,8 @@ bootstrap_barrio_button_outline: 0
 
 # Navbar
 # --------------
+bootstrap_barrio_navbar_top_position: ''
+bootstrap_barrio_navbar_top_inverse: 0
 bootstrap_barrio_navbar_position: ''
 bootstrap_barrio_navbar_inverse: 0
 
@@ -72,8 +74,3 @@ bootstrap_barrio_tooltip_trigger:
   click: 0
 bootstrap_barrio_tooltip_delay: 0
 bootstrap_barrio_tooltip_container: 'body'
-
-# Global
-# --------------
-bootstrap_barrio_toggle_name: 1
-bootstrap_barrio_toggle_search: 1

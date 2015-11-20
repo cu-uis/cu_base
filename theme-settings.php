@@ -3,7 +3,7 @@
  * @file
  * theme-settings.php
  *
- * Provides theme settings for Bootstrap based themes when admin theme is not.
+ * Provides theme settings for Bootstrap Barrio based themes when admin theme is not.
  *
  * @see ./includes/settings.inc
  */
@@ -28,7 +28,6 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
   $form['theme_settings']['#open'] = FALSE;
   $form['logo']['#open'] = FALSE;
   $form['favicon']['#open'] = FALSE;
-
   $form['bootstrap'] = array(
     '#type' => 'vertical_tabs',
     '#prefix' => '<h2><small>' . t('Bootstrap Settings') . '</small></h2>',
@@ -44,7 +43,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
 
   //Container
   $form['layout']['container'] = array(
-    '#type' => 'fieldset',
+    '#type' => 'details',
     '#title' => t('Container'),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
@@ -60,7 +59,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
 
   // Sidebar Position
   $form['layout']['sidebar_position'] = array(
-    '#type' => 'fieldset',
+    '#type' => 'details',
     '#title' => t('Sidebar Position'),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
@@ -89,7 +88,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
 
   // Sidebar First
   $form['layout']['sidebar_first'] = array(
-    '#type' => 'fieldset',
+    '#type' => 'details',
     '#title' => t('Sidebar First Layout'),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
@@ -117,7 +116,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
 
   // Sidebar Second
   $form['layout']['sidebar_second'] = array(
-    '#type' => 'fieldset',
+    '#type' => 'details',
     '#title' => t('Sidebar Second Layout'),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
@@ -145,7 +144,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
 
   // Footer Layout
   $form['layout']['footer'] = array(
-    '#type' => 'fieldset',
+    '#type' => 'details',
     '#title' => t('Footer Layout'),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
@@ -249,6 +248,24 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   );
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_position'] = array(
+    '#type' => 'select',
+    '#title' => t('Navbar top position'),
+    '#description' => t('Select your navbar top position.'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_position'),
+    '#options' => array(
+      'static-top' => t('Static Top'),
+      'fixed-top' => t('Fixed Top'),
+      'fixed-bottom' => t('Fixed Bottom'),
+    ),
+    '#empty_option' => t('Normal'),
+  );
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_inverse'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Inverse navbar top style'),
+    '#description' => t('Select if you want the inverse navbar top style.'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_inverse'),
+  );
   $form['components']['navbar']['bootstrap_barrio_navbar_position'] = array(
     '#type' => 'select',
     '#title' => t('Navbar Position'),
@@ -267,36 +284,6 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#description' => t('Select if you want the inverse navbar style.'),
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_inverse'),
   );
-
-  // Region wells.
-  $wells = array(
-    '' => t('None'),
-    'well' => t('.well (normal)'),
-    'well well-sm' => t('.well-sm (small)'),
-    'well well-lg' => t('.well-lg (large)'),
-  );
-  $form['components']['region_wells'] = array(
-    '#type' => 'details',
-    '#title' => t('Region wells'),
-    '#description' => t('Enable the <code>.well</code>, <code>.well-sm</code> or <code>.well-lg</code> classes for specified regions. See: documentation on !wells.', array(
-      '!wells' => \Drupal::l(t('Bootstrap Wells'), Url::fromUri('http://getbootstrap.com/components/#wells')),
-    )),
-    '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
-  );
-  // Get defined regions.
-  $regions = system_region_list('bootstrap');
-  foreach ($regions as $name => $title) {
-    $form['components']['region_wells']['region_well-' . $name] = array(
-      '#title' => $title,
-      '#type' => 'select',
-      '#attributes' => array(
-        'class' => array('input-sm'),
-      ),
-      '#options' => $wells,
-      '#default_value' => theme_get_setting('bootstrap_barrio_region_well-' . $name),
-    );
-  }
 
   // JavaScript settings.
   $form['javascript'] = array(
@@ -540,4 +527,5 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#description' => t('Appends the tooltip to a specific element. Example: "body"'),
     '#default_value' => theme_get_setting('bootstrap_barrio_tooltip_container'),
   );
+
 }
