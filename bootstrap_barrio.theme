@@ -53,18 +53,17 @@ function bootstrap_barrio_preprocess_page(&$variables) {
   $sidebar_first_width = 'col-md-' . theme_get_setting('bootstrap_barrio_sidebar_first_width');
   $sidebar_second_width = 'col-md-' . theme_get_setting('bootstrap_barrio_sidebar_second_width');
 
+  // Define default classes for containers
   $variables['navbar_top_attributes'] = array(
     'class' => array (
       'navbar',
-      'navbar-light',
-      'bg-faded',),
+     ),
 	'id' => array ( 'navbar-top' ),
   );
   $variables['navbar_attributes'] = array(
     'class' => array (
       'navbar',
-      'navbar-light',
-      'bg-faded',),
+    ),
 	'id' => array ( 'navbar-main' ),
   );
   $variables['content_attributes'] = array(
@@ -88,6 +87,7 @@ function bootstrap_barrio_preprocess_page(&$variables) {
 	'id' => array ( 'sidebar_second' ),
   );
 
+  // Calculate widths
   if (theme_get_setting('bootstrap_barrio_content_offset')) {
 	$variables['content_attributes']['class'][] =  'col-md-offset-' . theme_get_setting('bootstrap_barrio_content_offset');
   }
@@ -98,6 +98,7 @@ function bootstrap_barrio_preprocess_page(&$variables) {
 	$variables['secondary_attributes']['class'][] =  'col-md-offset-' . theme_get_setting('bootstrap_barrio_sidebar_second_offset');
   }
 
+  // Define column layout classes
   switch (theme_get_setting('bootstrap_barrio_sidebar_position')) {
 	case 'left':
 	  $variables['content_attributes']['class'][] = 'pull-right';
@@ -110,12 +111,74 @@ function bootstrap_barrio_preprocess_page(&$variables) {
 	  break;
   }
 
+  // Define navigation position
+  switch (theme_get_setting('bootstrap_barrio_navbar_top_position')) {
+	case 'fixed-top':
+	  $variables['navbar_top_attributes']['class'][] = 'navbar-fixed-top';
+	  break;
+	case 'fixed-bottom':
+	  $variables['navbar_top_attributes']['class'][] = 'navbar-fixed-bottom';
+	  break;
+  }
+  switch (theme_get_setting('bootstrap_barrio_navbar_position')) {
+	case 'fixed-top':
+	  $variables['navbar_attributes']['class'][] = 'navbar-fixed-top';
+	  break;
+	case 'fixed-bottom':
+	  $variables['navbar_attributes']['class'][] = 'navbar-fixed-bottom';
+	  break;
+  }
+
+  // Define navigation color scheme
+  switch (theme_get_setting('bootstrap_barrio_navbar_top_color')) {
+	case 'light':
+	  $variables['navbar_top_attributes']['class'][] = 'navbar-light';
+	  break;
+	case 'dark':
+	  $variables['navbar_top_attributes']['class'][] = 'navbar-dark';
+	  break;
+  }
+  switch (theme_get_setting('bootstrap_barrio_navbar_color')) {
+	case 'light':
+	  $variables['navbar_attributes']['class'][] = 'navbar-light';
+	  break;
+	case 'dark':
+	  $variables['navbar_attributes']['class'][] = 'navbar-dark';
+	  break;
+  }
+
+  // Define navigation background classes
+  switch (theme_get_setting('bootstrap_barrio_navbar_top_background')) {
+	case 'primary':
+	  $variables['navbar_top_attributes']['class'][] = 'bg-primary';
+	  break;
+	case 'faded':
+	  $variables['navbar_top_attributes']['class'][] = 'bg-faded';
+	  break;
+	case 'inverse':
+	  $variables['navbar_top_attributes']['class'][] = 'bg-inverse';
+	  break;
+  }
+  switch (theme_get_setting('bootstrap_barrio_navbar_background')) {
+	case 'primary':
+	  $variables['navbar_attributes']['class'][] = 'bg-primary';
+	  break;
+	case 'faded':
+	  $variables['navbar_attributes']['class'][] = 'bg-faded';
+	  break;
+	case 'inverse':
+	  $variables['navbar_attributes']['class'][] = 'bg-inverse';
+	  break;
+  }
+
+  // Declare region attributes
   $variables['navbar_top_attributes'] = new Attribute($variables['navbar_top_attributes']);
   $variables['navbar_attributes'] = new Attribute($variables['navbar_attributes']);
   $variables['content_attributes'] = new Attribute($variables['content_attributes']);
   $variables['sidebar_first_attributes'] = new Attribute($variables['sidebar_first_attributes']);
   $variables['sidebar_second_attributes'] = new Attribute($variables['sidebar_second_attributes']);
 
+  // Declare container layout
   $variables['container'] = theme_get_setting('bootstrap_barrio_fluid_container') ? 'container-fluid' : 'container';
 
 }

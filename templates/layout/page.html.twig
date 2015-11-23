@@ -33,8 +33,10 @@
  *   comment/reply/12345).
  *
  * Regions:
- * - page.top_header: Items for the header region.
+ * - page.top_header: Items for the top header region.
+ * - page.top_header_form: Items for the top header form region.
  * - page.header: Items for the header region.
+ * - page.header_form: Items for the header form region.
  * - page.highlighted: Items for the highlighted region.
  * - page.primary_menu: Items for the primary menu region.
  * - page.secondary_menu: Items for the secondary menu region.
@@ -67,11 +69,18 @@
 <div id="page-wrapper">
   <div id="page">
     <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
-      {% if page.secondary_menu or page.page.top_header %}
+      {% if page.secondary_menu or page.page.top_header or page.top_header_form %}
         <nav{{ navbar_top_attributes }}>
           <div class="section {{ container }} clearfix">
-            {{ page.secondary_menu }}
-            {{ page.top_header }}
+            <div class="navbar-nav">
+              {{ page.secondary_menu }}
+              {{ page.top_header }}
+            </div>
+            {% if page.top_header_form %}
+              <div class="form-inline navbar-form pull-right">
+                {{ page.top_header_form }}
+              </div>
+            {% endif %}
           </div>
 	    </nav>
       {% endif %}
@@ -86,6 +95,11 @@
           <div class="collapse navbar-toggleable-xs navbar-nav" id="CollapsingNavbar">
             {{ page.primary_menu }}
 	      </div>
+          {% if page.header_form %}
+            <div class="form-inline navbar-form pull-right">
+              {{ page.header_form }}
+            </div>
+          {% endif %}
         </div>
       </nav>
     </header>

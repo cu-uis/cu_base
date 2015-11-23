@@ -20,9 +20,11 @@ bootstrap_barrio_button_outline: 0
 # Navbar
 # --------------
 bootstrap_barrio_navbar_top_position: ''
-bootstrap_barrio_navbar_top_inverse: 0
+bootstrap_barrio_navbar_top_color: 0
+bootstrap_barrio_navbar_top_background: 'faded'
 bootstrap_barrio_navbar_position: ''
-bootstrap_barrio_navbar_inverse: 0
+bootstrap_barrio_navbar_color: 'dark'
+bootstrap_barrio_navbar_background: 'inverse'
 
 # Anchors
 # --------------

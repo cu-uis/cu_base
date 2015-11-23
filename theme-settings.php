@@ -254,17 +254,34 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#description' => t('Select your navbar top position.'),
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_position'),
     '#options' => array(
-      'static-top' => t('Static Top'),
       'fixed-top' => t('Fixed Top'),
+//      'scroll-fixed-top' => t('Scroll Fixed Top'),
       'fixed-bottom' => t('Fixed Bottom'),
     ),
     '#empty_option' => t('Normal'),
   );
-  $form['components']['navbar']['bootstrap_barrio_navbar_top_inverse'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Inverse navbar top style'),
-    '#description' => t('Select if you want the inverse navbar top style.'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_inverse'),
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_color'] = array(
+    '#type' => 'select',
+    '#title' => t('Navbar top color'),
+    '#description' => t('Select a color for links in navbar top.'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_color'),
+    '#options' => array(
+      'light' => t('Light'),
+      'dark' => t('Dark'),
+    ),
+    '#empty_option' => t('Default'),
+  );
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_background'] = array(
+    '#type' => 'select',
+    '#title' => t('Navbar top background'),
+    '#description' => t('Select a color for background in navbar top.'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_background'),
+    '#options' => array(
+      'primary' => t('Primary'),
+      'faded' => t('Faded'),
+      'inverse' => t('Inverse'),
+    ),
+    '#empty_option' => t('Default'),
   );
   $form['components']['navbar']['bootstrap_barrio_navbar_position'] = array(
     '#type' => 'select',
@@ -272,17 +289,34 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#description' => t('Select your Navbar position.'),
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_position'),
     '#options' => array(
-      'static-top' => t('Static Top'),
       'fixed-top' => t('Fixed Top'),
+//      'scroll-fixed-top' => t('Scroll Fixed Top'),
       'fixed-bottom' => t('Fixed Bottom'),
     ),
     '#empty_option' => t('Normal'),
   );
-  $form['components']['navbar']['bootstrap_barrio_navbar_inverse'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Inverse navbar style'),
-    '#description' => t('Select if you want the inverse navbar style.'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_inverse'),
+  $form['components']['navbar']['bootstrap_barrio_navbar_color'] = array(
+    '#type' => 'select',
+    '#title' => t('Navbar link color'),
+    '#description' => t('Select a color for links in navbar style.'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_color'),
+    '#options' => array(
+      'light' => t('Light'),
+      'dark' => t('Dark'),
+    ),
+    '#empty_option' => t('Default'),
+  );
+  $form['components']['navbar']['bootstrap_barrio_navbar_background'] = array(
+    '#type' => 'select',
+    '#title' => t('Backgroun navbar'),
+    '#description' => t('Select a color for background in navbar.'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_background'),
+    '#options' => array(
+      'primary' => t('Primary'),
+      'faded' => t('Faded'),
+      'inverse' => t('Inverse'),
+    ),
+    '#empty_option' => t('Default'),
   );
 
   // JavaScript settings.
