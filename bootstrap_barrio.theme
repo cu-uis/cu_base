@@ -242,6 +242,13 @@ function bootstrap_barrio_preprocess_block(&$variables) {
   }
 }
 
+function bootstrap_barrio_preprocess_form_element(&$variables) {
+  if (is_object($variables['label']['#title'])) {
+    $variables['input_title'] = $variables['label']['#title']->render();
+  }
+  $variables['input_attributes'] = new Attribute($variables['element']['#attributes']);
+}
+
 /**
  * Implements hook_preprocess_HOOK() for menu.html.twig.
  */
