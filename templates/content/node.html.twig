@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Bartik's theme implementation to display a node.
+ * Bootstrap Barrio's theme implementation to display a node.
  *
  * Available variables:
  * - node: The node entity with limited access to object properties and methods.
@@ -70,7 +70,6 @@
     'clearfix',
   ]
 %}
-{{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
   <header>
     {{ title_prefix }}
@@ -83,9 +82,11 @@
     {% if display_submitted %}
       <div class="node__meta">
         {{ author_picture }}
-        <span{{ author_attributes }}>
-          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        </span>
+        {% block submitted %}
+          <span{{ author_attributes }}>
+            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+          </span>
+        {% endblock %}
         {{ metadata }}
       </div>
     {% endif %}

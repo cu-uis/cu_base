@@ -28,8 +28,8 @@ global-styling:
       css/components/messages.css: {}
       css/components/node.css: {}
       css/components/node-preview.css: {}
+      css/components/page.css: {}
       css/components/page-title.css: {}
-      css/components/pager.css: {}
       css/components/panel.css: {}
       css/components/primary-menu.css: {}
       css/components/search-form.css: {}
@@ -90,6 +90,12 @@ indented:
   css:
     component:
       css/components/indented.css: {}
+
+links:
+  version: VERSION
+  css:
+    component:
+      css/components/links.css: {}
 
 maintenance_page:
   version: VERSION

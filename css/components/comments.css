@@ -43,28 +43,19 @@
   margin: 4px 0;
   line-height: 1.2;
 }
-.comment__time {
+.comment__time, .comment__permalink {
   margin-bottom: 4px;
   color: #68696b;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.733em;
   line-height: 1.2;
-
+  padding: 0 0.5em 0 0; /* LTR */
+}
+[dir="rtl"] .comment__time, .comment__permalink {
+  padding: 0 0 0 0.5em;
 }
 .comment__permalink {
   font-size: 0.733em;
   line-height: 1.2;
-}
-.comment__content {
-  position: relative;
-  display: table-cell;
-  padding: 10px 25px 10px 25px;
-  vertical-align: top;
-  width: 100%;
-  border: 1px solid #d3d7d9;
-  font-size: 0.929em;
-  line-height: 1.6;
-  word-break: break-all;
 }
 
 .comment__content:before {
@@ -118,11 +109,11 @@
 .comment .links {
   padding: 0 0 0.25em 0;
 }
-.comment .links li {
+.comment .links-inline span {
   padding: 0 0.5em 0 0; /* LTR */
   font-size: 1.08em;
 }
-[dir="rtl"] .comment .links li {
+[dir="rtl"] .comment .links-inline span {
   padding: 0 0 0 0.5em;
 }
 .comment--unpublished {

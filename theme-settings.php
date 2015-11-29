@@ -28,6 +28,25 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
   $form['theme_settings']['#open'] = FALSE;
   $form['logo']['#open'] = FALSE;
   $form['favicon']['#open'] = FALSE;
+
+  // Library settings
+  if (\Drupal::moduleHandler()->moduleExists('bootstrap_library')) {
+    $form['bootstrap_barrio_library'] = array(
+      '#type' => 'select',
+      '#title' => t('Load library'),
+      '#description' => t('Select how to load the Bootstrap Library.'),
+      '#default_value' => theme_get_setting('bootstrap_barrio_library'),
+      '#options' => array(
+        'cdn' => t('CDN'),
+        'development' => t('Local non minimized (development)'),
+        'production' => t('Local minimized (production)'),
+      ),
+      '#empty_option' => t('None'),
+      '#description' => t('If none is selected you should load the library via Bootstrap Library or manually. If CDN is selected, the library version must be configured on !boostrap_library_link',  array('!bootstrap_library_link' => Drupal::l('Bootstrap Library Settings' , Url::fromRoute('bootstrap_library.admin')))),
+    );
+  }
+
+  // Vertical tabs
   $form['bootstrap'] = array(
     '#type' => 'vertical_tabs',
     '#prefix' => '<h2><small>' . t('Bootstrap Settings') . '</small></h2>',
@@ -142,39 +161,21 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     ),
   );
 
-  // Footer Layout
-  $form['layout']['footer'] = array(
-    '#type' => 'details',
-    '#title' => t('Footer Layout'),
-    '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
-  );
-  $form['layout']['footer']['bootstrap_barrio_footer_layout'] = array(
-    '#type' => 'select',
-    '#title' => t('Footer Regions Position'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_footer_layout'),
-    '#options' => array(
-      '1-1-1-1-1-1' => '1-1-1-1-1-1',
-      '4-1' => '4-1',
-      '3-2' => '3-2',
-    ),
-  );
-
   // General.
-  $form['general'] = array(
+  $form['components'] = array(
     '#type' => 'details',
-    '#title' => t('General'),
+    '#title' => t('Components'),
     '#group' => 'bootstrap',
   );
 
   // Buttons.
-  $form['general']['buttons'] = array(
+  $form['components']['buttons'] = array(
     '#type' => 'details',
     '#title' => t('Buttons'),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   );
-  $form['general']['buttons']['bootstrap_barrio_button_size'] = array(
+  $form['components']['buttons']['bootstrap_barrio_button_size'] = array(
     '#type' => 'select',
     '#title' => t('Default button size'),
     '#default_value' => theme_get_setting('bootstrap_barrio_button_size'),
@@ -183,62 +184,13 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
       'btn-sm' => t('Small'),
       'btn-lg' => t('Large'),
     ),
-  $form['general']['buttons']['bootstrap_barrio_button_outline'] = array(
+  $form['components']['buttons']['bootstrap_barrio_button_outline'] = array(
     '#type' => 'checkbox',
     '#title' => t('Buttonn with outline format'),
     '#default_value' => theme_get_setting('bootstrap_barrio_button_outline'),
     '#description' => t('Use <code>.btn-default-outline</code> class. See : !bootstrap_barrio_link', array(
       '!bootstrap_barrio_link' => Drupal::l('Outline Buttons' , Url::fromUri('http://getbootstrap.com/css/' , ['absolute' => TRUE , 'fragment' => 'grid-example-fluid'])),
     )),)
-  );
-
-  // Forms.
-  $form['general']['forms'] = array(
-    '#type' => 'details',
-    '#title' => t('Forms'),
-    '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
-  );
-  $form['general']['forms']['bootstrap_barrio_forms_required_has_error'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Make required elements display as an error'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_forms_required_has_error'),
-    '#description' => t('If an element in a form is required, enabling this will always display the element with a <code>.has-error</code> class. This turns the element red and helps in usability for determining which form elements are required to submit the form.  This feature compliments the "JavaScript > Forms > Automatically remove error classes when values have been entered" feature.'),
-  );
-  $form['general']['forms']['bootstrap_barrio_forms_smart_descriptions'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Smart form descriptions (via Tooltips)'),
-    '#description' => t('Convert descriptions into tooltips (must be enabled) automatically based on certain criteria. This helps reduce the, sometimes unnecessary, amount of noise on a page full of form elements.'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_forms_smart_descriptions'),
-  );
-  $form['general']['forms']['bootstrap_barrio_forms_smart_descriptions_limit'] = array(
-    '#type' => 'textfield',
-    '#title' => t('"Smart form descriptions" maximum character limit'),
-    '#description' => t('Prevents descriptions from becoming tooltips by checking the character length of the description (HTML is not counted towards this limit). To disable this filtering criteria, leave an empty value.'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_forms_smart_descriptions_limit'),
-    '#states' => array(
-      'visible' => array(
-        ':input[name="bootstrap_barrio_forms_smart_descriptions"]' => array('checked' => TRUE),
-      ),
-    ),
-  );
-  $form['general']['forms']['bootstrap_barrio_forms_smart_descriptions_allowed_tags'] = array(
-    '#type' => 'textfield',
-    '#title' => t('"Smart form descriptions" allowed (HTML) tags'),
-    '#description' => t('Prevents descriptions from becoming tooltips by checking for HTML not in the list above (i.e. links). Separate by commas. To disable this filtering criteria, leave an empty value.'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_forms_smart_descriptions_allowed_tags'),
-    '#states' => array(
-      'visible' => array(
-        ':input[name="bootstrap_barrio_forms_smart_descriptions"]' => array('checked' => TRUE),
-      ),
-    ),
-  );
-
-  // JavaScript settings.
-  $form['components'] = array(
-    '#type' => 'details',
-    '#title' => t('Components'),
-    '#group' => 'bootstrap',
   );
 
   // Navbar.
@@ -317,249 +269,6 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
       'inverse' => t('Inverse'),
     ),
     '#empty_option' => t('Default'),
-  );
-
-  // JavaScript settings.
-  $form['javascript'] = array(
-    '#type' => 'details',
-    '#title' => t('JavaScript'),
-    '#group' => 'bootstrap',
-  );
-
-  // Anchors.
-  $form['javascript']['anchors'] = array(
-    '#type' => 'details',
-    '#title' => t('Anchors'),
-    '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
-  );
-  $form['javascript']['anchors']['bootstrap_barrio_anchors_fix'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Fix anchor positions'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_anchors_fix'),
-    '#description' => t('Ensures anchors are correctly positioned only when there is margin or padding detected on the BODY element. This is useful when fixed navbar or administration menus are used.'),
-  );
-  $form['javascript']['anchors']['bootstrap_barrio_anchors_smooth_scrolling'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Enable smooth scrolling'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_anchors_smooth_scrolling'),
-    '#description' => t('Animates page by scrolling to an anchor link target smoothly when clicked.'),
-    '#states' => array(
-      'invisible' => array(
-        ':input[name="bootstrap_barrio_anchors_fix"]' => array('checked' => FALSE),
-      ),
-    ),
-  );
-
-  // Popovers.
-  $form['javascript']['popovers'] = array(
-    '#type' => 'details',
-    '#title' => t('Popovers'),
-    '#description' => t('Add small overlays of content, like those on the iPad, to any element for housing secondary information.'),
-    '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
-  );
-  $form['javascript']['popovers']['bootstrap_barrio_popover_enabled'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Enable popovers.'),
-    '#description' => t('Elements that have the !code attribute set will automatically initialize the popover upon page load. !warning', array(
-      '!code' => '<code>data-toggle="popover"</code>',
-      '!warning' => '<strong class="error text-error">WARNING: This feature can sometimes impact performance. Disable if pages appear to "hang" after initial load.</strong>',
-    )),
-    '#default_value' => theme_get_setting('bootstrap_barrio_popover_enabled'),
-  );
-  $form['javascript']['popovers']['options'] = array(
-    '#type' => 'details',
-    '#title' => t('Options'),
-    '#description' => t('These are global options. Each popover can independently override desired settings by appending the option name to !data. Example: !data-animation.', array(
-      '!data' => '<code>data-</code>',
-      '!data-animation' => '<code>data-animation="false"</code>',
-    )),
-    '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
-    '#states' => array(
-      'visible' => array(
-        ':input[name="bootstrap_barrio_popover_enabled"]' => array('checked' => TRUE),
-      ),
-    ),
-  );
-  $form['javascript']['popovers']['options']['bootstrap_barrio_popover_animation'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('animate'),
-    '#description' => t('Apply a CSS fade transition to the popover.'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_popover_animation'),
-  );
-  $form['javascript']['popovers']['options']['popover_html'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('HTML'),
-    '#description' => t("Insert HTML into the popover. If false, jQuery's text method will be used to insert content into the DOM. Use text if you're worried about XSS attacks."),
-    '#default_value' => theme_get_setting('bootstrap_barrio_popover_html'),
-  );
-  $options = array(
-    'top',
-    'bottom',
-    'left',
-    'right',
-    'auto',
-    'auto top',
-    'auto bottom',
-    'auto left',
-    'auto right',
-  );
-  $form['javascript']['popovers']['options']['bootstrap_barrio_popover_placement'] = array(
-    '#type' => 'select',
-    '#title' => t('placement'),
-    '#description' => t('Where to position the popover. When "auto" is specified, it will dynamically reorient the popover. For example, if placement is "auto left", the popover will display to the left when possible, otherwise it will display right.'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_popover_placement'),
-    '#options' => array_combine($options, $options),
-  );
-  $form['javascript']['popovers']['options']['bootstrap_barrio_popover_selector'] = array(
-    '#type' => 'textfield',
-    '#title' => t('selector'),
-    '#description' => t('If a selector is provided, tooltip objects will be delegated to the specified targets. In practice, this is used to enable dynamic HTML content to have popovers added. See !this and !example.', array(
-      '!this' => \Drupal::l(t('this'), Url::fromUri('https://github.com/twbs/bootstrap/issues/4215')),
-      '!example' => \Drupal::l(t('an informative example'), Url::fromUri('http://jsfiddle.net/fScua/')),
-    )),
-    '#default_value' => theme_get_setting('bootstrap_barrio_popover_selector'),
-  );
-  $options = array(
-    'click',
-    'hover',
-    'focus',
-    'manual',
-  );
-  $form['javascript']['popovers']['options']['bootstrap_barrio_popover_trigger'] = array(
-    '#type' => 'checkboxes',
-    '#title' => t('trigger'),
-    '#description' => t('How a popover is triggered.'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_popover_trigger'),
-    '#options' => array_combine($options, $options),
-  );
-  $form['javascript']['popovers']['options']['bootstrap_barrio_popover_trigger_autoclose'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Auto-close on document click'),
-    '#description' => t('Will automatically close the current popover if a click occurs anywhere else other than the popover element.'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_popover_trigger_autoclose'),
-  );
-  $form['javascript']['popovers']['options']['bootstrap_barrio_popover_title'] = array(
-    '#type' => 'textfield',
-    '#title' => t('title'),
-    '#description' => t("Default title value if \"title\" attribute isn't present."),
-    '#default_value' => theme_get_setting('bootstrap_barrio_popover_title'),
-  );
-  $form['javascript']['popovers']['options']['bootstrap_barrio_popover_content'] = array(
-    '#type' => 'textfield',
-    '#title' => t('content'),
-    '#description' => t('Default content value if "data-content" or "data-target" attributes are not present.'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_popover_content'),
-  );
-  $form['javascript']['popovers']['options']['bootstrap_barrio_popover_delay'] = array(
-    '#type' => 'textfield',
-    '#title' => t('delay'),
-    '#description' => t('The amount of time to delay showing and hiding the popover (in milliseconds). Does not apply to manual trigger type.'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_popover_delay'),
-  );
-  $form['javascript']['popovers']['options']['bootstrap_barrio_popover_container'] = array(
-    '#type' => 'textfield',
-    '#title' => t('container'),
-    '#description' => t('Appends the popover to a specific element. Example: "body". This option is particularly useful in that it allows you to position the popover in the flow of the document near the triggering element - which will prevent the popover from floating away from the triggering element during a window resize.'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_popover_container'),
-  );
-
-  // Tooltips.
-  $form['javascript']['tooltips'] = array(
-    '#type' => 'details',
-    '#title' => t('Tooltips'),
-    '#description' => t("Inspired by the excellent jQuery.tipsy plugin written by Jason Frame; Tooltips are an updated version, which don't rely on images, use CSS3 for animations, and data-attributes for local title storage. See !link for more documentation.", array(
-      '!link' => \Drupal::l(t('Bootstrap tooltips'), Url::fromUri('http://getbootstrap.com/javascript/#tooltips')),
-    )),
-    '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
-  );
-  $form['javascript']['tooltips']['bootstrap_barrio_tooltip_enabled'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Enable tooltips'),
-    '#description' => t('Elements that have the !code attribute set will automatically initialize the tooltip upon page load. !warning', array(
-      '!code' => '<code>data-toggle="tooltip"</code>',
-      '!warning' => '<strong class="error text-error">WARNING: This feature can sometimes impact performance. Disable if pages appear to "hang" after initial load.</strong>',
-    )),
-    '#default_value' => theme_get_setting('bootstrap_barrio_tooltip_enabled'),
-  );
-  $form['javascript']['tooltips']['options'] = array(
-    '#type' => 'details',
-    '#title' => t('Options'),
-    '#description' => t('These are global options. Each tooltip can independently override desired settings by appending the option name to !data. Example: !data-animation.', array(
-      '!data' => '<code>data-</code>',
-      '!data-animation' => '<code>data-animation="false"</code>',
-    )),
-    '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
-    '#states' => array(
-      'visible' => array(
-        ':input[name="bootstrap_barrio_tooltip_enabled"]' => array('checked' => TRUE),
-      ),
-    ),
-  );
-  $form['javascript']['tooltips']['options']['bootstrap_barrio_tooltip_animation'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('animate'),
-    '#description' => t('Apply a CSS fade transition to the tooltip.'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_tooltip_animation'),
-  );
-  $form['javascript']['tooltips']['options']['bootstrap_barrio_tooltip_html'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('HTML'),
-    '#description' => t("Insert HTML into the tooltip. If false, jQuery's text method will be used to insert content into the DOM. Use text if you're worried about XSS attacks."),
-    '#default_value' => theme_get_setting('bootstrap_barrio_tooltip_html'),
-  );
-  $options = array(
-    'top',
-    'bottom',
-    'left',
-    'right',
-    'auto',
-    'auto top',
-    'auto bottom',
-    'auto left',
-    'auto right',
-  );
-  $form['javascript']['tooltips']['options']['bootstrap_barrio_tooltip_placement'] = array(
-    '#type' => 'select',
-    '#title' => t('placement'),
-    '#description' => t('Where to position the tooltip. When "auto" is specified, it will dynamically reorient the tooltip. For example, if placement is "auto left", the tooltip will display to the left when possible, otherwise it will display right.'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_tooltip_placement'),
-    '#options' => array_combine($options, $options),
-  );
-  $form['javascript']['tooltips']['options']['bootstrap_barrio_tooltip_selector'] = array(
-    '#type' => 'textfield',
-    '#title' => t('selector'),
-    '#description' => t('If a selector is provided, tooltip objects will be delegated to the specified targets.'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_tooltip_selector'),
-  );
-  $options = array(
-    'click',
-    'hover',
-    'focus',
-    'manual',
-  );
-  $form['javascript']['tooltips']['options']['bootstrap_barrio_tooltip_trigger'] = array(
-    '#type' => 'checkboxes',
-    '#title' => t('trigger'),
-    '#description' => t('How a tooltip is triggered.'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_tooltip_trigger'),
-    '#options' => array_combine($options, $options),
-  );
-  $form['javascript']['tooltips']['options']['bootstrap_barrio_tooltip_delay'] = array(
-    '#type' => 'textfield',
-    '#title' => t('delay'),
-    '#description' => t('The amount of time to delay showing and hiding the tooltip (in milliseconds). Does not apply to manual trigger type.'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_tooltip_delay'),
-  );
-  $form['javascript']['tooltips']['options']['bootstrap_barrio_tooltip_container'] = array(
-    '#type' => 'textfield',
-    '#title' => t('container'),
-    '#description' => t('Appends the tooltip to a specific element. Example: "body"'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_tooltip_container'),
   );
 
 }

@@ -69,39 +69,41 @@
 <div id="page-wrapper">
   <div id="page">
     <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
-      {% if page.secondary_menu or page.page.top_header or page.top_header_form %}
-        <nav{{ navbar_top_attributes }}>
-          <div class="section {{ container }} clearfix">
-            <div class="navbar-nav">
-              {{ page.secondary_menu }}
-              {{ page.top_header }}
+      {% block head %}
+        {% if page.secondary_menu or page.page.top_header or page.top_header_form %}
+          <nav{{ navbar_top_attributes }}>
+            <div class="section {{ container }} clearfix">
+              <div class="navbar-nav">
+                {{ page.secondary_menu }}
+                {{ page.top_header }}
+              </div>
+              {% if page.top_header_form %}
+                <div class="form-inline navbar-form pull-right">
+                  {{ page.top_header_form }}
+                </div>
+              {% endif %}
             </div>
-            {% if page.top_header_form %}
+          </nav>
+        {% endif %}
+        <nav{{ navbar_attributes }}>
+          <div class="section {{ container }} clearfix">
+            <div class="navbar-brand">
+              {{ page.header }}
+            </div>
+            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#CollapsingNavbar">
+              &#9776;
+            </button>
+            <div class="collapse navbar-toggleable-xs navbar-nav" id="CollapsingNavbar">
+              {{ page.primary_menu }}
+	        </div>
+            {% if page.header_form %}
               <div class="form-inline navbar-form pull-right">
-                {{ page.top_header_form }}
+                {{ page.header_form }}
               </div>
             {% endif %}
           </div>
-	    </nav>
-      {% endif %}
-      <nav{{ navbar_attributes }}>
-        <div class="section {{ container }} clearfix">
-          <div class="navbar-brand">
-            {{ page.header }}
-          </div>
-          <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#CollapsingNavbar">
-            &#9776;
-          </button>
-          <div class="collapse navbar-toggleable-xs navbar-nav" id="CollapsingNavbar">
-            {{ page.primary_menu }}
-	      </div>
-          {% if page.header_form %}
-            <div class="form-inline navbar-form pull-right">
-              {{ page.header_form }}
-            </div>
-          {% endif %}
-        </div>
-      </nav>
+        </nav>
+      {% endblock %}
     </header>
     {% if page.highlighted %}
       <div class="highlighted">
@@ -118,31 +120,33 @@
       </div>
     {% endif %}
     <div id="main-wrapper" class="layout-main-wrapper clearfix">
-      <div id="main" class="{{ container }}">
-        <div class="row clearfix">
-          {{ page.breadcrumb }}
-            <main{{ content_attributes }}>
-              <section class="section">
-                <a id="main-content" tabindex="-1"></a>
-                {{ page.content }}
-              </section>
-            </main>
-          {% if page.sidebar_first %}
-            <div{{ sidebar_first_attributes }}>
-              <aside class="section" role="complementary">
-                {{ page.sidebar_first }}
-              </aside>
-            </div>
-          {% endif %}
-          {% if page.sidebar_second %}
-            <div{{ sidebar_second_attributes }}>
-              <aside class="section" role="complementary">
-                {{ page.sidebar_second }}
-              </aside>
-            </div>
-          {% endif %}
+      {% block content %}
+        <div id="main" class="{{ container }}">
+          <div class="row clearfix">
+            {{ page.breadcrumb }}
+              <main{{ content_attributes }}>
+                <section class="section">
+                  <a id="main-content" tabindex="-1"></a>
+                  {{ page.content }}
+                </section>
+              </main>
+            {% if page.sidebar_first %}
+              <div{{ sidebar_first_attributes }}>
+                <aside class="section" role="complementary">
+                  {{ page.sidebar_first }}
+                </aside>
+              </div>
+            {% endif %}
+            {% if page.sidebar_second %}
+              <div{{ sidebar_second_attributes }}>
+                <aside class="section" role="complementary">
+                  {{ page.sidebar_second }}
+                </aside>
+              </div>
+            {% endif %}
+          </div>
         </div>
-      </div>
+      {% endblock %}
     </div>
     {% if page.featured_bottom_first or page.featured_bottom_second or page.featured_bottom_third %}
       <div class="featured-bottom">
@@ -154,21 +158,23 @@
       </div>
     {% endif %}
     <footer class="site-footer">
-      <div class="{{ container }}">
-        {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
-          <div class="site-footer__top clearfix">
-            {{ page.footer_first }}
-            {{ page.footer_second }}
-            {{ page.footer_third }}
-            {{ page.footer_fourth }}
-          </div>
-        {% endif %}
-        {% if page.footer_fifth %}
-          <div class="site-footer__bottom">
-            {{ page.footer_fifth }}
-          </div>
-        {% endif %}
-      </div>
+      {% block footer %}
+        <div class="{{ container }}">
+          {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
+            <div class="site-footer__top clearfix">
+              {{ page.footer_first }}
+              {{ page.footer_second }}
+              {{ page.footer_third }}
+              {{ page.footer_fourth }}
+            </div>
+          {% endif %}
+          {% if page.footer_fifth %}
+            <div class="site-footer__bottom">
+              {{ page.footer_fifth }}
+            </div>
+          {% endif %}
+        </div>
+      {% endblock %}
     </footer>
   </div>
 </div>

@@ -48,6 +48,21 @@ function bootstrap_barrio_preprocess_html(&$variables) {
  * Implements hook_preprocess_HOOK() for page templates.
  */
 function bootstrap_barrio_preprocess_page(&$variables) {
+  if (\Drupal::moduleHandler()->moduleExists('bootstrap_library')) {
+    $library = theme_get_setting('bootstrap_barrio_library');
+    switch ($library) {
+      case 'cdn' :
+        $variables['#attached']['library'][] = 'bootstrap_library/bootstrap-cdn';
+        break;
+      case 'production':
+        $variables['#attached']['library'][] = 'bootstrap_library/bootstrap';
+        break;
+      case 'development':
+        $variables['#attached']['library'][] = 'bootstrap_library/bootstrap-dev';
+        break;
+    }
+  }
+
   $width = _bootstrap_barrio_content_width(!empty($variables['page']['sidebar_first']), !empty($variables['page']['sidebar_second']));
   $content_width = 'col-md-' . $width;
   $sidebar_first_width = 'col-md-' . theme_get_setting('bootstrap_barrio_sidebar_first_width');
@@ -262,6 +277,16 @@ function bootstrap_barrio_preprocess_menu_local_task(&$variables) {
   $options = $url->getOptions();
   $url->setOptions($options + $link['localized_options']);
   $variables['item'] = Link::fromTextAndUrl($link['title'], $url);
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for links templates.
+ */
+function bootstrap_barrio_theme_suggestions_links_alter(array &$suggestions, array $variables) {
+  // ToDo get from core a variable to flag inline links
+  if ( in_array('inline', $variables['attributes']['class']) ) {
+    $suggestions[] = 'links__inline';
+  }
 }
 
 /**
