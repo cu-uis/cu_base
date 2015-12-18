@@ -63,6 +63,11 @@ function bootstrap_barrio_preprocess_page(&$variables) {
     }
   }
 
+  $fonts = theme_get_setting('bootstrap_barrio_google_fonts');
+  if ($fonts) {
+    $variables['#attached']['library'][] = 'bootstrap_barrio/' . $fonts;
+  }
+
   $width = _bootstrap_barrio_content_width(!empty($variables['page']['sidebar_first']), !empty($variables['page']['sidebar_second']));
   $content_width = 'col-md-' . $width;
   $sidebar_first_width = 'col-md-' . theme_get_setting('bootstrap_barrio_sidebar_first_width');
@@ -202,6 +207,7 @@ function bootstrap_barrio_preprocess_page(&$variables) {
  * Implements hook_preprocess_HOOK() for page templates.
  */
 function bootstrap_barrio_preprocess_page_title(&$variables) {
+  if( !strlen($variables['title']) ) unset($variables['title']);
   // Since the title and the shortcut link are both block level elements,
   // positioning them next to each other is much simpler with a wrapper div.
   if (!empty($variables['title_suffix']['add_or_remove_shortcut']) && $variables['title']) {

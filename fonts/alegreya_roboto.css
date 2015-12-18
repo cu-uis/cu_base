@@ -1,0 +1,23 @@
+
+/* ---------- Alegreya, Roboto Condensed, Roboto ---------- */
+
+h1, h2 {
+    font-family: 'Alegreya', serif;
+}
+h1 {
+	font-weight: 700;
+    }
+h2 {
+	font-weight: 700;
+    }
+h3, h4, h5, h6 {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+h3 {
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    }
+body, p, a, li {
+    font-family: 'Roboto', sans-serif;
+    }

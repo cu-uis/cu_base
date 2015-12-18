@@ -1,6 +1,6 @@
 /**
  * @file
- * Visual styles for Bartik's field components.
+ * Visual styles for Bootstrap Barrio's field components.
  */
 
 .field--type-entity-reference {
@@ -60,7 +60,6 @@
 }
 .field--name-field-tags {
   margin: 0 0 1.2em;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .field--name-field-tags .field__label {
   font-weight: normal;

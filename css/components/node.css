@@ -1,6 +1,6 @@
 /**
  * @file
- * Visual styles for Bartik's node component.
+ * Visual styles for Bootstrap Barrio's node component.
  */
 
 .node__content {
@@ -35,7 +35,6 @@
 
 /* Node metadata styles. */
 .node__meta {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.857em;
   color: #68696b;
   margin-bottom: -5px;

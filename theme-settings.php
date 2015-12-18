@@ -270,5 +270,33 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     ),
     '#empty_option' => t('Default'),
   );
+  // Fonts.
+  $form['components']['fonts'] = array(
+    '#type' => 'details',
+    '#title' => t('Fonts'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+  $form['components']['fonts']['bootstrap_barrio_google_fonts'] = array(
+    '#type' => 'select',
+    '#title' => t('Google Fonts Combination'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_google_fonts'),
+    '#empty_option' => t('None'),
+    '#options' => array(
+      'monserrat_lato' => 'Monserrat, Lato',
+      'alegreya_roboto' => 'Alegreya, Roboto Condensed, Roboto',
+      'dancing_garamond' => 'Dancing Script, EB Garamond',
+      'amatic_josefin' => 'Amatic SC, Josefin Sans',
+      'oswald_droid' => 'Oswald, Droid Serif',
+      'playfair_alice' => 'Playfair Display, Alice',
+      'dosis_opensans' => 'Dosis, Open Sans',
+      'lato_hotel' => 'Lato, Grand Hotel',
+      'medula_abel' => 'Medula One, Abel',
+      'fjalla_cantarell' => 'Fjalla One, Cantarell',
+      'coustard_leckerli' => 'Coustard Ultra, Leckerli One',
+      'philosopher_muli' => ' Philosopher, Muli ',
+      'vollkorn_exo' => 'Vollkorn, Exo',
+    ),
+  );
 
 }

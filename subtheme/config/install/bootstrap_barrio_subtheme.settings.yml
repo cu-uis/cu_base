@@ -6,7 +6,6 @@ bootstrap_barrio_sidebar_first_width: 3
 bootstrap_barrio_sidebar_first_offset: 0
 bootstrap_barrio_sidebar_second_width: 3
 bootstrap_barrio_sidebar_second_offset: 0
-bootstrap_barrio_footer_layout: '1-1-1-1-1'
 
 # Container
 # --------------
@@ -25,54 +24,3 @@ bootstrap_barrio_navbar_top_background: 'faded'
 bootstrap_barrio_navbar_position: ''
 bootstrap_barrio_navbar_color: 'dark'
 bootstrap_barrio_navbar_background: 'inverse'
-
-# Anchors
-# --------------
-bootstrap_barrio_anchors_fix: 1
-bootstrap_barrio_anchors_smooth_scrolling: 1
-
-# Forms
-# --------------
-bootstrap_barrio_forms_required_has_error: 0
-bootstrap_barrio_forms_has_error_value_toggle: 1
-bootstrap_barrio_forms_smart_descriptions: 1
-bootstrap_barrio_forms_smart_descriptions_limit: 250
-bootstrap_barrio_forms_smart_descriptions_allowed_tags: 'b, code, em, i, kbd, span, strong'
-
-
-# Popovers
-# --------------
-bootstrap_barrio_popover_enabled: 1
-bootstrap_barrio_popover_animation: 1
-bootstrap_barrio_popover_html: 0
-bootstrap_barrio_popover_placement: 'right'
-bootstrap_barrio_popover_selector: ''
-bootstrap_barrio_popover_trigger:
-  hover: 0
-bootstrap_barrio_popover_trigger:
-  focus: 0
-bootstrap_barrio_popover_trigger:
-  click: 'click'
-bootstrap_barrio_popover_trigger_autoclose: 1
-bootstrap_barrio_popover_title: ''
-bootstrap_barrio_popover_content: ''
-bootstrap_barrio_popover_delay: 0
-bootstrap_barrio_popover_container: 'body'
-
-# Tooltips
-# --------------
-bootstrap_barrio_tooltip_enabled: 1
-bootstrap_barrio_tooltip_descriptions: 1
-bootstrap_barrio_tooltip_descriptions_length: 200
-bootstrap_barrio_tooltip_animation: 1
-bootstrap_barrio_tooltip_html: 0
-bootstrap_barrio_tooltip_placement: 'auto left'
-bootstrap_barrio_tooltip_selector: ''
-bootstrap_barrio_tooltip_trigger:
-  hover: 'hover'
-bootstrap_barrio_tooltip_trigger:
-  focus: 'focus'
-bootstrap_barrio_tooltip_trigger:
-  click: 0
-bootstrap_barrio_tooltip_delay: 0
-bootstrap_barrio_tooltip_container: 'body'
