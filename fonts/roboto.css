@@ -2,7 +2,7 @@
 /* ---------- Alegreya, Roboto Condensed, Roboto ---------- */
 
 h1, h2, h1 a, h2 a {
-    font-family: 'Alegreya', serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 h1, h1 a {
 	font-weight: 700;
@@ -13,7 +13,7 @@ h2, h2 a {
 h3, h4, h5, h6, h3 a {
     font-family: 'Roboto Condensed', sans-serif;
 }
-h3 {
+h3, h3 a {
     font-weight: normal;
     text-transform: uppercase;
     letter-spacing: 2px;

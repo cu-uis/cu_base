@@ -88,6 +88,14 @@ search-results:
     component:
       css/components/search-results.css: {}
 
+sidebar-collapse:
+  version: VERSION
+  js:
+    js/sidebar-collapse.js: { external:true }
+  css:
+    component:
+      css/components/sidebar-collapse.css: {}
+
 verticaltabs:
   version: VERSION
   css:
@@ -95,6 +103,13 @@ verticaltabs:
       css/components/vertical-tabs.css: {}
 
 # Fonts
+
+roboto:
+  version: VERSION
+  css:
+    component:
+      fonts/roboto.css: {}
+      //fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:700: {}
 
 alegreya_roboto:
   version: VERSION
@@ -187,3 +202,49 @@ monserrat_lato:
       fonts/monserrat_lato.css: {}
       //fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic: {}
       //fonts.googleapis.com/css?family=Montserrat:400,700: {}
+
+# Colors
+
+messages_light:
+  version: VERSION
+  css:
+    component:
+      css/colors/messages/messages-light.css: {}
+
+messages_dark:
+  version: VERSION
+  css:
+    component:
+      css/colors/messages/messages-dark.css: {}
+
+# icons
+
+material_design_icons:
+  version: VERSION
+  css:
+    component:
+      //fonts.googleapis.com/icon?family=Material+Icons: {}
+
+fontawesome:
+  version: VERSION
+  css:
+    component:
+      //maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css: {}
+
+# Material Design for Bootstrap
+
+mdb:
+  remote: http://mdbootstrap.com
+  license:
+    name: MIT
+    gpl-compatible: false
+  js:
+    //mdbootstrap.com/mdbcdn/mdbcdn/mdb.min.js: { external:true }
+  css:
+    theme:
+      //mdbootstrap.com/mdbcdn/mdb.min.css: {}
+  dependencies:
+    - core/jquery
+  dependencies:
+    - bootstrap_barrio/material_design_icons
+

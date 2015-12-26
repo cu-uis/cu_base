@@ -104,13 +104,17 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     ),
   );
 
-
   // Sidebar First
   $form['layout']['sidebar_first'] = array(
     '#type' => 'details',
     '#title' => t('Sidebar First Layout'),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
+  );
+  $form['layout']['sidebar_first']['bootstrap_barrio_sidebar_collapse'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Sidebar collapse'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_collapse'),
   );
   $form['layout']['sidebar_first']['bootstrap_barrio_sidebar_first_width'] = array(
     '#type' => 'select',
@@ -183,7 +187,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#options' => array(
       'btn-sm' => t('Small'),
       'btn-lg' => t('Large'),
-    ),
+  ),
   $form['components']['buttons']['bootstrap_barrio_button_outline'] = array(
     '#type' => 'checkbox',
     '#title' => t('Buttonn with outline format'),
@@ -271,18 +275,26 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#empty_option' => t('Default'),
   );
   // Fonts.
-  $form['components']['fonts'] = array(
+  // General.
+  $form['fonts'] = array(
+    '#type' => 'details',
+    '#title' => t('Fonts'),
+    '#group' => 'bootstrap',
+  );
+
+  $form['fonts']['fonts'] = array(
     '#type' => 'details',
     '#title' => t('Fonts'),
     '#collapsible' => TRUE,
-    '#collapsed' => TRUE,
+    '#collapsed' => FALSE,
   );
-  $form['components']['fonts']['bootstrap_barrio_google_fonts'] = array(
+  $form['fonts']['fonts']['bootstrap_barrio_google_fonts'] = array(
     '#type' => 'select',
     '#title' => t('Google Fonts Combination'),
     '#default_value' => theme_get_setting('bootstrap_barrio_google_fonts'),
     '#empty_option' => t('None'),
     '#options' => array(
+      'roboto' => 'Roboto Condensed, Roboto',
       'monserrat_lato' => 'Monserrat, Lato',
       'alegreya_roboto' => 'Alegreya, Roboto Condensed, Roboto',
       'dancing_garamond' => 'Dancing Script, EB Garamond',
@@ -298,5 +310,46 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
       'vollkorn_exo' => 'Vollkorn, Exo',
     ),
   );
+  $form['fonts']['icons'] = array(
+    '#type' => 'details',
+    '#title' => t('Fonts'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  $form['fonts']['icons']['bootstrap_barrio_icons'] = array(
+    '#type' => 'select',
+    '#title' => t('Icon set'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_icons'),
+    '#empty_option' => t('None'),
+    '#options' => array(
+      'material_design_icons' => 'Material Design Icons',
+      'fontawesome' => 'Font Awesome',
+    ),
+  );
 
+  // General.
+  $form['colors'] = array(
+    '#type' => 'details',
+    '#title' => t('Colors'),
+    '#group' => 'bootstrap',
+  );
+
+  // Buttons.
+  $form['colors']['alerts'] = array(
+    '#type' => 'details',
+    '#title' => t('Colors'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  $form['colors']['alerts']['bootstrap_barrio_system_messages'] = array(
+    '#type' => 'select',
+    '#title' => t('System Messages Color Scheme'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_system_messages'),
+    '#empty_option' => t('Default'),
+    '#options' => array(
+      'messages_light' => t('Light'),
+      'messages_dark' => t('Dark'),
+    ),
+    '#description' => t('Replace standard color scheme for the system mantainance alerts with Google Material Design color scheme'),
+  );
 }

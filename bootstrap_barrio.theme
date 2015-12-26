@@ -68,6 +68,16 @@ function bootstrap_barrio_preprocess_page(&$variables) {
     $variables['#attached']['library'][] = 'bootstrap_barrio/' . $fonts;
   }
 
+  $system_messages = theme_get_setting('bootstrap_barrio_system_messages');
+  if ($system_messages) {
+    $variables['#attached']['library'][] = 'bootstrap_barrio/' . $system_messages;
+  }
+
+  $icons = theme_get_setting('bootstrap_barrio_icons');
+  if ($icons) {
+    $variables['#attached']['library'][] = 'bootstrap_barrio/' . $icons;
+  }
+
   $width = _bootstrap_barrio_content_width(!empty($variables['page']['sidebar_first']), !empty($variables['page']['sidebar_second']));
   $content_width = 'col-md-' . $width;
   $sidebar_first_width = 'col-md-' . theme_get_setting('bootstrap_barrio_sidebar_first_width');
@@ -189,6 +199,12 @@ function bootstrap_barrio_preprocess_page(&$variables) {
 	case 'inverse':
 	  $variables['navbar_attributes']['class'][] = 'bg-inverse';
 	  break;
+  }
+
+  if (theme_get_setting('bootstrap_barrio_sidebar_collapse')) {
+	$variables['content_attributes']['class'][] = 'sidebar-offcanvas';
+	$variables['sidebar_collapse'] = TRUE;
+    $variables['#attached']['library'][] = 'bootstrap_barrio/sidebar_collapse';
   }
 
   // Declare region attributes
