@@ -70,26 +70,26 @@
 #}
 
 {% block head %}
-  {% if page.secondary_menu or page.page.top_header or page.top_header_form %}
-    <nav{{ navbar_top_attributes }}>
-      <div class="section {{ container }} clearfix">
-        <div class="navbar-nav">
-          {{ page.secondary_menu }}
-          {{ page.top_header }}
-        </ div>
-        {% if page.top_header_form %}
-          <div class="form-inline navbar-form pull-right">
-            {{ page.top_header_form }}
-          </div>
-        {% endif %}
-      </div>
-    </nav>
-  {% endif %}
-  <nav{{ navbar_attributes }}>
+  <nav{{ navbar_top_attributes }}>
     <div class="section {{ container }} clearfix">
       <div class="navbar-brand">
         {{ page.header }}
       </div>
+      {% if page.top_header_form %}
+        <div class="form-inline navbar-form pull-right">
+          {{ page.top_header_form }}
+        </div>
+      {% endif %}
+      {% if page.secondary_menu or page.page.top_header %}
+        <div class="navbar-nav pull-right">
+          {{ page.secondary_menu }}
+          {{ page.top_header }}
+        </ div>
+      {% endif %}
+    </div>
+  </nav>
+  <nav{{ navbar_attributes }}>
+    <div class="section {{ container }} clearfix">
       <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#CollapsingNavbar">
         &#9776;
       </button>
