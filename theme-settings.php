@@ -274,6 +274,181 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     ),
     '#empty_option' => t('Default'),
   );
+
+  // Affix
+  $form['affix'] = array(
+    '#type' => 'details',
+    '#title' => t('Affix'),
+    '#group' => 'bootstrap',
+  );
+  $form['affix']['navbar_top'] = array(
+    '#type' => 'details',
+    '#title' => t('Affix Navbar Top'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+  $form['affix']['navbar_top']['bootstrap_barrio_navbar_top_affix'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Affix navbar top'),
+    '#description' => t('Apply affix effect to the top navbar of the site.'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_affix'),
+  );
+/*  $form['affix']['navbar_top']['bootstrap_barrio_navbar_top_affix_top'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Affix top'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_affix_top'),
+    '#prefix' => '<div id="navbar-top-affix">',
+    '#size' => 6,
+    '#maxlength' => 3,
+    '#states' => [
+      'invisible' => [
+        'input[name="bootstrap_barrio_navbar_top_affix"]' => ['checked' => FALSE],
+      ],
+    ],
+  );
+  $form['affix']['navbar_top']['bootstrap_barrio_navbar_top_affix_bottom'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Affix bottom'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_affix_bottom'),
+    '#suffix' => '</div>',
+    '#size' => 6,
+    '#maxlength' => 3,
+    '#states' => [
+      'invisible' => [
+        'input[name="bootstrap_barrio_navbar_top_affix"]' => ['checked' => FALSE],
+      ],
+    ],
+  ); */
+  $form['affix']['navbar'] = array(
+    '#type' => 'details',
+    '#title' => t('Affix Navbar'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+  $form['affix']['navbar']['bootstrap_barrio_navbar_affix'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Affix navbar'),
+    '#description' => t('Apply affix effect to the navbar of the site.'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_affix'),
+  );
+/*  $form['affix']['navbar']['bootstrap_barrio_navbar_affix_top'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Affix top'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_affix_top'),
+    '#prefix' => '<div id="navbar-affix">',
+    '#size' => 6,
+    '#maxlength' => 3,
+    '#states' => [
+      'invisible' => [
+        'input[name="bootstrap_barrio_navbar_affix"]' => ['checked' => FALSE],
+      ],
+    ],
+  );
+  $form['affix']['navbar']['bootstrap_barrio_navbar_affix_bottom'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Affix bottom'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_affix_bottom'),
+    '#suffix' => '</div>',
+    '#size' => 6,
+    '#maxlength' => 3,
+    '#states' => [
+      'invisible' => [
+        'input[name="bootstrap_barrio_navbar_affix"]' => ['checked' => FALSE],
+      ],
+    ],
+  ); */
+  $form['affix']['sidebar_first'] = array(
+    '#type' => 'details',
+    '#title' => t('Affix sidebar first'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+  $form['affix']['sidebar_first']['bootstrap_barrio_sidebar_first_affix'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Affix sidebar first'),
+    '#description' => t('Apply affix effect to the sidebar first of the site.'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_first_affix'),
+  );
+/*  $form['affix']['sidebar_first']['bootstrap_barrio_sidebar_first_affix_top'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Affix top'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_first_affix_top'),
+    '#prefix' => '<div id="sidebar-first-affix">',
+    '#size' => 6,
+    '#maxlength' => 3,
+    '#states' => [
+      'invisible' => [
+        'input[name="bootstrap_barrio_sidebar_first_affix"]' => ['checked' => FALSE],
+      ],
+    ],
+  );
+  $form['affix']['sidebar_first']['bootstrap_barrio_sidebar_first_affix_bottom'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Affix bottom'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_first_affix_bottom'),
+    '#suffix' => '</div>',
+    '#size' => 6,
+    '#maxlength' => 3,
+    '#states' => [
+      'invisible' => [
+        'input[name="bootstrap_barrio_sidebar_first_affix"]' => ['checked' => FALSE],
+      ],
+    ],
+  ); */
+  $form['affix']['sidebar_second'] = array(
+    '#type' => 'details',
+    '#title' => t('Affix sidebar second'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+  $form['affix']['sidebar_second']['bootstrap_barrio_sidebar_second_affix'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Affix sidebar second'),
+    '#description' => t('Apply affix effect to the sidebar second of the site.'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_second_affix'),
+  );
+/*  $form['affix']['sidebar_second']['bootstrap_barrio_sidebar_second_affix_top'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Affix top'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_second_affix_top'),
+    '#prefix' => '<div id="sidebar-second-affix">',
+    '#size' => 6,
+    '#maxlength' => 3,
+    '#states' => [
+      'invisible' => [
+        'input[name="bootstrap_barrio_sidebar_second_affix"]' => ['checked' => FALSE],
+      ],
+    ],
+  );
+  $form['affix']['sidebar_second']['bootstrap_barrio_sidebar_second_affix_bottom'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Affix bottom'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_second_affix_bottom'),
+    '#suffix' => '</div>',
+    '#size' => 6,
+    '#maxlength' => 3,
+    '#states' => [
+      'invisible' => [
+        'input[name="bootstrap_barrio_sidebar_second_affix"]' => ['checked' => FALSE],
+      ],
+    ],
+  ); */
+
+  // Scroll Spy.
+  $form['scroll_spy'] = array(
+    '#type' => 'details',
+    '#title' => t('Scroll Spy'),
+    '#group' => 'bootstrap',
+  );
+  $form['scroll_spy']['bootstrap_barrio_scroll_spy'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Element for Scroll Spy'),
+    '#description' => t('A valid jquery Id for the element containing .nav that will behave as scroll spy.'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_scroll_spy'),
+    '#size' => 40,
+    '#maxlength' => 40,
+  );
+
   // Fonts.
   // General.
   $form['fonts'] = array(
@@ -312,7 +487,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
   );
   $form['fonts']['icons'] = array(
     '#type' => 'details',
-    '#title' => t('Fonts'),
+    '#title' => t('Icons'),
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,
   );

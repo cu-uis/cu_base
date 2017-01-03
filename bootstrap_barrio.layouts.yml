@@ -1,6 +1,6 @@
 bb_cardbasic:
   label: Card basic
-  category: Display Suite
+  category: Barrio
   class: '\Drupal\ds\Plugin\DsLayout'
   type: partial
   template: templates/ds/ds-card-basic
@@ -9,7 +9,7 @@ bb_cardbasic:
       label: Content
 bb_cardtopimage:
   label: Card top image
-  category: Display Suite
+  category: Barrio
   class: '\Drupal\ds\Plugin\DsLayout'
   type: partial
   template: templates/ds/ds-card-top-image
@@ -20,7 +20,7 @@ bb_cardtopimage:
       label: Content
 bb_cardimageoverlay:
   label: Card image overlay
-  category: Display Suite
+  category: Barrio
   class: '\Drupal\ds\Plugin\DsLayout'
   type: partial
   template: templates/ds/ds-card-image-overlay
@@ -31,7 +31,7 @@ bb_cardimageoverlay:
       label: Content
 bb_cardheaderfooter:
   label: Card header footer
-  category: Display Suite
+  category: Barrio
   class: '\Drupal\ds\Plugin\DsLayout'
   type: partial
   template: templates/ds/ds-card-header-footer
@@ -44,7 +44,7 @@ bb_cardheaderfooter:
       label: Footer
 bb_card3stack:
   label: Card three block stacked
-  category: Display Suite
+  category: Barrio
   class: '\Drupal\ds\Plugin\DsLayout'
   type: partial
   template: templates/ds/ds-card-3stack

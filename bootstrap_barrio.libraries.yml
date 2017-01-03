@@ -2,8 +2,10 @@ global-styling:
   version: VERSION
   js:
     js/global.js: {}
+    js/affix.js: {}
   css:
     component:
+      css/components/affix.css: {}
       css/components/book.css: {}
       css/components/comments.css: {}
       css/components/contextual.css: {}
@@ -35,6 +37,14 @@ global-styling:
       css/components/ui-dialog.css: {}
     theme:
       css/print.css: { media: print }
+
+affix:
+  version: VERSION
+  js:
+    js/affix.js: {}
+  css:
+    component:
+      css/components/affix.css: {}
 
 book-navigation:
   version: VERSION

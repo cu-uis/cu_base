@@ -34,6 +34,13 @@ function bootstrap_barrio_preprocess_html(&$variables) {
   if (!empty($variables['page']['featured_top'])) {
     $variables['attributes']['class'][] = 'has-featured-top';
   }
+
+  // Scroll Spy info added to body
+  if ($scroll_spy = theme_get_setting('bootstrap_barrio_scroll_spy')) {
+    $variables['attributes']['data-target'] = $scroll_spy;
+    $variables['attributes']['data-spy'] = "scroll";
+  }
+
   // Page specific info
   $variables['path_info']['args'] = FALSE;
   $path = \Drupal::service('path.current')->getPath();
@@ -53,6 +60,7 @@ function bootstrap_barrio_preprocess_html(&$variables) {
     ),
   );
   $variables['page']['#attached']['html_head'][] = [$http_equiv, 'http-equiv'];
+
 }
 
 /**
@@ -79,14 +87,14 @@ function bootstrap_barrio_preprocess_page(&$variables) {
     $variables['#attached']['library'][] = 'bootstrap_barrio/' . $fonts;
   }
 
-  $system_messages = theme_get_setting('bootstrap_barrio_system_messages');
-  if ($system_messages) {
-    $variables['#attached']['library'][] = 'bootstrap_barrio/' . $system_messages;
-  }
-
   $icons = theme_get_setting('bootstrap_barrio_icons');
   if ($icons) {
     $variables['#attached']['library'][] = 'bootstrap_barrio/' . $icons;
+  }
+
+  $system_messages = theme_get_setting('bootstrap_barrio_system_messages');
+  if ($system_messages) {
+    $variables['#attached']['library'][] = 'bootstrap_barrio/' . $system_messages;
   }
 
   $width = _bootstrap_barrio_content_width(!empty($variables['page']['sidebar_first']), !empty($variables['page']['sidebar_second']));
@@ -128,15 +136,36 @@ function bootstrap_barrio_preprocess_page(&$variables) {
 	'id' => array ( 'sidebar_second' ),
   );
 
+  // Affix
+  $affix_navbar_top = theme_get_setting('bootstrap_barrio_navbar_top_affix');
+  $affix_navbar = theme_get_setting('bootstrap_barrio_navbar_affix');
+  $affix_sidebar_first = theme_get_setting('bootstrap_barrio_sidebar_first_affix');
+  $affix_sidebar_second = theme_get_setting('bootstrap_barrio_sidebar_second_affix');
+  if ($affix_navbar_top || $affix_navbar || $affix_sidebar_first || $affix_sidebar_second) {
+	$variables['#attached']['library'][] = 'bootstrap_barrio/affix';
+	if ($affix_navbar_top) {
+       $variables['navbar_top_attributes']['data-toggle'] = 'affix';
+	}
+	if ($affix_navbar) {
+       $variables['navbar_attributes']['data-toggle'] = 'affix';
+	}
+	if ($affix_sidebar_first) {
+       $variables['sidebar_first_attributes']['data-toggle'] = 'affix';
+	}
+	if ($affix_sidebar_second) {
+       $variables['sidebar_second_attributes']['data-toggle'] = 'affix';
+	}
+  }
+  
   // Calculate widths
   if (theme_get_setting('bootstrap_barrio_content_offset')) {
 	$variables['content_attributes']['class'][] =  'col-md-offset-' . theme_get_setting('bootstrap_barrio_content_offset');
   }
   if (theme_get_setting('bootstrap_barrio_sidebar_first_offset')) {
-	$variables['primary_attributes']['class'][] =  'col-md-offset-' . theme_get_setting('bootstrap_barrio_sidebar_first_offset');
+	$variables['sidebar_first_attributes']['class'][] =  'col-md-offset-' . theme_get_setting('bootstrap_barrio_sidebar_first_offset');
   }
   if (theme_get_setting('bootstrap_barrio_sidebar_second_offset')) {
-	$variables['secondary_attributes']['class'][] =  'col-md-offset-' . theme_get_setting('bootstrap_barrio_sidebar_second_offset');
+	$variables['sidebar_second_attributes']['class'][] =  'col-md-offset-' . theme_get_setting('bootstrap_barrio_sidebar_second_offset');
   }
 
   // Define column layout classes
@@ -180,6 +209,9 @@ function bootstrap_barrio_preprocess_page(&$variables) {
 	case 'dark':
 	  $variables['navbar_top_attributes']['class'][] = 'navbar-dark';
 	  break;
+	default:
+	  $variables['navbar_top_attributes']['class'][] = 'navbar-default';
+	  break;
   }
   switch (theme_get_setting('bootstrap_barrio_navbar_color')) {
 	case 'light':
@@ -187,6 +219,9 @@ function bootstrap_barrio_preprocess_page(&$variables) {
 	  break;
 	case 'dark':
 	  $variables['navbar_attributes']['class'][] = 'navbar-dark';
+	  break;
+	default:
+	  $variables['navbar_attributes']['class'][] = 'navbar-default';
 	  break;
   }
 

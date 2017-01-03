@@ -1,24 +1,15 @@
 /**
  * @file
- * Global utilities.
+ * Affix for Bootstrap 4.
+ * https://www.codeply.com/users/skelly
  *
  */
 (function ($, Drupal) {
 
   'use strict';
 
-  Drupal.behaviors.bootstrap_barrio = {
+  Drupal.behaviors.bootstrap_barrio_affix = {
     attach: function (context, settings) {
-
-	$(window).scroll(function() {
-        if ($(this).scrollTop() > 50){  
-          $('body').addClass("scrolled");
-        }
-        else{
-          $('body').removeClass("scrolled");
-        }
-      });
-
       var toggleAffix = function(affixElement, scrollElement, wrapper) {
   
         var height = affixElement.outerHeight(),
@@ -48,8 +39,6 @@
         // init
         toggleAffix(ele, $(window), wrapper);
       });
-
-    }
-  };
-
+    };
+  }
 })(jQuery, Drupal);

@@ -121,11 +121,13 @@
       </div>
     {% endif %}
     {% if page.featured_top %}
-      <div class="featured-top">
-        <aside class="featured-top__inner section {{ container }} clearfix" role="complementary">
-          {{ page.featured_top }}
-        </aside>
-      </div>
+      {% block featured %}
+        <div class="featured-top">
+          <aside class="featured-top__inner section {{ container }} clearfix" role="complementary">
+            {{ page.featured_top }}
+          </aside>
+        </div>
+      {% endblock %}
     {% endif %}
     <div id="main-wrapper" class="layout-main-wrapper clearfix">
       {% block content %}
