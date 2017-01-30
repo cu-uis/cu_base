@@ -204,6 +204,22 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   );
+  $form['components']['navbar']['bootstrap_barrio_navbar_toggle'] = array(
+    '#type' => 'select',
+    '#title' => t('Navbar top toggle size'),
+    '#description' => t('Select size for navbar to collapse.'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_toggle'),
+    '#options' => array(
+      'navbar-toggleable-md' => t('Medium'),
+      'navbar-toggleable-sm' => t('Small'),
+    ),
+  );
+  $form['components']['navbar']['bootstrap_barrio_navbar_container'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Navbar Width Container'),
+    '#description' => t('Check if Navbar width will be inside container or fluid width.'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_container'),
+  );
   $form['components']['navbar']['bootstrap_barrio_navbar_top_position'] = array(
     '#type' => 'select',
     '#title' => t('Navbar top position'),
@@ -211,7 +227,6 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_position'),
     '#options' => array(
       'fixed-top' => t('Fixed Top'),
-//      'scroll-fixed-top' => t('Scroll Fixed Top'),
       'fixed-bottom' => t('Fixed Bottom'),
     ),
     '#empty_option' => t('Normal'),
@@ -223,7 +238,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_color'),
     '#options' => array(
       'light' => t('Light'),
-      'dark' => t('Dark'),
+      'inverse' => t('Inverse'),
     ),
     '#empty_option' => t('Default'),
   );
@@ -246,7 +261,6 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_position'),
     '#options' => array(
       'fixed-top' => t('Fixed Top'),
-//      'scroll-fixed-top' => t('Scroll Fixed Top'),
       'fixed-bottom' => t('Fixed Bottom'),
     ),
     '#empty_option' => t('Normal'),
@@ -258,7 +272,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_color'),
     '#options' => array(
       'light' => t('Light'),
-      'dark' => t('Dark'),
+      'inverse' => t('Inverse'),
     ),
     '#empty_option' => t('Default'),
   );

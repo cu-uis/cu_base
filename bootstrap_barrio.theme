@@ -112,6 +112,7 @@ function bootstrap_barrio_preprocess_page(&$variables) {
   $variables['navbar_attributes'] = array(
     'class' => array (
       'navbar',
+	  theme_get_setting('bootstrap_barrio_navbar_toggle'),
     ),
 	'id' => array ( 'navbar-main' ),
   );
@@ -171,7 +172,7 @@ function bootstrap_barrio_preprocess_page(&$variables) {
   // Define column layout classes
   switch (theme_get_setting('bootstrap_barrio_sidebar_position')) {
 	case 'left':
-	  $variables['content_attributes']['class'][] = 'pull-right';
+	  $variables['content_attributes']['class'][] = 'float-right';
 	  break;
 	case 'both':
       if (!empty($variables['page']['sidebar_first'])) {
@@ -207,7 +208,7 @@ function bootstrap_barrio_preprocess_page(&$variables) {
 	  $variables['navbar_top_attributes']['class'][] = 'navbar-light';
 	  break;
 	case 'dark':
-	  $variables['navbar_top_attributes']['class'][] = 'navbar-dark';
+	  $variables['navbar_top_attributes']['class'][] = 'navbar-inverse';
 	  break;
 	default:
 	  $variables['navbar_top_attributes']['class'][] = 'navbar-default';
@@ -217,8 +218,8 @@ function bootstrap_barrio_preprocess_page(&$variables) {
 	case 'light':
 	  $variables['navbar_attributes']['class'][] = 'navbar-light';
 	  break;
-	case 'dark':
-	  $variables['navbar_attributes']['class'][] = 'navbar-dark';
+	case 'inverse':
+	  $variables['navbar_attributes']['class'][] = 'navbar-inverse';
 	  break;
 	default:
 	  $variables['navbar_attributes']['class'][] = 'navbar-default';
@@ -263,6 +264,7 @@ function bootstrap_barrio_preprocess_page(&$variables) {
   $variables['sidebar_second_attributes'] = new Attribute($variables['sidebar_second_attributes']);
 
   // Declare container layout
+  $variables['container_navbar'] = theme_get_setting('bootstrap_barrio_navbar_container');
   $variables['container'] = theme_get_setting('bootstrap_barrio_fluid_container') ? 'container-fluid' : 'container';
 
 }
