@@ -49,6 +49,9 @@ function bootstrap_barrio_preprocess_html(&$variables) {
   if (isset($path_args[0]) && isset($path_args[1]) && ($path_args[0] == 'node') && (is_numeric($path_args[1]))) {
     $variables['attributes']['class'][] = 'page-node-' . $path_args[1];
   }
+  if (isset($path_args[0]) && isset($path_args[1]) && ($path_args[0] == 'user')) {
+    $variables['attributes']['class'][] = 'page-user-' . $path_args[1];
+  }
 
   // SEO Information
   $http_equiv = array(
@@ -160,13 +163,13 @@ function bootstrap_barrio_preprocess_page(&$variables) {
   
   // Calculate widths
   if (theme_get_setting('bootstrap_barrio_content_offset')) {
-	$variables['content_attributes']['class'][] =  'col-md-offset-' . theme_get_setting('bootstrap_barrio_content_offset');
+	$variables['content_attributes']['class'][] =  'offset-md-' . theme_get_setting('bootstrap_barrio_content_offset');
   }
   if (theme_get_setting('bootstrap_barrio_sidebar_first_offset')) {
-	$variables['sidebar_first_attributes']['class'][] =  'col-md-offset-' . theme_get_setting('bootstrap_barrio_sidebar_first_offset');
+	$variables['sidebar_first_attributes']['class'][] =  'offset-md-' . theme_get_setting('bootstrap_barrio_sidebar_first_offset');
   }
   if (theme_get_setting('bootstrap_barrio_sidebar_second_offset')) {
-	$variables['sidebar_second_attributes']['class'][] =  'col-md-offset-' . theme_get_setting('bootstrap_barrio_sidebar_second_offset');
+	$variables['sidebar_second_attributes']['class'][] =  'offset-md-' . theme_get_setting('bootstrap_barrio_sidebar_second_offset');
   }
 
   // Define column layout classes
@@ -176,9 +179,9 @@ function bootstrap_barrio_preprocess_page(&$variables) {
 	  break;
 	case 'both':
       if (!empty($variables['page']['sidebar_first'])) {
-	    $variables['content_attributes']['class'][] = 'col-md-push-' . ( theme_get_setting('bootstrap_barrio_sidebar_first_width') + theme_get_setting('bootstrap_barrio_sidebar_first_offset') );
+	    $variables['content_attributes']['class'][] = 'push-md-' . ( theme_get_setting('bootstrap_barrio_sidebar_first_width') + theme_get_setting('bootstrap_barrio_sidebar_first_offset') );
       }
-	  $variables['sidebar_first_attributes']['class'][] = 'col-md-pull-' . ( $width + theme_get_setting('bootstrap_barrio_content_offset') );
+	  $variables['sidebar_first_attributes']['class'][] = 'pull-md-' . ( $width + theme_get_setting('bootstrap_barrio_content_offset') );
 	  break;
 	case 'right':
 	  break;

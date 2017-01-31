@@ -30,6 +30,7 @@ global-styling:
       css/components/tableselect.css: {}
       css/components/tablesort-indicator.css: {}
       css/components/ui.widget.css: {}
+      css/components/tabs.css: {}
       css/components/user.css: { weight: -10 }
       # @see https://www.drupal.org/node/2389735
       css/components/vertical-tabs.css: {}
@@ -105,6 +106,12 @@ sidebar-collapse:
   css:
     component:
       css/components/sidebar-collapse.css: {}
+
+tabs:
+  version: VERSION
+  css:
+    component:
+      css/components/tabs.css: {}
 
 verticaltabs:
   version: VERSION

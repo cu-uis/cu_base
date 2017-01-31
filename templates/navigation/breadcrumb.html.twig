@@ -15,11 +15,11 @@
     <ol class="breadcrumb">
     {% for item in breadcrumb %}
       {% if item.url %}
-        <li>
+        <li class="breadcrumb-item">
           <a href="{{ item.url }}">{{ item.text }}</a>
         </li>
       {% else %}
-        <li class="active">
+        <li class="breadcrumb-item active">
           {{ item.text }}
         </li>
       {% endif %}
