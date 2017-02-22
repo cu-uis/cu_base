@@ -25,7 +25,6 @@
         }
       
       };
-  
 
       $('[data-toggle="affix"]').each(function() {
         var ele = $(this),
@@ -39,6 +38,6 @@
         // init
         toggleAffix(ele, $(window), wrapper);
       });
-    };
+    }
   }
 })(jQuery, Drupal);
