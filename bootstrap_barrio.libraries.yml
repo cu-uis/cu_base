@@ -108,7 +108,7 @@ search-results:
 sidebar-collapse:
   version: VERSION
   js:
-    js/sidebar-collapse.js: { external:true }
+    js/sidebar-collapse.js: { external: true }
   css:
     component:
       css/components/sidebar-collapse.css: {}
@@ -262,7 +262,7 @@ mdb:
     name: MIT
     gpl-compatible: false
   js:
-    //mdbootstrap.com/mdbcdn/mdbcdn/mdb.min.js: { external:true }
+    //mdbootstrap.com/mdbcdn/mdbcdn/mdb.min.js: { external: true }
   css:
     theme:
       //mdbootstrap.com/mdbcdn/mdb.min.css: {}
