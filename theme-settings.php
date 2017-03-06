@@ -42,7 +42,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
         'production' => t('Local minimized (production)'),
       ),
       '#empty_option' => t('None'),
-      '#description' => t('If none is selected you should load the library via Bootstrap Library or manually. If CDN is selected, the library version must be configured on !boostrap_library_link',  array('!bootstrap_library_link' => Drupal::l('Bootstrap Library Settings' , Url::fromRoute('bootstrap_library.admin')))),
+      '#description' => t('If none is selected you should load the library via Bootstrap Library or manually. If CDN is selected, the library version must be configured on @boostrap_library_link',  array('@bootstrap_library_link' => Drupal::l('Bootstrap Library Settings' , Url::fromRoute('bootstrap_library.admin')))),
     );
   }
 
@@ -71,8 +71,8 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#type' => 'checkbox',
     '#title' => t('Fluid container'),
     '#default_value' => theme_get_setting('bootstrap_barrio_fluid_container'),
-    '#description' => t('Use <code>.container-fluid</code> class. See : !bootstrap_barrio_link', array(
-      '!bootstrap_barrio_link' => Drupal::l('Fluid container' , Url::fromUri('http://getbootstrap.com/css/' , ['absolute' => TRUE , 'fragment' => 'grid-example-fluid'])),
+    '#description' => t('Use <code>.container-fluid</code> class. See : @bootstrap_barrio_link', array(
+      '@bootstrap_barrio_link' => Drupal::l('Fluid container' , Url::fromUri('http://getbootstrap.com/css/' , ['absolute' => TRUE , 'fragment' => 'grid-example-fluid'])),
     )),
   );
 
@@ -192,8 +192,8 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#type' => 'checkbox',
     '#title' => t('Buttonn with outline format'),
     '#default_value' => theme_get_setting('bootstrap_barrio_button_outline'),
-    '#description' => t('Use <code>.btn-default-outline</code> class. See : !bootstrap_barrio_link', array(
-      '!bootstrap_barrio_link' => Drupal::l('Outline Buttons' , Url::fromUri('http://getbootstrap.com/css/' , ['absolute' => TRUE , 'fragment' => 'grid-example-fluid'])),
+    '#description' => t('Use <code>.btn-default-outline</code> class. See : @bootstrap_barrio_link', array(
+      '@bootstrap_barrio_link' => Drupal::l('Outline Buttons' , Url::fromUri('http://getbootstrap.com/css/' , ['absolute' => TRUE , 'fragment' => 'grid-example-fluid'])),
     )),)
   );
 
