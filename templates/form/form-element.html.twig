@@ -50,6 +50,7 @@
     'js-form-item',
     'js-form-type-' ~ type|clean_class,
     type in ['checkbox', 'radio'] ? type|clean_class : 'form-type-' ~ type|clean_class,
+    type in ['checkbox', 'radio'] ? form-check,
     'js-form-item-' ~ name|clean_class,
     'form-item-' ~ name|clean_class,
     title_display not in ['after', 'before'] ? 'form-no-label',
@@ -74,11 +75,11 @@
         {{ description.content }}
       </div>
     {% endif %}
-    <label>
+    <label class="form-check-label">
       {% if label_display == 'before' %}
         {{ input_title }}&nbsp;
       {% endif %}
-      <input{{ input_attributes }}>
+      <input{{ input_attributes.addClass('form-check-input') }}>
       {% if label_display == 'after' %}
         &nbsp;{{ input_title }}
       {% endif %}
@@ -97,7 +98,7 @@
       </small>
     {% endif %}
   </div>
-  {% else %}
+{% else %}
   <fieldset{{ attributes.addClass(classes, 'form-group') }}>
     {% if label_display in ['before', 'invisible'] %}
       {{ label }}
