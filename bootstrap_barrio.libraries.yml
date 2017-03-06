@@ -72,6 +72,12 @@ file:
     component:
       css/components/file.css: { weight: -10 }
 
+form:
+  version: VERSION
+  css:
+    component:
+      css/components/form.css: {}
+
 indented:
   version: VERSION
   css:
