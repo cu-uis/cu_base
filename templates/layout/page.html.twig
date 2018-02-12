@@ -76,10 +76,8 @@
           {% if container_navbar %}
           <div class="container">
           {% endif %}
-              <div class="navbar-nav">
-                {{ page.secondary_menu }}
-                {{ page.top_header }}
-              </div>
+              {{ page.secondary_menu }}
+              {{ page.top_header }}
               {% if page.top_header_form %}
                 <div class="form-inline navbar-form float-right">
                   {{ page.top_header_form }}
@@ -136,8 +134,12 @@
     <div id="main-wrapper" class="layout-main-wrapper clearfix">
       {% block content %}
         <div id="main" class="{{ container }}">
+          {% if page.breadcrumb %}
+            <div class="row">
+              {{ page.breadcrumb }}
+            </div>
+          {% endif %}
           <div class="row row-offcanvas row-offcanvas-left clearfix">
-            {{ page.breadcrumb }}
               <main{{ content_attributes }}>
                 <section class="section">
                   <a id="main-content" tabindex="-1"></a>
