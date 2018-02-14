@@ -310,7 +310,7 @@ function bootstrap_barrio_preprocess_block(&$variables) {
 }
 
 function bootstrap_barrio_preprocess_form_element(&$variables) {
-  if (!isset($variables['label']['#title'])) {
+  if ( is_object($variables['label']['#title']) && !$variables['label']['#title'] instanceof \Drupal\Component\Render\MarkupInterface) {
     $variables['input_title'] = NULL;
   }
   elseif ( is_object($variables['label']['#title']) ) {
