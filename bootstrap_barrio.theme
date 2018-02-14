@@ -310,13 +310,18 @@ function bootstrap_barrio_preprocess_block(&$variables) {
 }
 
 function bootstrap_barrio_preprocess_form_element(&$variables) {
-  if ( is_object($variables['label']['#title']) ) {
-    $variables['input_title'] = $variables['label']['#title']->render();
+  if (!isset($variables['label']['#title'])) {
+    $variables['input_title'] = NULL;
+  }
+  elseif ( is_object($variables['label']['#title']) ) {
+    $variables['input_title'] = $variables['label']['#title'];
   }
   else {
     $variables['input_title'] = $variables['label']['#title'];
   }
-  $variables['input_attributes'] = new Attribute($variables['element']['#attributes']);
+  if (isset($variables['element']['#attributes'])) {
+    $variables['input_attributes'] = new Attribute($variables['element']['#attributes']);
+  }
 }
 
 /**
