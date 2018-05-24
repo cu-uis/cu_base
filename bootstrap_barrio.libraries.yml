@@ -102,12 +102,6 @@ node:
     component:
       css/components/node.css: { weight: -10 }
 
-search-results:
-  version: VERSION
-  css:
-    component:
-      css/components/search-results.css: {}
-
 sidebar-collapse:
   version: VERSION
   js:
@@ -253,8 +247,9 @@ material_design_icons:
 
 fontawesome:
   version: VERSION
-  js:
-    //use.fontawesome.com/releases/v5.0.13/js/all.js: { external: true }
+  css:
+    component:
+      //maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css: {}
 
 # Material Design for Bootstrap
 

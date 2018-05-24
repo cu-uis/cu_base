@@ -85,9 +85,9 @@
       <div class="node__meta">
         {{ author_picture }}
         {% block submitted %}
-          <span{{ author_attributes }}>
+          <em{{ author_attributes }}>
             {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-          </span>
+          </em>
         {% endblock %}
         {{ metadata }}
       </div>
