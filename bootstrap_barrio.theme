@@ -342,6 +342,23 @@ function bootstrap_barrio_preprocess_menu_local_task(&$variables) {
 }
 
 /**
+ * Implements hook_theme_suggestions_HOOK_alter() for region templates.
+ */
+function bootstrap_barrio_theme_suggestions_region_alter(array &$suggestions, array $variables) {
+  $nowrap = [
+    'breadcrumb',
+    'content',
+    'primary-menu',
+    'header',
+    'sidebar-first',
+    'sidebar-second',
+  ]
+  if ( in_array($variables['region'], $nowrap) ) {
+    $suggestions[] = 'region__nowrap';
+  }
+}
+
+/**
  * Implements hook_theme_suggestions_HOOK_alter() for links templates.
  */
 function bootstrap_barrio_theme_suggestions_links_alter(array &$suggestions, array $variables) {
