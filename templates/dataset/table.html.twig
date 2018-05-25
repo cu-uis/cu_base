@@ -42,11 +42,12 @@
 
 {%
   set table_classes = [
-    not no_striping ? 'table-striped',
     'table',
+    'table-hover',
+    not no_striping ? 'table-striped' : 'table-bordered',
   ]
 %}
-
+<div class="table-responsive">
 <table{{ attributes.addClass(table_classes) }}>
   {% if caption %}
     <caption>{{ caption }}</caption>
@@ -65,7 +66,7 @@
   {% endfor %}
 
   {% if header %}
-    <thead>
+    <thead class='thead-dark'>
       <tr>
         {% for cell in header %}
           {%
@@ -119,3 +120,4 @@
     </tfoot>
   {% endif %}
 </table>
+</div>
