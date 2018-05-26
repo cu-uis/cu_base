@@ -348,12 +348,12 @@ function bootstrap_barrio_theme_suggestions_region_alter(array &$suggestions, ar
   $nowrap = [
     'breadcrumb',
     'content',
-    'primary-menu',
+    'primary_menu',
     'header',
-    'sidebar-first',
-    'sidebar-second',
-  ]
-  if ( in_array($variables['region'], $nowrap) ) {
+    'sidebar_first',
+    'sidebar_second',
+  ];
+  if ( in_array($variables['elements']['#region'], $nowrap) ) {
     $suggestions[] = 'region__nowrap';
   }
 }
