@@ -359,7 +359,7 @@ function bootstrap_barrio_theme_suggestions_region_alter(array &$suggestions, ar
 }
 
 /**
- * Implements hook_theme_suggestions_HOOK_alter() for node add/edit.
+ * Implements hook_theme_HOOK_form_alter() for node add/edit.
  */
 function bootstrap_barrio_form_node_form_alter(&$form, FormStateInterface $form_state) {
   $form['#theme'] = ['node_edit_form'];

@@ -258,6 +258,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_background'),
     '#options' => array(
       'bg-primary' => t('Primary'),
+      'bg-secondary' => t('Secondary'),
       'bg-light' => t('Light'),
       'bg-dark' => t('Dark'),
     ),
@@ -293,6 +294,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_background'),
     '#options' => array(
       'bg-primary' => t('Primary'),
+      'bg-secondary' => t('Secondary'),
       'bg-light' => t('Light'),
       'bg-dark' => t('Dark'),
     ),
