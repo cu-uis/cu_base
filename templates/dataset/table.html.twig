@@ -35,6 +35,7 @@
  *   any rows.
  * - no_striping: A boolean indicating that the row should receive no striping.
  * - header_columns: The number of columns in the header.
+ * - thead_class: Class for the table header
  *
  * @see template_preprocess_table()
  */
@@ -43,7 +44,7 @@
 {%
   set table_classes = [
     'table',
-    'table-hover',
+    hover ? 'table-hover',
     not no_striping ? 'table-striped' : 'table-bordered',
   ]
 %}
@@ -66,7 +67,7 @@
   {% endfor %}
 
   {% if header %}
-    <thead class='thead-light'>
+    <thead class='{{ thead_class }}'>
       <tr>
         {% for cell in header %}
           {%

@@ -175,13 +175,13 @@ function bootstrap_barrio_preprocess_page(&$variables) {
   
   // Calculate widths
   if (theme_get_setting('bootstrap_barrio_content_offset')) {
-	$variables['content_attributes']['class'][] =  'offset-md-' . theme_get_setting('bootstrap_barrio_content_offset');
+    $variables['content_attributes']['class'][] =  'offset-md-' . theme_get_setting('bootstrap_barrio_content_offset');
   }
   if (theme_get_setting('bootstrap_barrio_sidebar_first_offset')) {
-	$variables['sidebar_first_attributes']['class'][] =  'offset-md-' . theme_get_setting('bootstrap_barrio_sidebar_first_offset');
+    $variables['sidebar_first_attributes']['class'][] =  'offset-md-' . theme_get_setting('bootstrap_barrio_sidebar_first_offset');
   }
   if (theme_get_setting('bootstrap_barrio_sidebar_second_offset')) {
-	$variables['sidebar_second_attributes']['class'][] =  'offset-md-' . theme_get_setting('bootstrap_barrio_sidebar_second_offset');
+    $variables['sidebar_second_attributes']['class'][] =  'offset-md-' . theme_get_setting('bootstrap_barrio_sidebar_second_offset');
   }
 
   // Define column layout classes
@@ -232,8 +232,8 @@ function bootstrap_barrio_preprocess_page(&$variables) {
   }
 
   if (theme_get_setting('bootstrap_barrio_sidebar_collapse')) {
-	$variables['content_attributes']['class'][] = 'sidebar-offcanvas';
-	$variables['sidebar_collapse'] = TRUE;
+	  $variables['content_attributes']['class'][] = 'sidebar-offcanvas';
+	  $variables['sidebar_collapse'] = TRUE;
     $variables['#attached']['library'][] = 'bootstrap_barrio/sidebar_collapse';
   }
 
@@ -339,6 +339,24 @@ function bootstrap_barrio_preprocess_menu_local_task(&$variables) {
   $options = $url->getOptions();
   $url->setOptions($options + $link['localized_options']);
   $variables['item'] = Link::fromTextAndUrl($link['title'], $url);
+}
+
+/**
+ * Implements template_preprocess_table()
+ */
+function bootstrap_barrio_preprocess_table(&$variables) {
+  $variables['table_class'] = theme_get_setting('bootstrap_barrio_table_style');
+  $variables['hover'] = theme_get_setting('bootstrap_barrio_table_hover');
+  $variables['thead_class'] = theme_get_setting('bootstrap_barrio_table_head');
+}
+
+/**
+ * Implements template_preprocess_views_view_table()
+ */
+function bootstrap_barrio_preprocess_views_view_table(&$variables) {
+  $variables['table_class'] = theme_get_setting('bootstrap_barrio_table_style');
+  $variables['hover'] = theme_get_setting('bootstrap_barrio_table_hover');
+  $variables['thead_class'] = theme_get_setting('bootstrap_barrio_table_head');
 }
 
 /**

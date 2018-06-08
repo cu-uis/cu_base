@@ -258,7 +258,6 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_background'),
     '#options' => array(
       'bg-primary' => t('Primary'),
-      'bg-secondary' => t('Secondary'),
       'bg-light' => t('Light'),
       'bg-dark' => t('Dark'),
     ),
@@ -294,7 +293,6 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_background'),
     '#options' => array(
       'bg-primary' => t('Primary'),
-      'bg-secondary' => t('Secondary'),
       'bg-light' => t('Light'),
       'bg-dark' => t('Dark'),
     ),
@@ -535,7 +533,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#group' => 'bootstrap',
   );
 
-  // Buttons.
+  // Alerts.
   $form['colors']['alerts'] = array(
     '#type' => 'details',
     '#title' => t('Colors'),
@@ -552,5 +550,38 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
       'messages_dark' => t('Dark'),
     ),
     '#description' => t('Replace standard color scheme for the system mantainance alerts with Google Material Design color scheme'),
+  );
+  $form['colors']['tables'] = array(
+    '#type' => 'details',
+    '#title' => t('Tables'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+  $form['colors']['tables']['bootstrap_barrio_table_style'] = array(
+    '#type' => 'select',
+    '#title' => t('Table cell style'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_table_style'),
+    '#empty_option' => t('Default'),
+    '#options' => array(
+      'messages_light' => t('Light'),
+      'messages_dark' => t('Dark'),
+    ),
+  );
+  $form['colors']['tables']['bootstrap_barrio_table_hover'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Hover efect over table cells'),
+    '#description' => t('Apply Bootstrap table hover effect.'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_table_hover'),
+  );
+  $form['colors']['tables']['bootstrap_barrio_table_head'] = array(
+    '#type' => 'select',
+    '#title' => t('Table Header Color Scheme'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_table_head'),
+    '#empty_option' => t('Default'),
+    '#options' => array(
+      'table-striped' => t('Striped'),
+      'table-bordered' => t('Bordered'),
+    ),
+    '#description' => t('Select the table head color scheme'),
   );
 }

@@ -33,6 +33,8 @@
 {%
   set classes = [
     'table',
+    hover ? 'table-hover',
+    table_class,
     'views-table',
     'views-view-table',
     'cols-' ~ header|length,
@@ -40,6 +42,7 @@
     sticky ? 'sticky-enabled',
   ]
 %}
+<div class="table-responsive">
 <table{{ attributes.addClass(classes) }}>
   {% if caption_needed %}
     <caption>
@@ -61,7 +64,7 @@
     </caption>
   {% endif %}
   {% if header %}
-    <thead>
+    <thead class='{{ thead_class }}'>
       <tr>
         {% for key, column in header %}
           {% if column.default_classes %}
@@ -125,3 +128,4 @@
     {% endfor %}
   </tbody>
 </table>
+</div>
