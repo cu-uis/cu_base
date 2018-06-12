@@ -249,7 +249,7 @@ fontawesome:
   version: VERSION
   css:
     component:
-      //maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css: {}
+      //use.fontawesome.com/releases/v5.0.13/css/all.css: {}
 
 # Material Design for Bootstrap
 
