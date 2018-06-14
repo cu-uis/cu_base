@@ -563,8 +563,8 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_table_style'),
     '#empty_option' => t('Default'),
     '#options' => array(
-      'messages_light' => t('Light'),
-      'messages_dark' => t('Dark'),
+      'table-striped' => t('Striped'),
+      'table-bordered' => t('Bordered'),
     ),
   );
   $form['colors']['tables']['bootstrap_barrio_table_hover'] = array(
@@ -579,8 +579,8 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_table_head'),
     '#empty_option' => t('Default'),
     '#options' => array(
-      'table-striped' => t('Striped'),
-      'table-bordered' => t('Bordered'),
+      'thead-light' => t('Light'),
+      'thead-light' => t('Dark'),
     ),
     '#description' => t('Select the table head color scheme'),
   );
