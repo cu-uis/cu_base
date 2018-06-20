@@ -179,6 +179,12 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   );
+  $form['components']['buttons']['bootstrap_barrio_button'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Convert input submit to button element'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_button'),
+    '#description' => t('Convert all input submit to button element. There is a known issue with Ajax Exposed Filters, which do not work as the ajax commands expects an input element, no other issues have been detected at the time.'),
+  );
   $form['components']['buttons']['bootstrap_barrio_button_size'] = array(
     '#type' => 'select',
     '#title' => t('Default button size'),

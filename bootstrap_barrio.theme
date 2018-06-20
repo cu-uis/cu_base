@@ -407,6 +407,15 @@ function bootstrap_barrio_theme_suggestions_form_alter(array &$suggestions, arra
 }
 
 /**
+ * Implements hook_theme_suggestions_HOOK_alter() for form templates.
+ */
+function bootstrap_barrio_theme_suggestions_input_alter(array &$suggestions, array $variables) {
+  if ($variables['element']['#type'] == 'submit' && theme_get_setting('bootstrap_barrio_button')) {
+    $suggestions[] = 'input__submit_button';
+  }
+}
+
+/**
  * Implements hook_form_alter() to add classes to the search form.
 
 function bootstrap_barrio_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
