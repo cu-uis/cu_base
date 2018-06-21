@@ -76,6 +76,60 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     )),
   );
 
+  // List of regions
+  $theme = \Drupal::theme()->getActiveTheme()->getName();
+  $region_list = system_region_list($theme, $show = REGIONS_ALL);
+  // Only for initial setup if not defined on install
+  $nowrap = [
+    'breadcrumb',
+    'content',
+    'primary_menu',
+    'header',
+    'sidebar_first',
+    'sidebar_second',
+  ];
+
+  //Region
+  $form['layout']['region'] = array(
+    '#type' => 'details',
+    '#title' => t('Region'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+  foreach ($region_list as $name => $description) {
+    if ( theme_get_setting('bootstrap_barrio_region_clean_' . $name) !== NULL) {
+      $region_clean = theme_get_setting('bootstrap_barrio_region_clean_' . $name);
+    }
+    else {
+      $region_clean = in_array($name, $nowrap);
+    }
+    if ( theme_get_setting('bootstrap_barrio_region_class_' . $name) !== NULL) {
+      $region_class = theme_get_setting('bootstrap_barrio_region_class_' . $name);
+    }
+    else {
+      $region_class = $region_clean ? NULL : 'row';
+    }
+
+    $form['layout']['region'][$name] = array(
+      '#type' => 'details',
+      '#title' => $description,
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+    );
+    $form['layout']['region'][$name]['bootstrap_barrio_region_clean_' . $name] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Clean wrapper for @description region', array('@description' => $description)),
+      '#default_value' => $region_clean,
+    );
+    $form['layout']['region'][$name]['bootstrap_barrio_region_class_' . $name] = array(
+      '#type' => 'textfield',
+      '#title' => t('Classes for @description region', array('@description' => $description)),
+      '#default_value' => theme_get_setting('bootstrap_barrio_region_class_' . $name),
+      '#size' => 40,
+      '#maxlength' => 40,
+    );
+  }
+
   // Sidebar Position
   $form['layout']['sidebar_position'] = array(
     '#type' => 'details',

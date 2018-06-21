@@ -301,6 +301,16 @@ function bootstrap_barrio_preprocess_node(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK() for region.html.twig.
+ */
+function bootstrap_barrio_preprocess_region(&$variables) {
+  // Add a clearfix class to system branding blocks.
+  if (theme_get_setting('bootstrap_barrio_region_class_' . $variables['elements']['#region']) !== NULL) {
+    $variables['region_classes'] = theme_get_setting('bootstrap_barrio_region_class_' . $variables['elements']['#region']);
+  }
+}
+
+/**
  * Implements hook_preprocess_HOOK() for block.html.twig.
  */
 function bootstrap_barrio_preprocess_block(&$variables) {
@@ -372,7 +382,13 @@ function bootstrap_barrio_theme_suggestions_region_alter(array &$suggestions, ar
     'sidebar_first',
     'sidebar_second',
   ];
-  if ( in_array($variables['elements']['#region'], $nowrap) ) {
+  if ( theme_get_setting('bootstrap_barrio_region_class_' . $variables['elements']['#region']) !== NULL) {
+    $region_clean = theme_get_setting('bootstrap_barrio_region_class_' . $variables['elements']['#region']);
+  }
+  else {
+    $region_clean = in_array($variables['elements']['#region'], $nowrap);
+  }
+  if ( $region_clean ) {
     $suggestions[] = 'region__nowrap';
   }
 }
