@@ -124,7 +124,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     $form['layout']['region'][$name]['bootstrap_barrio_region_class_' . $name] = array(
       '#type' => 'textfield',
       '#title' => t('Classes for @description region', array('@description' => $description)),
-      '#default_value' => theme_get_setting('bootstrap_barrio_region_class_' . $name),
+      '#default_value' => $region_class,
       '#size' => 40,
       '#maxlength' => 40,
     );
