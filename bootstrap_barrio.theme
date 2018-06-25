@@ -392,8 +392,8 @@ function bootstrap_barrio_theme_suggestions_region_alter(array &$suggestions, ar
     'sidebar_first',
     'sidebar_second',
   ];
-  if ( theme_get_setting('bootstrap_barrio_region_class_' . $variables['elements']['#region']) !== NULL) {
-    $region_clean = theme_get_setting('bootstrap_barrio_region_class_' . $variables['elements']['#region']);
+  if ( theme_get_setting('bootstrap_barrio_region_clean_' . $variables['elements']['#region']) !== NULL) {
+    $region_clean = theme_get_setting('bootstrap_barrio_region_clean_' . $variables['elements']['#region']);
   }
   else {
     $region_clean = in_array($variables['elements']['#region'], $nowrap);
