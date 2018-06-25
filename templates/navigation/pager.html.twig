@@ -58,19 +58,15 @@
       {# Now generate the actual pager piece. #}
       {% for key, item in items.pages %}
         <li class="page-item {{ current == key ? 'active' : '' }}">
-          <span class="page-link">
-            {% if current == key %}
-              {% set title = 'Current page'|t %}
-            {% else %}
-              {% set title = 'Go to page @key'|t({'@key': key}) %}
-            {% endif %}
-          </span>
-          <a href="{{ item.href }}" title="{{ title }}"{{ item.attributes|without('href', 'title') }} class="page-link">
-            <span class="visually-hidden">
-              {{ current == key ? 'Current page'|t : 'Page'|t }}
+          {% if current == key %}
+            <span class="page-link">
+              {{- key -}}
             </span>
-            {{- key -}}
-          </a>
+          {% else %}
+            <a href="{{ item.href }}" title="{{ title }}"{{ item.attributes|without('href', 'title') }} class="page-link">
+              {{- key -}}
+            </a>
+          {% endif %}
         </li>
       {% endfor %}
       {# Add an ellipsis if there are further next pages. #}
