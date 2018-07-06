@@ -82,6 +82,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
   // Only for initial setup if not defined on install
   $nowrap = [
     'breadcrumb',
+    'highlighted',
     'content',
     'primary_menu',
     'header',
