@@ -265,6 +265,5 @@ mdb:
       //mdbootstrap.com/mdbcdn/mdb.min.css: {}
   dependencies:
     - core/jquery
-  dependencies:
     - bootstrap_barrio/material_design_icons
 
