@@ -482,14 +482,16 @@ function bootstrap_barrio_form_alter(&$form, \Drupal\Core\Form\FormStateInterfac
  * Implements hook_preprocess_input() to add classes to inputs.
  */
 function bootstrap_barrio_preprocess_input(&$variables) {
-  if (is_object($variables['attributes']['class'])) {
-    if ( in_array( 'error', $variables['attributes']['class']->value() ) ) {
-      $variables['attributes']['class']->addClass('is-invalid');
+  if (isset($variables['attributes']['class'])) {
+    if (is_object($variables['attributes']['class'])) {
+      if ( in_array( 'error', $variables['attributes']['class']->value() ) ) {
+        $variables['attributes']['class']->addClass('is-invalid');
+      }
     }
-  }
-  elseif (is_array($variables['attributes']['class'])) {
-    if ( in_array( 'error', $variables['attributes']['class'] ) ) {
-      $variables['attributes']['class'][] = 'is-invalid';
+    elseif (is_array($variables['attributes']['class'])) {
+      if ( in_array( 'error', $variables['attributes']['class'] ) ) {
+        $variables['attributes']['class'][] = 'is-invalid';
+      }
     }
   }
   if ($variables['element']['#type'] == 'submit') {
