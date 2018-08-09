@@ -641,7 +641,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#empty_option' => t('Default'),
     '#options' => array(
       'thead-light' => t('Light'),
-      'thead-light' => t('Dark'),
+      'thead-dark' => t('Dark'),
     ),
     '#description' => t('Select the table head color scheme'),
   );
