@@ -364,6 +364,26 @@ function bootstrap_barrio_preprocess_menu_local_task(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK() for menu-local-action.html.twig.
+ */
+
+function bootstrap_barrio_preprocess_menu_local_action(&$variables) {
+  $link = $variables['element']['#link'];
+  $link += array(
+    'localized_options' => array(),
+  );
+  $link['localized_options']['attributes']['class'][] = 'btn';
+  $link['localized_options']['attributes']['class'][] = 'btn-secondary';
+  $link['localized_options']['set_active_class'] = TRUE;
+  $variables['link'] = array(
+    '#type' => 'link',
+    '#title' => $link['title'],
+    '#options' => $link['localized_options'],
+    '#url' => $link['url'],
+  );
+}
+
+/**
  * Implements template_preprocess_table()
  */
 function bootstrap_barrio_preprocess_table(&$variables) {
@@ -462,6 +482,16 @@ function bootstrap_barrio_form_alter(&$form, \Drupal\Core\Form\FormStateInterfac
  * Implements hook_preprocess_input() to add classes to inputs.
  */
 function bootstrap_barrio_preprocess_input(&$variables) {
+  if (is_object($variables['attributes']['class'])) {
+    if ( in_array( 'error', $variables['attributes']['class']->value() ) ) {
+      $variables['attributes']['class']->addClass('is-invalid');
+    }
+  }
+  elseif (is_array($variables['attributes']['class'])) {
+    if ( in_array( 'error', $variables['attributes']['class'] ) ) {
+      $variables['attributes']['class'][] = 'is-invalid';
+    }
+  }
   if ($variables['element']['#type'] == 'submit') {
     $button_size = theme_get_setting('bootstrap_barrio_button_size');
     if (is_object($variables['attributes']['class'])) {
