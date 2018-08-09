@@ -251,7 +251,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
   ),
   $form['components']['buttons']['bootstrap_barrio_button_outline'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Buttonn with outline format'),
+    '#title' => t('Button with outline format'),
     '#default_value' => theme_get_setting('bootstrap_barrio_button_outline'),
     '#description' => t('Use <code>.btn-default-outline</code> class. See : @bootstrap_barrio_link', array(
       '@bootstrap_barrio_link' => Drupal::l('Outline Buttons' , Url::fromUri('http://getbootstrap.com/css/' , ['absolute' => TRUE , 'fragment' => 'grid-example-fluid'])),
