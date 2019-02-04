@@ -15,8 +15,6 @@ libraries-extend:
     - bootstrap_barrio/file
 
 ckeditor_stylesheets:
-  - css/base/elements.css
-  - css/components/captions.css
   - css/components/table.css
 
 regions:
