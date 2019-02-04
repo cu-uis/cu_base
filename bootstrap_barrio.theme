@@ -16,6 +16,10 @@ use Drupal\Core\Form\FormStateInterface;
  * Adds body classes if certain regions have content.
  */
 function bootstrap_barrio_preprocess_html(&$variables) {
+  if (!is_array($variables['attributes']['class'])) {
+    $variables['attributes']['class'] = [];
+  }
+
   // Add information about the number of sidebars.
   if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
     $variables['attributes']['class'][] = 'layout-two-sidebars';
