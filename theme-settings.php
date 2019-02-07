@@ -42,7 +42,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
         'production' => t('Local minimized (production)'),
       ],
       '#empty_option' => t('None'),
-      '#description' => t('If none is selected you should load the library via Bootstrap Library or manually. If CDN is selected, the library version must be configured on @boostrap_library_link', [('@bootstrap_library_link' => Drupal::l('Bootstrap Library Settings' , Url::fromRoute('bootstrap_library.admin')))]),
+      '#description' => t('If none is selected you should load the library via Bootstrap Library or manually. If CDN is selected, the library version must be configured on @boostrap_library_link', ['@bootstrap_library_link' => Drupal::l('Bootstrap Library Settings' , Url::fromRoute('bootstrap_library.admin'))]),
     ];
   }
 
@@ -96,7 +96,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#title' => t('Region'),
     '#collapsible' => TRUE,
    '#collapsed' => TRUE,
-  )];
+  ];
   foreach ($region_list as $name => $description) {
     if ( theme_get_setting('bootstrap_barrio_region_clean_' . $name) !== NULL) {
       $region_clean = theme_get_setting('bootstrap_barrio_region_clean_' . $name);
@@ -249,7 +249,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
       'btn-sm' => t('Small'),
       'btn-lg' => t('Large'),
     ]
-  ],
+  ];
   $form['components']['buttons']['bootstrap_barrio_button_outline'] = [
     '#type' => 'checkbox',
     '#title' => t('Button with outline format'),
@@ -302,7 +302,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     ],
     '#empty_option' => t('Normal'),
   ];
-  $form['components']['navbar']['bootstrap_barrio_navbar_top_color'] = [(
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_color'] = [
     '#type' => 'select',
     '#title' => t('Navbar top color'),
     '#description' => t('Select a color for links in navbar top.'),
@@ -602,12 +602,12 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,
   ];
-  $form['colors']['alerts']['bootstrap_barrio_system_messages'] = [(
+  $form['colors']['alerts']['bootstrap_barrio_system_messages'] = [
     '#type' => 'select',
     '#title' => t('System Messages Color Scheme'),
     '#default_value' => theme_get_setting('bootstrap_barrio_system_messages'),
     '#empty_option' => t('Default'),
-    '#options' => [(
+    '#options' => [
       'messages_light' => t('Light'),
       'messages_dark' => t('Dark'),
     ],
