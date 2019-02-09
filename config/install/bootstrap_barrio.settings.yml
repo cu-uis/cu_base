@@ -30,6 +30,11 @@ bootstrap_barrio_navbar_top_background: 'bg-secondary'
 bootstrap_barrio_navbar_position: ''
 bootstrap_barrio_navbar_color: 'navbar-dark'
 bootstrap_barrio_navbar_background: 'bg-primary'
+
+# Messages
+#---------
+bootstrap_barrio_messages_widget: 'toasts'
+
 # Colors
 # --------------
 bootstrap_barrio_table_hover: 1
