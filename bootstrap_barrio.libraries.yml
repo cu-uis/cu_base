@@ -51,7 +51,11 @@ affix:
   css:
     component:
       css/components/affix.css: {}
-
+alerts:
+  version: VERSION
+  css:
+    component:
+      css/components/alerts.css: {}
 book-navigation:
   version: VERSION
   css:
