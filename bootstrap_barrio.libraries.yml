@@ -6,6 +6,7 @@ global-styling:
   css:
     component:
       css/components/affix.css: {}
+      css/components/alerts.css: {}
       css/components/book.css: {}
       css/components/comments.css: {}
       css/components/contextual.css: {}
