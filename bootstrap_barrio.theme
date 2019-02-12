@@ -357,7 +357,6 @@ function bootstrap_barrio_preprocess_form_element(&$variables) {
  */
 function bootstrap_barrio_preprocess_form_element_label(&$variables) {
   $element = $variables['element'];
-  print_r($element['#type']);
 }
 
 /**
