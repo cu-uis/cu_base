@@ -123,6 +123,11 @@ tabs:
     component:
       css/components/tabs.css: {}
 
+toast:
+  version: VERSION
+  js:
+    js/toast.js: {}
+
 verticaltabs:
   version: VERSION
   css:
