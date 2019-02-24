@@ -105,13 +105,13 @@
     {% endif %}
     {% if label_display == 'before' %}
       <label {{ attributes.addClass(labelclass).setAttribute('for', input_attributes.id) }}>
-        {{ input_title }}
+        {{ input_title | raw }}
       </label>
     {% endif %}
     <input{{ input_attributes.addClass(inputclass) }}>
     {% if label_display == 'after' %}
       <label {{ attributes.addClass(labelclass).setAttribute('for', input_attributes.id) }}>
-        {{ input_title }}
+        {{ input_title | raw }}
       </label>
     {% endif %}
     {% if suffix is not empty %}
