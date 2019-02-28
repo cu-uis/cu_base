@@ -16,7 +16,7 @@ use Drupal\Core\Form\FormStateInterface;
  * Adds body classes if certain regions have content.
  */
 function bootstrap_barrio_preprocess_html(&$variables) {
-  if (!array_key_exists('class', $variables['attributes']) || !is_array($variables['attributes']['class'])) {
+  if (!isset($variables['attributes']['class'])) {
     $variables['attributes']['class'] = [];
   }
 
