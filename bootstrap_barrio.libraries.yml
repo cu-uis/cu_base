@@ -279,3 +279,6 @@ mdb:
     - core/jquery
     - bootstrap_barrio/material_design_icons
 
+views.ajax:
+  js:
+    js/modules/views/ajax_view.js: {}
