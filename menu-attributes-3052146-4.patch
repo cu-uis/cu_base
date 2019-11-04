@@ -1,0 +1,60 @@
+diff --git a/templates/navigation/menu--account.html.twig b/templates/navigation/menu--account.html.twig
+index 72f55cc..3633708 100644
+--- a/templates/navigation/menu--account.html.twig
++++ b/templates/navigation/menu--account.html.twig
+@@ -36,7 +36,6 @@
+           set classes = [
+            'nav-link',
+             item.in_active_trail ? 'active',
+-            item.url.getOption('attributes').class ? item.url.getOption('attributes').class | join(' '),
+           ]
+         %}
+         {{ link(item.title, item.url, {'class': classes}) }}
+diff --git a/templates/navigation/menu--footer.html.twig b/templates/navigation/menu--footer.html.twig
+index 637ee6e..13d42f5 100644
+--- a/templates/navigation/menu--footer.html.twig
++++ b/templates/navigation/menu--footer.html.twig
+@@ -48,7 +48,6 @@
+           set link_classes = [
+             'nav-link',
+             item.in_active_trail ? 'active',
+-            item.url.getOption('attributes').class ? item.url.getOption('attributes').class | join(' '),
+           ]
+         %}
+         {{ link(item.title, item.url, {'class': link_classes}) }}
+diff --git a/templates/navigation/menu--main.html.twig b/templates/navigation/menu--main.html.twig
+index 58f4f48..117f9d0 100644
+--- a/templates/navigation/menu--main.html.twig
++++ b/templates/navigation/menu--main.html.twig
+@@ -50,7 +50,6 @@
+             not menu_level ? 'nav-link',
+             item.in_active_trail ? 'active',
+             item.below ? 'dropdown-toggle',
+-            item.url.getOption('attributes').class ? item.url.getOption('attributes').class | join(' '),
+           ]
+         %}
+         {% if item.below %}
+diff --git a/templates/navigation/menu-local-task.html.twig b/templates/navigation/menu-local-task.html.twig
+index b341d2c..74d4918 100644
+--- a/templates/navigation/menu-local-task.html.twig
++++ b/templates/navigation/menu-local-task.html.twig
+@@ -20,7 +20,6 @@
+   set classes = [
+     'nav-link',
+     is_active ? 'active',
+-    item.url.getOption('attributes').class ? item.url.getOption('attributes').class | join(' '),
+   ]
+ %}
+ <li{{ attributes.addClass(is_active ? 'active', 'nav-item') }}>{{ link(item.text, item.url, {'class': classes}) }}</li>
+diff --git a/templates/navigation/menu.html.twig b/templates/navigation/menu.html.twig
+index f9eda06..88b0a19 100644
+--- a/templates/navigation/menu.html.twig
++++ b/templates/navigation/menu.html.twig
+@@ -48,7 +48,6 @@
+           set link_classes = [
+             'nav-link',
+             item.in_active_trail ? 'active',
+-            item.url.getOption('attributes').class ? item.url.getOption('attributes').class,
+           ]
+         %}
+         {{ link(item.title, item.url, {'class': link_classes}) }}
