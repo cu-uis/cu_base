@@ -506,7 +506,7 @@ function bootstrap_barrio_form_alter(&$form, \Drupal\Core\Form\FormStateInterfac
     if (!isset($form[$key]['submit']['#attributes'])) {
       $form[$key]['submit']['#attributes'] = new Attribute();
     }
-    $outline = theme_get_setting('bootstrap_barrio_button_outline') ? 'btn-primary-outline' : 'btn-primary';
+    $outline = theme_get_setting('bootstrap_barrio_button_outline') ? 'btn-outline-primary' : 'btn-primary';
 // If use the $outline variable, HTML crashes. Even if use the value directly 
     $form[$key]['submit']['#attributes']->addClass(['btn', 'btn-primary', 'btn-sm']);
   }
@@ -533,7 +533,7 @@ function bootstrap_barrio_preprocess_input(&$variables) {
     if (is_object($variables['attributes']['class'])) {
       if (empty(array_intersect(['btn-primary', 'btn-secondary', 'btn-success', 'btn-warning', 'btn-danger', 'btn-link'], $variables['attributes']['class']->value()))) {
         if ( theme_get_setting('bootstrap_barrio_button_outline') ) {
-          $variables['attributes']['class']->addClass('btn-primary-outline');
+          $variables['attributes']['class']->addClass('btn-outline-primary');
         }
         else {
           $variables['attributes']['class']->addClass('btn-primary');
@@ -551,7 +551,7 @@ function bootstrap_barrio_preprocess_input(&$variables) {
 	else {
       $variables['attributes']['class'][] = 'btn';
       if ( theme_get_setting('bootstrap_barrio_button_outline') ) {
-        $variables['attributes']['class'][] = 'btn-primary-outline';
+        $variables['attributes']['class'][] = 'btn-outline-primary';
       }
       else {
         $variables['attributes']['class'][] = 'btn-primary';
