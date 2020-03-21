@@ -373,7 +373,8 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#title' => t('Messages Widget'),
     '#default_value' => theme_get_setting('bootstrap_barrio_messages_widget'),
     '#options' => [
-      'alerts' => t('Alerts'),
+      'default' => t('Alerts classic'),
+      'alerts' => t('Alerts bottom'),
       'toasts' => t('Toasts'),
     ]
   ];

@@ -471,8 +471,13 @@ function bootstrap_barrio_theme_suggestions_links_alter(array &$suggestions, arr
  * Implements hook_theme_suggestions_HOOK_alter() for status messages templates.
  */
 function bootstrap_barrio_theme_suggestions_status_messages_alter(array &$suggestions, array $variables) {
-  if ( theme_get_setting('bootstrap_barrio_messages_widget') == 'toasts' ) {
-    $suggestions[] = 'status_messages__toasts';
+  switch (theme_get_setting('bootstrap_barrio_messages_widget')) {
+    case 'toasts':
+      $suggestions[] = 'status_messages__toasts';
+      break;
+    case 'alerts':
+      $suggestions[] = 'status_messages__alerts';
+      break;
   }
 }
 

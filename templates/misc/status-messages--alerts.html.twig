@@ -25,6 +25,7 @@
  * @ingroup themeable
  */
 #}
+<div class="alert-wrapper">
 {% for type, messages in message_list %}
   {%
     set classes = [
@@ -47,6 +48,7 @@
     'info': 'status',
   }
 %}
+
   <div aria-label="{{ status_headings[type] }}" {{ attributes|without('role', 'aria-label').addClass(classes).setAttribute('role', role[type]) }}>
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
@@ -64,4 +66,4 @@
     {% endfor %}
   </div>
 {% endfor %}
-
+</div>
