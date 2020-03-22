@@ -19,10 +19,10 @@ libraries-extend:
     - bootstrap_barrio/views.ajax
 
 regions:
-  top_header: 'Top Header'
-  top_header_form: "Top Header Form"
+  top_header: 'Top header'
+  top_header_form: 'Top header form'
   header: Header
-  header_form: "Header Form"
+  header_form: 'Header form'
   primary_menu: 'Primary menu'
   secondary_menu: 'Secondary menu'
   page_top: 'Page top'
