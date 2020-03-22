@@ -5,7 +5,7 @@ bootstrap_barrio.settings:
   label: 'Bootstrap Barrio settings'
   mapping:
     bootstrap_barrio_library:
-      type: integer
+      type: text
       label: 'Library'
     bootstrap_barrio_sidebar_position:
       type: text
@@ -56,7 +56,7 @@ bootstrap_barrio.settings:
       type: text
       label: 'Background'
     bootstrap_barrio_navbar_toggle:
-      type: integer
+      type: text
       label: 'Enable'
     bootstrap_barrio_navbar_container:
       type: text
