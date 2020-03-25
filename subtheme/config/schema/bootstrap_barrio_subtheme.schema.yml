@@ -8,7 +8,7 @@ bootstrap_barrio_subtheme.settings:
 # Library.
 # ----------------------------
 bootstrap_barrio_library:
-  type: integer
+  type: text
   label: 'Load library'
 
 # Container.
