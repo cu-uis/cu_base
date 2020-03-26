@@ -71,7 +71,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#title' => t('Fluid container'),
     '#default_value' => theme_get_setting('bootstrap_barrio_fluid_container'),
     '#description' => t('Use <code>.container-fluid</code> class. See @bootstrap_fluid_containers_link.', [
-      '@bootstrap_fluid_containers_link' => Link::fromTextAndUrl('Containers in the Bootstrap 4 documentation' , Url::fromUri('https://getbootstrap.com/docs/4.3/layout/overview/' , ['absolute' => TRUE , 'fragment' => 'containers'])),    ]),
+      '@bootstrap_fluid_containers_link' => Link::fromTextAndUrl('Containers in the Bootstrap 4 documentation' , Url::fromUri('https://getbootstrap.com/docs/4.3/layout/overview/' , ['absolute' => TRUE , 'fragment' => 'containers']))->toString(),    ]),
   ];
 
   // List of regions.
@@ -254,7 +254,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#title' => t('Button with outline format'),
     '#default_value' => theme_get_setting('bootstrap_barrio_button_outline'),
     '#description' => t('Use <code>.btn-default-outline</code> class. See @bootstrap_outline_buttons_link.', [
-      '@bootstrap_outline_buttons_link' => Link::fromTextAndUrl('Outline buttons in the Bootstrap 4 documentation' , Url::fromUri('https://getbootstrap.com/docs/4.3/components/buttons/' , ['absolute' => TRUE , 'fragment' => 'outline-buttons'])),    ]),
+      '@bootstrap_outline_buttons_link' => Link::fromTextAndUrl('Outline buttons in the Bootstrap 4 documentation' , Url::fromUri('https://getbootstrap.com/docs/4.3/components/buttons/' , ['absolute' => TRUE , 'fragment' => 'outline-buttons']))->toString(),    ]),
   ];
 
   // Navbar.
