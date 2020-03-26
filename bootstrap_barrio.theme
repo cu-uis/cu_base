@@ -57,8 +57,8 @@ function bootstrap_barrio_preprocess_html(&$variables) {
   if (isset($path_args[0]) && isset($path_args[1]) && ($path_args[0] == 'user')) {
     $variables['attributes']['class'][] = 'page-user-' . $path_args[1];
   }
-  if (isset($path_args[0]) && isset($path_args[1] && isset($path_args[2]) && 
-    ($path_args[0] == 'taxonomy' && $path_args[1] == 'term')) {
+  if (isset($path_args[0]) && isset($path_args[1]) && isset($path_args[2]) && 
+    $path_args[0] == 'taxonomy' && $path_args[1] == 'term') {
     $variables['attributes']['class'][] = 'page-taxonomy-term-' . $path_args[2];
     $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($path_args[2]);
     $vocabulary_id = $term->bundle();
@@ -156,7 +156,7 @@ function bootstrap_barrio_preprocess_page(&$variables) {
     'class' => [ 'sidebar', $sidebar_second_width ],
 	  'id' => [ 'sidebar_second' ],
   ];
-  
+
   // Get custom Navbar classes from config and add them to Navbars
   if (theme_get_setting('bootstrap_barrio_navbar_top_class') !== NULL) {
     $variables['navbar_top_attributes']['class'][] = theme_get_setting('bootstrap_barrio_navbar_top_class');
