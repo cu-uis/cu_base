@@ -62,11 +62,11 @@ function bootstrap_barrio_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = 'page-taxonomy-term-' . $path_args[2];
     $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->load($path_args[2]);
     $vocabulary_id = $term->bundle();
-    $variables['attributes']['class'][] = 'page-vocabulary-' . $vocabulary_id;
+    $variables['attributes']['class'][] = 'page-vocabulary-' . Html::cleanCssIdentifier($vocabulary_id);
   }
   $view_id = \Drupal::routeMatch()->getParameter('view_id');
   if ($view_id) {
-    $variables['attributes']['class'][] = 'page-view-' . $view_id;
+    $variables['attributes']['class'][] = 'page-view-' . Html::cleanCssIdentifier($view_id);
   }
 
   // SEO Information
