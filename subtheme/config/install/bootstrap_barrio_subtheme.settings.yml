@@ -48,5 +48,5 @@ bootstrap_barrio_system_messages: 'messages_light'
 
 # Tables.
 # ----------------------------
- bootstrap_barrio_table_hover: 1
- bootstrap_barrio_table_style: 'table-striped'
+bootstrap_barrio_table_hover: 1
+bootstrap_barrio_table_style: 'table-striped'
