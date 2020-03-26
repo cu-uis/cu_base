@@ -156,6 +156,14 @@ function bootstrap_barrio_preprocess_page(&$variables) {
     'class' => [ 'sidebar', $sidebar_second_width ],
 	  'id' => [ 'sidebar_second' ],
   ];
+  
+  // Get custom Navbar classes from config and add them to Navbars
+  if (theme_get_setting('bootstrap_barrio_navbar_top_class') !== NULL) {
+    $variables['navbar_top_attributes']['class'][] = theme_get_setting('bootstrap_barrio_navbar_top_class');
+  }
+  if (theme_get_setting('bootstrap_barrio_navbar_class') !== NULL) {
+    $variables['navbar_attributes']['class'][] = theme_get_setting('bootstrap_barrio_navbar_class');
+  }
 
   // Affix
   $affix_navbar_top = theme_get_setting('bootstrap_barrio_navbar_top_affix');

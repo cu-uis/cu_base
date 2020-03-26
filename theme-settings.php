@@ -353,6 +353,21 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     ],
     '#empty_option' => t('Default'),
   ];
+    // Allow custom classes on Navbars
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_class'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Custom classes for Navbar Top'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_class'),
+    '#size' => 40,
+    '#maxlength' => 40,
+  );
+  $form['components']['navbar']['bootstrap_barrio_navbar_class'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Custom classes for Navbar'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_class'),
+    '#size' => 40,
+    '#maxlength' => 40,
+  );
 
   // Messages.
   $form['components']['alerts'] = [
