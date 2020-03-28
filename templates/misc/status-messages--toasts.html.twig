@@ -27,7 +27,7 @@
 #}
 {{ attach_library('bootstrap_barrio/toast') }}
 
-<div class="toast-wrapper" aria-live="polite" aria-atomic="true">
+<div class="toast-wrapper" aria-live="polite" aria-atomic="true" data-drupal-messages>
 
   {% for type, messages in message_list %}
     {%

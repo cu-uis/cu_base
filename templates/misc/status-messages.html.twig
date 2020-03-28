@@ -25,6 +25,7 @@
  * @ingroup themeable
  */
 #}
+<div data-drupal-messages>
 {% for type, messages in message_list %}
   {%
     set classes = [
@@ -68,4 +69,4 @@
     {% endfor %}
   </div>
 {% endfor %}
-
+</div>
