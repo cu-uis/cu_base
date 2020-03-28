@@ -574,6 +574,7 @@ function bootstrap_barrio_preprocess_input(&$variables) {
     $button_sizes = ['btn-sm', 'btn-lg'];
     $button_is_outline = theme_get_setting('bootstrap_barrio_button_outline');
     if (is_object($variables['attributes']['class'])) {
+      \Drupal::logger('bootstrap_barrio')->notice(implode($variables['attributes']['class']->value()));
       if (!in_array('btn', $variables['attributes']['class']->value())) {
         $variables['attributes']['class']->addClass('btn');
       }
@@ -593,8 +594,13 @@ function bootstrap_barrio_preprocess_input(&$variables) {
       if (!in_array('btn', $variables['attributes']['class'])) {
         $variables['attributes']['class'][] = 'btn';
       }
-      else {
-        $variables['attributes']['class'][] = 'btn-primary';
+      if (empty(array_intersect($button_types, $variables['attributes']['class']))) {
+        if ($button_is_outline) {
+          $variables['attributes']['class'][] = 'btn-outline-primary';
+        }
+        else {
+          $variables['attributes']['class'][] = 'btn-primary';
+        }
       }
       if ($button_size && empty(array_intersect($button_sizes, $variables['attributes']['class']))) {
         $variables['attributes']['class'][] = $button_size;
