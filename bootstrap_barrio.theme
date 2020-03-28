@@ -578,7 +578,7 @@ function bootstrap_barrio_preprocess_input(&$variables) {
         $variables['attributes']['class']->addClass('btn');
       }
       if (empty(array_intersect($button_types, $variables['attributes']['class']->value()))) {
-        if ($button_is_outline) ) {
+        if ($button_is_outline) {
           $variables['attributes']['class']->addClass('btn-outline-primary');
         }
         else {
