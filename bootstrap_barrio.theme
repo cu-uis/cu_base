@@ -41,13 +41,13 @@ function bootstrap_barrio_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = 'has-featured-top';
   }
 
-  // Scroll Spy info added to body
+  // Scroll Spy info added to body.
   if ($scroll_spy = theme_get_setting('bootstrap_barrio_scroll_spy')) {
     $variables['attributes']['data-target'] = $scroll_spy;
     $variables['attributes']['data-spy'] = "scroll";
   }
 
-  // Page specific info
+  // Page specific info.
   $variables['path_info']['args'] = FALSE;
   $path = \Drupal::service('path.current')->getPath();
   $path = ltrim($path, '/');
@@ -70,7 +70,7 @@ function bootstrap_barrio_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = 'page-view-' . Html::cleanCssIdentifier($view_id);
   }
 
-  // SEO Information
+  // SEO Information.
   $http_equiv = [
     '#type' => 'html_tag',
     '#tag' => 'meta',
@@ -83,6 +83,9 @@ function bootstrap_barrio_preprocess_html(&$variables) {
 
 }
 
+/**
+ * Implements hook_page_attachments_alter()
+ */
 function bootstrap_barrio_page_attachments_alter(&$page) {
   $viewport = [
     '#type' => 'html_tag',
@@ -102,7 +105,7 @@ function bootstrap_barrio_preprocess_page(&$variables) {
   if (\Drupal::moduleHandler()->moduleExists('bootstrap_library')) {
     $library = theme_get_setting('bootstrap_barrio_library');
     switch ($library) {
-      case 'cdn' :
+      case 'cdn':
         $variables['#attached']['library'][] = 'bootstrap_library/bootstrap-cdn';
         break;
       case 'production':
@@ -133,7 +136,7 @@ function bootstrap_barrio_preprocess_page(&$variables) {
   $sidebar_first_width = 'col-md-' . theme_get_setting('bootstrap_barrio_sidebar_first_width');
   $sidebar_second_width = 'col-md-' . theme_get_setting('bootstrap_barrio_sidebar_second_width');
 
-  // Define default classes for containers
+  // Define default classes for containers.
   $variables['navbar_top_attributes'] = [
     'class' => [ 'navbar' ],
 	  'id' => ['navbar-top' ],
@@ -164,7 +167,7 @@ function bootstrap_barrio_preprocess_page(&$variables) {
     $variables['navbar_attributes']['class'][] = theme_get_setting('bootstrap_barrio_navbar_class');
   }
 
-  // Affix
+  // Affix.
   $affix_navbar_top = theme_get_setting('bootstrap_barrio_navbar_top_affix');
   $affix_navbar = theme_get_setting('bootstrap_barrio_navbar_affix');
   $affix_sidebar_first = theme_get_setting('bootstrap_barrio_sidebar_first_affix');
@@ -172,31 +175,31 @@ function bootstrap_barrio_preprocess_page(&$variables) {
   if ($affix_navbar_top || $affix_navbar || $affix_sidebar_first || $affix_sidebar_second) {
     $variables['#attached']['library'][] = 'bootstrap_barrio/affix';
     if ($affix_navbar_top) {
-       $variables['navbar_top_attributes']['data-toggle'] = 'affix';
+      $variables['navbar_top_attributes']['data-toggle'] = 'affix';
     }
     if ($affix_navbar) {
-       $variables['navbar_attributes']['data-toggle'] = 'affix';
+      $variables['navbar_attributes']['data-toggle'] = 'affix';
     }
     if ($affix_sidebar_first) {
-       $variables['sidebar_first_attributes']['data-toggle'] = 'affix';
+      $variables['sidebar_first_attributes']['data-toggle'] = 'affix';
     }
     if ($affix_sidebar_second) {
-       $variables['sidebar_second_attributes']['data-toggle'] = 'affix';
+      $variables['sidebar_second_attributes']['data-toggle'] = 'affix';
     }
   }
 
-  // Calculate widths
+  // Calculate widths.
   if (theme_get_setting('bootstrap_barrio_content_offset')) {
-    $variables['content_attributes']['class'][] =  'offset-md-' . theme_get_setting('bootstrap_barrio_content_offset');
+    $variables['content_attributes']['class'][] = 'offset-md-' . theme_get_setting('bootstrap_barrio_content_offset');
   }
   if (theme_get_setting('bootstrap_barrio_sidebar_first_offset')) {
-    $variables['sidebar_first_attributes']['class'][] =  'offset-md-' . theme_get_setting('bootstrap_barrio_sidebar_first_offset');
+    $variables['sidebar_first_attributes']['class'][] = 'offset-md-' . theme_get_setting('bootstrap_barrio_sidebar_first_offset');
   }
   if (theme_get_setting('bootstrap_barrio_sidebar_second_offset')) {
-    $variables['sidebar_second_attributes']['class'][] =  'offset-md-' . theme_get_setting('bootstrap_barrio_sidebar_second_offset');
+    $variables['sidebar_second_attributes']['class'][] = 'offset-md-' . theme_get_setting('bootstrap_barrio_sidebar_second_offset');
   }
 
-  // Define column layout classes
+  // Define column layout classes.
   switch (theme_get_setting('bootstrap_barrio_sidebar_position')) {
 	case 'left':
     $variables['sidebar_first_attributes']['class'][] = 'order-first';
@@ -212,19 +215,19 @@ function bootstrap_barrio_preprocess_page(&$variables) {
 	  break;
   }
 
-  // Define navigation position
+  // Define navigation position.
   $variables['navbar_top_attributes']['class'][] = theme_get_setting('bootstrap_barrio_navbar_top_position');
   $variables['navbar_attributes']['class'][] = theme_get_setting('bootstrap_barrio_navbar_position');
 
-  // Define navigation color scheme
+  // Define navigation color scheme.
   $variables['navbar_top_attributes']['class'][] = theme_get_setting('bootstrap_barrio_navbar_top_color');
   $variables['navbar_attributes']['class'][] = theme_get_setting('bootstrap_barrio_navbar_color');
 
-  // Define navigation background classes
+  // Define navigation background classes.
   $variables['navbar_top_attributes']['class'][] = theme_get_setting('bootstrap_barrio_navbar_top_background');
   $variables['navbar_attributes']['class'][] = theme_get_setting('bootstrap_barrio_navbar_background');
 
-  // Define navigation toggle size
+  // Define navigation toggle size.
   switch (theme_get_setting('bootstrap_barrio_navbar_toggle')) {
     case 'navbar-toggleable-lg':
       $variables['navbar_attributes']['class'][] = 'navbar-expand-lg';
@@ -249,14 +252,14 @@ function bootstrap_barrio_preprocess_page(&$variables) {
     $variables['#attached']['library'][] = 'bootstrap_barrio/sidebar_collapse';
   }
 
-  // Declare region attributes
+  // Declare region attributes.
   $variables['navbar_top_attributes'] = new Attribute($variables['navbar_top_attributes']);
   $variables['navbar_attributes'] = new Attribute($variables['navbar_attributes']);
   $variables['content_attributes'] = new Attribute($variables['content_attributes']);
   $variables['sidebar_first_attributes'] = new Attribute($variables['sidebar_first_attributes']);
   $variables['sidebar_second_attributes'] = new Attribute($variables['sidebar_second_attributes']);
 
-  // Declare container layout
+  // Declare container layout.
   $variables['container_navbar'] = theme_get_setting('bootstrap_barrio_navbar_container');
   $variables['container'] = theme_get_setting('bootstrap_barrio_fluid_container') ? 'container-fluid' : 'container';
 
@@ -343,12 +346,15 @@ function bootstrap_barrio_preprocess_block(&$variables) {
   }
 }
 
+/**
+ * Implements hook_preprocess_HOOK() for form elements.
+ */
 function bootstrap_barrio_preprocess_form_element(&$variables) {
   if (isset($variables['label']['#title'])) {
-    if ( is_object($variables['label']['#title']) && !$variables['label']['#title'] instanceof \Drupal\Component\Render\MarkupInterface) {
+    if (is_object($variables['label']['#title']) && !$variables['label']['#title'] instanceof \Drupal\Component\Render\MarkupInterface) {
       $variables['input_title'] = NULL;
     }
-    elseif ( is_object($variables['label']['#title']) ) {
+    elseif (is_object($variables['label']['#title']) ) {
       $variables['input_title'] = $variables['label']['#title'];
     }
     else {
@@ -479,8 +485,8 @@ function bootstrap_barrio_form_node_form_alter(&$form, FormStateInterface $form_
  * Implements hook_theme_suggestions_HOOK_alter() for links templates.
  */
 function bootstrap_barrio_theme_suggestions_links_alter(array &$suggestions, array $variables) {
-  // ToDo get from core a variable to flag inline links
-  if ( in_array('inline', $variables['attributes']['class']) ) {
+  // ToDo get from core a variable to flag inline links.
+  if (in_array('inline', $variables['attributes']['class']) ) {
     $suggestions[] = 'links__inline';
   }
 }
@@ -532,19 +538,20 @@ function bootstrap_barrio_theme_suggestions_input_alter(array &$suggestions, arr
 
 /**
  * Implements hook_form_alter() to add classes to the search form.
-
-function bootstrap_barrio_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  if (in_array($form_id, ['search_block_form', 'search_form'])) {
-    $key = ($form_id == 'search_block_form') ? 'actions' : 'basic';
-    if (!isset($form[$key]['submit']['#attributes'])) {
-      $form[$key]['submit']['#attributes'] = new Attribute();
-    }
-    $outline = theme_get_setting('bootstrap_barrio_button_outline') ? 'btn-outline-primary' : 'btn-primary';
-// If use the $outline variable, HTML crashes. Even if use the value directly
-    $form[$key]['submit']['#attributes']->addClass(['btn', 'btn-primary', 'btn-sm']);
-  }
-}
+ *
+ *function bootstrap_barrio_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+ *  if (in_array($form_id, ['search_block_form', 'search_form'])) {
+ *    $key = ($form_id == 'search_block_form') ? 'actions' : 'basic';
+ *    if (!isset($form[$key]['submit']['#attributes'])) {
+ *      $form[$key]['submit']['#attributes'] = new Attribute();
+ *    }
+ *    $outline = theme_get_setting('bootstrap_barrio_button_outline') ? 'btn-outline-primary' : 'btn-primary';
+ * If use the $outline variable, HTML crashes. Even if use the value directly
+ *    $form[$key]['submit']['#attributes']->addClass(['btn', 'btn-primary', 'btn-sm']);
+ *  }
+ *}
  */
+
 /**
  * Implements hook_preprocess_input() to add classes to inputs.
  */
