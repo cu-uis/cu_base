@@ -553,48 +553,48 @@ function bootstrap_barrio_form_alter(&$form, \Drupal\Core\Form\FormStateInterfac
 function bootstrap_barrio_preprocess_input(&$variables) {
   if (isset($variables['attributes']['class'])) {
     if (is_object($variables['attributes']['class'])) {
-      if ( in_array( 'error', $variables['attributes']['class']->value() ) ) {
+      if (in_array( 'error', $variables['attributes']['class']->value())) {
         $variables['attributes']['class']->addClass('is-invalid');
       }
     }
     elseif (is_array($variables['attributes']['class'])) {
-      if ( in_array( 'error', $variables['attributes']['class'] ) ) {
+      if (in_array( 'error', $variables['attributes']['class'])) {
         $variables['attributes']['class'][] = 'is-invalid';
       }
     }
   }
   if ($variables['element']['#type'] == 'submit') {
     $button_size = theme_get_setting('bootstrap_barrio_button_size');
+    $button_types = ['btn-primary', 'btn-secondary', 'btn-success', 'btn-warning', 'btn-danger', 'btn-link'];
+    $button_sizes = ['btn-sm', 'btn-lg'];
+    $button_is_outline = theme_get_setting('bootstrap_barrio_button_outline');
     if (is_object($variables['attributes']['class'])) {
-      if (empty(array_intersect(['btn-primary', 'btn-secondary', 'btn-success', 'btn-warning', 'btn-danger', 'btn-link'], $variables['attributes']['class']->value()))) {
-        if ( theme_get_setting('bootstrap_barrio_button_outline') ) {
+      if (!in_array('btn', $variables['attributes']['class']->value())) {
+        $variables['attributes']['class']->addClass('btn');
+      }
+      if (empty(array_intersect($button_types, $variables['attributes']['class']->value()))) {
+        if ($button_is_outline) ) {
           $variables['attributes']['class']->addClass('btn-outline-primary');
         }
         else {
           $variables['attributes']['class']->addClass('btn-primary');
         }
       }
-      if ( !in_array( 'btn', $variables['attributes']['class']->value() ) ) {
-        $variables['attributes']['class']->addClass('btn');
-      }
-      if ($button_size) {
-        if (empty(array_intersect(['btn-sm', 'btn-lg'], $variables['attributes']['class']->value()))) {
-          $variables['attributes']['class']->addClass($button_size);
-        }
+      if ($button_size && empty(array_intersect($button_sizes, $variables['attributes']['class']->value()))) {
+        $variables['attributes']['class']->addClass($button_size);
       }
     }
     else {
-      $variables['attributes']['class'][] = 'btn';
-      if ( theme_get_setting('bootstrap_barrio_button_outline') ) {
-        $variables['attributes']['class'][] = 'btn-outline-primary';
+      if (!in_array('btn', $variables['attributes']['class'])) {
+        $variables['attributes']['class'][] = 'btn';
       }
       else {
         $variables['attributes']['class'][] = 'btn-primary';
       }
-      if ($button_size) {
+      if ($button_size && empty(array_intersect($button_sizes, $variables['attributes']['class']))) {
         $variables['attributes']['class'][] = $button_size;
       }
-      $variables['attributes'] = new Attribute( $variables['attributes'] );
+      $variables['attributes'] = new Attribute($variables['attributes']);
     }
     $variables['safe_value_label'] = Xss::filter($variables['attributes']['value']);
   }
