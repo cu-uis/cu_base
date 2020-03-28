@@ -261,7 +261,7 @@ fontawesome:
   version: VERSION
   css:
     component:
-      //use.fontawesome.com/releases/v5.12.1/css/all.css: {}
+      //use.fontawesome.com/releases/v5.13.0/css/all.css: {}
 
 # Material Design for Bootstrap
 

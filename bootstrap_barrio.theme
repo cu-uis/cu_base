@@ -129,8 +129,6 @@ function bootstrap_barrio_preprocess_page(&$variables) {
     $variables['#attached']['library'][] = 'bootstrap_barrio/' . $system_messages;
   }
 
-//  $width = _bootstrap_barrio_content_width(!empty($variables['page']['sidebar_first']), !empty($variables['page']['sidebar_second']));
-//  $content_width = 'col-md-' . $width;
   $content_width = 'col';
   $sidebar_first_width = 'col-md-' . theme_get_setting('bootstrap_barrio_sidebar_first_width');
   $sidebar_second_width = 'col-md-' . theme_get_setting('bootstrap_barrio_sidebar_second_width');
@@ -598,19 +596,4 @@ function bootstrap_barrio_preprocess_input(&$variables) {
     }
     $variables['safe_value_label'] = Xss::filter($variables['attributes']['value']);
   }
-}
-
-/**
- * Returns width of content region.
- *
- * Calculates content width based on first and second column width parameters.
- */
-function _bootstrap_barrio_content_width($first = 0, $second = 0) {
-  $content_offset = theme_get_setting('bootstrap_barrio_content_offset');
-  $sidebar_first_width = ( $first ) ? theme_get_setting('bootstrap_barrio_sidebar_first_width') : 0;
-  $sidebar_first_offset = ( $first ) ? theme_get_setting('bootstrap_barrio_sidebar_first_offset') : 0;
-  $sidebar_second_width = ( $second ) ? theme_get_setting('bootstrap_barrio_sidebar_second_width') : 0;
-  $sidebar_second_offset = ( $second ) ? theme_get_setting('bootstrap_barrio_sidebar_second_offset') : 0;
-  $content_width = 12 - $content_offset - $sidebar_first_width - $sidebar_first_offset - $sidebar_second_width - $sidebar_second_offset;
-  return $content_width;
 }
