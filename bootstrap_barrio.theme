@@ -475,6 +475,20 @@ function bootstrap_barrio_theme_suggestions_region_alter(array &$suggestions, ar
 }
 
 /**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function bootstrap_barrio_theme_suggestions_user_alter(array &$suggestions, array $variables, $hook) {
+  // Define the view mode.
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+  $user_id = \Drupal::service('current_user')->id();
+  $suggestions[] = 'user__' . $sanitized_view_mode;
+  $suggestions[] = 'user__' . $user_id;
+  $suggestions[] = 'user__' . $user_id . '__' . $sanitized_view_mode;
+
+  return $suggestions;
+}
+
+/**
  * Implements hook_theme_HOOK_form_alter() for node add/edit.
  */
 function bootstrap_barrio_form_node_form_alter(&$form, FormStateInterface $form_state) {
