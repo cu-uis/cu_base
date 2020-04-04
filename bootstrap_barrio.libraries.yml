@@ -134,6 +134,12 @@ verticaltabs:
     component:
       css/components/vertical-tabs.css: {}
 
+commerce:
+  version: VERSION
+  css:
+    component:
+      css/components/commerce.css: {}
+
 # Fonts
 
 roboto:
