@@ -154,10 +154,10 @@ bootstrap_barrio_region_class_footer_fifth:
 
 # Sidebar position.
 # ----------------------------
-  bootstrap_barrio_sidebar_position:
+bootstrap_barrio_sidebar_position:
   type: text
   label: 'Sidebar position'
-  bootstrap_barrio_content_offset:
+bootstrap_barrio_content_offset:
   type: integer
   label: 'Content offset'
 
@@ -169,16 +169,16 @@ bootstrap_barrio_sidebar_collapse:
 bootstrap_barrio_sidebar_first_width:
   type: integer
   label: 'Sidebar first width'
-  bootstrap_barrio_sidebar_first_offset:
+bootstrap_barrio_sidebar_first_offset:
   type: integer
   label: 'Sidebar first offset'
 
 # Sidebar second layout.
 # ----------------------------
-  bootstrap_barrio_sidebar_second_width:
+bootstrap_barrio_sidebar_second_width:
   type: integer
   label: 'Sidebar second width'
-  bootstrap_barrio_sidebar_second_offset:
+bootstrap_barrio_sidebar_second_offset:
   type: integer
   label: 'Sidebar second layout'
 
@@ -187,10 +187,10 @@ bootstrap_barrio_sidebar_first_width:
 bootstrap_barrio_button:
   type: integer
   label: 'Convert input submit to button element'
-  bootstrap_barrio_button_size:
+bootstrap_barrio_button_size:
   type: text
   label: 'Default button size'
-  bootstrap_barrio_button_outline:
+bootstrap_barrio_button_outline:
   type: integer
   label: 'Button with outline format'
 
@@ -205,22 +205,22 @@ bootstrap_barrio_navbar_toggle:
 bootstrap_barrio_navbar_top_navbar:
   type: integer
   label: 'Navbar top is navbar'
-  bootstrap_barrio_navbar_top_position:
+bootstrap_barrio_navbar_top_position:
   type: text
   label: 'Navbar top position'
-  bootstrap_barrio_navbar_top_color:
+bootstrap_barrio_navbar_top_color:
   type: text
   label: 'Navbar top link color'
-  bootstrap_barrio_navbar_top_background:
+bootstrap_barrio_navbar_top_background:
   type: text
   label: 'Navbar top background color'
-  bootstrap_barrio_navbar_position:
+bootstrap_barrio_navbar_position:
   type: text
   label: 'Navbar position'
-  bootstrap_barrio_navbar_color:
+bootstrap_barrio_navbar_color:
   type: text
   label: 'Navbar link color'
-  bootstrap_barrio_navbar_background:
+bootstrap_barrio_navbar_background:
   type: text
   label: 'Navbar background color'
 
