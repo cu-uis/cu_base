@@ -274,6 +274,9 @@ bootstrap_barrio_google_fonts:
 
 # Icons.
 # ----------------------------
+bootstrap_barrio_bootstrap_icons:
+  type: integer
+  label: 'Use Bootstrap icons'
 bootstrap_barrio_icons:
   type: text
   label: 'Icon set'

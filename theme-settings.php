@@ -651,6 +651,17 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,
   ];
+  $form['fonts']['icons']['bootstrap_barrio_bootstrap_icons'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Use Bootstrap icons'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_bootstrap_icons'),
+  ];
+  $form['fonts']['icons'] = [
+    '#type' => 'details',
+    '#title' => t('Icons'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  ];
   $form['fonts']['icons']['bootstrap_barrio_icons'] = [
     '#type' => 'select',
     '#title' => t('Icon set'),

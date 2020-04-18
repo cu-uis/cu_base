@@ -123,6 +123,11 @@ function bootstrap_barrio_preprocess_page(&$variables) {
     $variables['#attached']['library'][] = 'bootstrap_barrio/' . $fonts;
   }
 
+  $icons = theme_get_setting('bootstrap_barrio_bootstrap_icons');
+  if ($icons) {
+    $variables['#attached']['library'][] = 'bootstrap_barrio/bootstrap_icons';
+  }
+
   $icons = theme_get_setting('bootstrap_barrio_icons');
   if ($icons) {
     $variables['#attached']['library'][] = 'bootstrap_barrio/' . $icons;

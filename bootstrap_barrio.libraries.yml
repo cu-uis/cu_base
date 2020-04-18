@@ -63,6 +63,12 @@ book-navigation:
     component:
       css/components/book-navigation.css: {}
 
+bootstrap-icons:
+  version: VERSION
+  css:
+    component:
+      css/components/bootstrap-icons: {}
+
 breadcrumb:
   version: VERSION
   css:
