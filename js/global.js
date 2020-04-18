@@ -11,8 +11,8 @@
     attach: function (context, settings) {
 
       var position = $(window).scrollTop();
-	    $(window).scroll(function() {
-        if ($(this).scrollTop() > 50){  
+        $(window).scroll(function () {
+        if ($(this).scrollTop() > 50){
           $('body').addClass("scrolled");
         }
         else{

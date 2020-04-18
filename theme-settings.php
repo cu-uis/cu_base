@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * theme-settings.php
@@ -59,7 +60,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#group' => 'bootstrap',
   ];
 
-  //Container.
+  // Container.
   $form['layout']['container'] = [
     '#type' => 'details',
     '#title' => t('Container'),
@@ -71,7 +72,8 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#title' => t('Fluid container'),
     '#default_value' => theme_get_setting('bootstrap_barrio_fluid_container'),
     '#description' => t('Use <code>.container-fluid</code> class. See @bootstrap_fluid_containers_link.', [
-      '@bootstrap_fluid_containers_link' => Link::fromTextAndUrl('Containers in the Bootstrap 4 documentation' , Url::fromUri('https://getbootstrap.com/docs/4.3/layout/overview/' , ['absolute' => TRUE , 'fragment' => 'containers']))->toString(),    ]),
+      '@bootstrap_fluid_containers_link' => Link::fromTextAndUrl('Containers in the Bootstrap 4 documentation', Url::fromUri('https://getbootstrap.com/docs/4.3/layout/overview/', ['absolute' => TRUE, 'fragment' => 'containers']))->toString(),
+    ]),
   ];
 
   // List of regions.
@@ -89,7 +91,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     'sidebar_second',
   ];
 
-  //Region.
+  // Region.
   $form['layout']['region'] = [
     '#type' => 'details',
     '#title' => t('Region'),
@@ -254,7 +256,8 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#title' => t('Button with outline format'),
     '#default_value' => theme_get_setting('bootstrap_barrio_button_outline'),
     '#description' => t('Use <code>.btn-default-outline</code> class. See @bootstrap_outline_buttons_link.', [
-      '@bootstrap_outline_buttons_link' => Link::fromTextAndUrl('Outline buttons in the Bootstrap 4 documentation' , Url::fromUri('https://getbootstrap.com/docs/4.3/components/buttons/' , ['absolute' => TRUE , 'fragment' => 'outline-buttons']))->toString(),    ]),
+      '@bootstrap_outline_buttons_link' => Link::fromTextAndUrl('Outline buttons in the Bootstrap 4 documentation', Url::fromUri('https://getbootstrap.com/docs/4.3/components/buttons/', ['absolute' => TRUE, 'fragment' => 'outline-buttons']))->toString(),
+    ]),
   ];
 
   // Navbar.
@@ -353,21 +356,21 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     ],
     '#empty_option' => t('Default'),
   ];
-    // Allow custom classes on Navbars
-  $form['components']['navbar']['bootstrap_barrio_navbar_top_class'] = array(
+  // Allow custom classes on Navbars.
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_class'] = [
     '#type' => 'textfield',
     '#title' => t('Custom classes for Navbar Top'),
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_class'),
     '#size' => 40,
     '#maxlength' => 40,
-  );
-  $form['components']['navbar']['bootstrap_barrio_navbar_class'] = array(
+  ];
+  $form['components']['navbar']['bootstrap_barrio_navbar_class'] = [
     '#type' => 'textfield',
     '#title' => t('Custom classes for Navbar'),
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_class'),
     '#size' => 40,
     '#maxlength' => 40,
-  );
+  ];
 
   // Messages.
   $form['components']['alerts'] = [
@@ -449,32 +452,34 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#title' => t('Affix navbar top'),
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_affix'),
   ];
-/*  $form['affix']['navbar_top']['bootstrap_barrio_navbar_top_affix_top'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Affix top'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_affix_top'),
-    '#prefix' => '<div id="navbar-top-affix">',
-    '#size' => 6,
-    '#maxlength' => 3,
-    '#states' => [
-      'invisible' => [
-        'input[name="bootstrap_barrio_navbar_top_affix"]' => ['checked' => FALSE],
-      ],
-    ],
-  );
-  $form['affix']['navbar_top']['bootstrap_barrio_navbar_top_affix_bottom'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Affix bottom'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_affix_bottom'),
-    '#suffix' => '</div>',
-    '#size' => 6,
-    '#maxlength' => 3,
-    '#states' => [
-      'invisible' => [
-        'input[name="bootstrap_barrio_navbar_top_affix"]' => ['checked' => FALSE],
-      ],
-    ],
-  ); */
+  /*
+  $form['affix']['navbar_top']['bootstrap_barrio_navbar_top_affix_top'] = [
+  '#type' => 'textfield',
+  '#title' => t('Affix top'),
+  '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_affix_top'),
+  '#prefix' => '<div id="navbar-top-affix">',
+  '#size' => 6,
+  '#maxlength' => 3,
+  '#states' => [
+  'invisible' => [
+  'input[name="bootstrap_barrio_navbar_top_affix"]' => ['checked' => FALSE],
+  ],
+  ],
+  ];
+  $form['affix']['navbar_top']['bootstrap_barrio_navbar_top_affix_bottom'] = [
+  '#type' => 'textfield',
+  '#title' => t('Affix bottom'),
+  '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_affix_bottom'),
+  '#suffix' => '</div>',
+  '#size' => 6,
+  '#maxlength' => 3,
+  '#states' => [
+  'invisible' => [
+  'input[name="bootstrap_barrio_navbar_top_affix"]' => ['checked' => FALSE],
+  ],
+  ],
+  ];
+   */
   $form['affix']['navbar'] = [
     '#type' => 'details',
     '#title' => t('Affix navbar'),
@@ -486,32 +491,34 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#title' => t('Affix navbar'),
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_affix'),
   ];
-/*  $form['affix']['navbar']['bootstrap_barrio_navbar_affix_top'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Affix top'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_affix_top'),
-    '#prefix' => '<div id="navbar-affix">',
-    '#size' => 6,
-    '#maxlength' => 3,
-    '#states' => [
-      'invisible' => [
-        'input[name="bootstrap_barrio_navbar_affix"]' => ['checked' => FALSE],
-      ],
-    ],
-  );
-  $form['affix']['navbar']['bootstrap_barrio_navbar_affix_bottom'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Affix bottom'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_affix_bottom'),
-    '#suffix' => '</div>',
-    '#size' => 6,
-    '#maxlength' => 3,
-    '#states' => [
-      'invisible' => [
-        'input[name="bootstrap_barrio_navbar_affix"]' => ['checked' => FALSE],
-      ],
-    ],
-  ); */
+  /*
+  $form['affix']['navbar']['bootstrap_barrio_navbar_affix_top'] = [
+  '#type' => 'textfield',
+  '#title' => t('Affix top'),
+  '#default_value' => theme_get_setting('bootstrap_barrio_navbar_affix_top'),
+  '#prefix' => '<div id="navbar-affix">',
+  '#size' => 6,
+  '#maxlength' => 3,
+  '#states' => [
+  'invisible' => [
+  'input[name="bootstrap_barrio_navbar_affix"]' => ['checked' => FALSE],
+  ],
+  ],
+  ];
+  $form['affix']['navbar']['bootstrap_barrio_navbar_affix_bottom'] = [
+  '#type' => 'textfield',
+  '#title' => t('Affix bottom'),
+  '#default_value' => theme_get_setting('bootstrap_barrio_navbar_affix_bottom'),
+  '#suffix' => '</div>',
+  '#size' => 6,
+  '#maxlength' => 3,
+  '#states' => [
+  'invisible' => [
+  'input[name="bootstrap_barrio_navbar_affix"]' => ['checked' => FALSE],
+  ],
+  ],
+  ];
+   */
   $form['affix']['sidebar_first'] = [
     '#type' => 'details',
     '#title' => t('Affix sidebar first'),
@@ -523,31 +530,32 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#title' => t('Affix sidebar first'),
     '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_first_affix'),
   ];
-/*  $form['affix']['sidebar_first']['bootstrap_barrio_sidebar_first_affix_top'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Affix top'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_first_affix_top'),
-    '#prefix' => '<div id="sidebar-first-affix">',
-    '#size' => 6,
-    '#maxlength' => 3,
-    '#states' => [
-      'invisible' => [
-        'input[name="bootstrap_barrio_sidebar_first_affix"]' => ['checked' => FALSE],
-      ],
-    ],
+  /*
+  $form['affix']['sidebar_first']['bootstrap_barrio_sidebar_first_affix_top'] = array(
+  '#type' => 'textfield',
+  '#title' => t('Affix top'),
+  '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_first_affix_top'),
+  '#prefix' => '<div id="sidebar-first-affix">',
+  '#size' => 6,
+  '#maxlength' => 3,
+  '#states' => [
+  'invisible' => [
+  'input[name="bootstrap_barrio_sidebar_first_affix"]' => ['checked' => FALSE],
+  ],
+  ],
   );
   $form['affix']['sidebar_first']['bootstrap_barrio_sidebar_first_affix_bottom'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Affix bottom'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_first_affix_bottom'),
-    '#suffix' => '</div>',
-    '#size' => 6,
-    '#maxlength' => 3,
-    '#states' => [
-      'invisible' => [
-        'input[name="bootstrap_barrio_sidebar_first_affix"]' => ['checked' => FALSE],
-      ],
-    ],
+  '#type' => 'textfield',
+  '#title' => t('Affix bottom'),
+  '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_first_affix_bottom'),
+  '#suffix' => '</div>',
+  '#size' => 6,
+  '#maxlength' => 3,
+  '#states' => [
+  'invisible' => [
+  'input[name="bootstrap_barrio_sidebar_first_affix"]' => ['checked' => FALSE],
+  ],
+  ],
   ); */
   $form['affix']['sidebar_second'] = [
     '#type' => 'details',
@@ -560,33 +568,34 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#title' => t('Affix sidebar second'),
     '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_second_affix'),
   ];
-/*  $form['affix']['sidebar_second']['bootstrap_barrio_sidebar_second_affix_top'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Affix top'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_second_affix_top'),
-    '#prefix' => '<div id="sidebar-second-affix">',
-    '#size' => 6,
-    '#maxlength' => 3,
-    '#states' => [
-      'invisible' => [
-        'input[name="bootstrap_barrio_sidebar_second_affix"]' => ['checked' => FALSE],
-      ],
-    ],
-  );
-  $form['affix']['sidebar_second']['bootstrap_barrio_sidebar_second_affix_bottom'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Affix bottom'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_second_affix_bottom'),
-    '#suffix' => '</div>',
-    '#size' => 6,
-    '#maxlength' => 3,
-    '#states' => [
-      'invisible' => [
-        'input[name="bootstrap_barrio_sidebar_second_affix"]' => ['checked' => FALSE],
-      ],
-    ],
-  ); */
-
+  /*
+  $form['affix']['sidebar_second']['bootstrap_barrio_sidebar_second_affix_top'] = [
+  '#type' => 'textfield',
+  '#title' => t('Affix top'),
+  '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_second_affix_top'),
+  '#prefix' => '<div id="sidebar-second-affix">',
+  '#size' => 6,
+  '#maxlength' => 3,
+  '#states' => [
+  'invisible' => [
+  'input[name="bootstrap_barrio_sidebar_second_affix"]' => ['checked' => FALSE],
+  ],
+  ],
+  ];
+  $form['affix']['sidebar_second']['bootstrap_barrio_sidebar_second_affix_bottom'] = [
+  '#type' => 'textfield',
+  '#title' => t('Affix bottom'),
+  '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_second_affix_bottom'),
+  '#suffix' => '</div>',
+  '#size' => 6,
+  '#maxlength' => 3,
+  '#states' => [
+  'invisible' => [
+  'input[name="bootstrap_barrio_sidebar_second_affix"]' => ['checked' => FALSE],
+  ],
+  ],
+  ];
+   */
   // Scroll Spy.
   $form['scroll_spy'] = [
     '#type' => 'details',
@@ -596,7 +605,8 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
   $form['scroll_spy']['bootstrap_barrio_scroll_spy'] = [
     '#type' => 'textfield',
     '#title' => t('Scrollspy element ID'),
-    '#description' => t('Specify a valid jQuery ID for the element containing a .nav that will behave with scrollspy.'),    '#default_value' => theme_get_setting('bootstrap_barrio_scroll_spy'),
+    '#description' => t('Specify a valid jQuery ID for the element containing a .nav that will behave with scrollspy.'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_scroll_spy'),
     '#size' => 40,
     '#maxlength' => 40,
   ];
@@ -619,20 +629,20 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_google_fonts'),
     '#empty_option' => t('None'),
     '#options' => [
-      'roboto' => 'Roboto Condensed, Roboto',
-      'monserrat_lato' => 'Monserrat, Lato',
-      'alegreya_roboto' => 'Alegreya, Roboto Condensed, Roboto',
-      'dancing_garamond' => 'Dancing Script, EB Garamond',
-      'amatic_josefin' => 'Amatic SC, Josefin Sans',
-      'oswald_droid' => 'Oswald, Droid Serif',
-      'playfair_alice' => 'Playfair Display, Alice',
-      'dosis_opensans' => 'Dosis, Open Sans',
-      'lato_hotel' => 'Lato, Grand Hotel',
-      'medula_abel' => 'Medula One, Abel',
-      'fjalla_cantarell' => 'Fjalla One, Cantarell',
-      'coustard_leckerli' => 'Coustard Ultra, Leckerli One',
-      'philosopher_muli' => ' Philosopher, Muli ',
-      'vollkorn_exo' => 'Vollkorn, Exo',
+      'roboto' => t('Roboto Condensed, Roboto'),
+      'monserrat_lato' => t('Monserrat, Lato'),
+      'alegreya_roboto' => t('Alegreya, Roboto Condensed, Roboto'),
+      'dancing_garamond' => t('Dancing Script, EB Garamond'),
+      'amatic_josefin' => t('Amatic SC, Josefin Sans'),
+      'oswald_droid' => t('Oswald, Droid Serif'),
+      'playfair_alice' => t('Playfair Display, Alice'),
+      'dosis_opensans' => t('Dosis, Open Sans'),
+      'lato_hotel' => t('Lato, Grand Hotel'),
+      'medula_abel' => t('Medula One, Abel'),
+      'fjalla_cantarell' => t('Fjalla One, Cantarell'),
+      'coustard_leckerli' => t('Coustard Ultra, Leckerli One'),
+      'philosopher_muli' => t('Philosopher, Muli'),
+      'vollkorn_exo' => t('Vollkorn, Exo'),
     ],
   ];
   $form['fonts']['icons'] = [
@@ -647,8 +657,8 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_icons'),
     '#empty_option' => t('None'),
     '#options' => [
-      'material_design_icons' => 'Material Design Icons',
-      'fontawesome' => 'Font Awesome',
+      'material_design_icons' => t('Material Design Icons'),
+      'fontawesome' => t('Font Awesome'),
     ],
   ];
 

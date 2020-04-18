@@ -5,17 +5,17 @@
 
 .alert-success {
   color: white;
-  background-color: #007E33;
-  border-color: #00C851;
+  background-color: #007e33;
+  border-color: #00c851;
 }
 .alert-warning {
   color: white;
-  background-color: #FF8800;
+  background-color: #ff8800;
   border-color: #ffbb33;
 }
 .alert-danger {
   color: white;
-  background-color: #CC0000;
+  background-color: #cc0000;
   border-color: #ff4444;
 }
 .alert-dismissible .close {
