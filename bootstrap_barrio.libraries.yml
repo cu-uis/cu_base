@@ -67,7 +67,7 @@ bootstrap-icons:
   version: VERSION
   css:
     component:
-      css/components/bootstrap-icons: {}
+      css/components/bootstrap-icons.css: {}
 
 breadcrumb:
   version: VERSION
