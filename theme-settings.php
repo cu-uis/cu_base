@@ -645,13 +645,13 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
       'vollkorn_exo' => t('Vollkorn, Exo'),
     ],
   ];
-  $form['fonts']['icons'] = [
+  $form['fonts']['bootstrap_icons'] = [
     '#type' => 'details',
-    '#title' => t('Icons'),
+    '#title' => t('Bootstrap icons'),
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,
   ];
-  $form['fonts']['icons']['bootstrap_barrio_bootstrap_icons'] = [
+  $form['fonts']['bootstrap_icons']['bootstrap_barrio_bootstrap_icons'] = [
     '#type' => 'checkbox',
     '#title' => t('Use Bootstrap icons'),
     '#default_value' => theme_get_setting('bootstrap_barrio_bootstrap_icons'),
