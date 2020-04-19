@@ -614,7 +614,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
   // Fonts.
   $form['fonts'] = [
     '#type' => 'details',
-    '#title' => t('Fonts'),
+    '#title' => t('Fonts & icons'),
     '#group' => 'bootstrap',
   ];
   $form['fonts']['fonts'] = [
