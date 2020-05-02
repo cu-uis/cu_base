@@ -44,7 +44,7 @@ bootstrap_barrio_file: 'custom'
 
 # Colors.
 # ----------------------------
-bootstrap_barrio_system_messages: 'messages_light'
+bootstrap_barrio_system_messages: 'messages_white'
 
 # Tables.
 # ----------------------------

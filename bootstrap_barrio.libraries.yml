@@ -249,7 +249,19 @@ monserrat_lato:
 
 # Colors
 
-messages_light:
+messages_white:
+  version: VERSION
+  css:
+    component:
+      css/colors/messages/messages-white.css: {}
+
+messages_gray:
+  version: VERSION
+  css:
+    component:
+      css/colors/messages/messages-gray.css: {}
+
+      messages_light:
   version: VERSION
   css:
     component:

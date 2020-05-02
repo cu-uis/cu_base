@@ -693,8 +693,10 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_system_messages'),
     '#empty_option' => t('Default'),
     '#options' => [
-      'messages_light' => t('Light'),
-      'messages_dark' => t('Dark'),
+      'messages_white' => t('White'),
+      'messages_gray' => t('Gray'),
+      'messages_light' => t('Light color'),
+      'messages_dark' => t('Dark color'),
     ],
     '#description' => t('Replace the standard color scheme for system messages with a Google Material Design color scheme.'),
   ];
