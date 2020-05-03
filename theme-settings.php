@@ -456,7 +456,8 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
   $form['affix']['navbar_top']['bootstrap_barrio_navbar_top_affix_top'] = [
   '#type' => 'textfield',
   '#title' => t('Affix top'),
-  '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_affix_top'),
+  '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_affix_top'
+  ),
   '#prefix' => '<div id="navbar-top-affix">',
   '#size' => 6,
   '#maxlength' => 3,
@@ -469,7 +470,8 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
   $form['affix']['navbar_top']['bootstrap_barrio_navbar_top_affix_bottom'] = [
   '#type' => 'textfield',
   '#title' => t('Affix bottom'),
-  '#default_value' => theme_get_setting('bootstrap_barrio_navbar_top_affix_bottom'),
+  '#default_value' => theme_get_setting(
+  'bootstrap_barrio_navbar_top_affix_bottom'),
   '#suffix' => '</div>',
   '#size' => 6,
   '#maxlength' => 3,
@@ -531,10 +533,12 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_first_affix'),
   ];
   /*
-  $form['affix']['sidebar_first']['bootstrap_barrio_sidebar_first_affix_top'] = array(
+  $form['affix']['sidebar_first'][
+  'bootstrap_barrio_sidebar_first_affix_top'] = array(
   '#type' => 'textfield',
   '#title' => t('Affix top'),
-  '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_first_affix_top'),
+  '#default_value' => theme_get_setting(
+  'bootstrap_barrio_sidebar_first_affix_top'),
   '#prefix' => '<div id="sidebar-first-affix">',
   '#size' => 6,
   '#maxlength' => 3,
@@ -544,10 +548,12 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
   ],
   ],
   );
-  $form['affix']['sidebar_first']['bootstrap_barrio_sidebar_first_affix_bottom'] = array(
+  $form['affix']['sidebar_first'][
+  'bootstrap_barrio_sidebar_first_affix_bottom'] = array(
   '#type' => 'textfield',
   '#title' => t('Affix bottom'),
-  '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_first_affix_bottom'),
+  '#default_value' => theme_get_setting(
+  'bootstrap_barrio_sidebar_first_affix_bottom'),
   '#suffix' => '</div>',
   '#size' => 6,
   '#maxlength' => 3,
@@ -569,10 +575,12 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_second_affix'),
   ];
   /*
-  $form['affix']['sidebar_second']['bootstrap_barrio_sidebar_second_affix_top'] = [
+  $form['affix']['sidebar_second'][
+  'bootstrap_barrio_sidebar_second_affix_top'] = [
   '#type' => 'textfield',
   '#title' => t('Affix top'),
-  '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_second_affix_top'),
+  '#default_value' => theme_get_setting(
+  'bootstrap_barrio_sidebar_second_affix_top'),
   '#prefix' => '<div id="sidebar-second-affix">',
   '#size' => 6,
   '#maxlength' => 3,
@@ -582,10 +590,12 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
   ],
   ],
   ];
-  $form['affix']['sidebar_second']['bootstrap_barrio_sidebar_second_affix_bottom'] = [
+  $form['affix']['sidebar_second'][
+  'bootstrap_barrio_sidebar_second_affix_bottom'] = [
   '#type' => 'textfield',
   '#title' => t('Affix bottom'),
-  '#default_value' => theme_get_setting('bootstrap_barrio_sidebar_second_affix_bottom'),
+  '#default_value' => theme_get_setting(
+  'bootstrap_barrio_sidebar_second_affix_bottom'),
   '#suffix' => '</div>',
   '#size' => 6,
   '#maxlength' => 3,
