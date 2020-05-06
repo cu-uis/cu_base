@@ -115,7 +115,7 @@ node:
     component:
       css/components/node.css: { weight: -10 }
 
-sidebar-collapse:
+sidebar_collapse:
   version: VERSION
   js:
     js/sidebar-collapse.js: { external: true }
