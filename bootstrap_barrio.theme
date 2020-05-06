@@ -552,8 +552,10 @@ function bootstrap_barrio_form_node_form_alter(&$form, FormStateInterface $form_
  */
 function bootstrap_barrio_theme_suggestions_links_alter(array &$suggestions, array $variables) {
   // ToDo get from core a variable to flag inline links.
-  if (in_array('inline', $variables['attributes']['class'])) {
-    $suggestions[] = 'links__inline';
+  if (isset($variables['attributes']['class'])) {
+    if ( in_array('inline', $variables['attributes']['class']) ) {
+      $suggestions[] = 'links__inline';
+    }
   }
 }
 
