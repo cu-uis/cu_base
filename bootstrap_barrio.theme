@@ -163,11 +163,11 @@ function bootstrap_barrio_preprocess_page(&$variables) {
     'role' => ['main'],
   ];
   $variables['sidebar_first_attributes'] = [
-    'class' => ['sidebar_first sidebar', $sidebar_first_width],
+    'class' => ['sidebar_first', 'sidebar', $sidebar_first_width],
     'id' => ['sidebar_first'],
   ];
   $variables['sidebar_second_attributes'] = [
-    'class' => ['sidebar_second sidebar', $sidebar_second_width],
+    'class' => ['sidebar_second', 'sidebar', $sidebar_second_width],
     'id' => ['sidebar_second'],
   ];
 
