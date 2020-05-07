@@ -445,7 +445,7 @@ function bootstrap_barrio_theme_suggestions_menu_alter(array &$suggestions, arra
   // Taken from http://kristiankaa.dk/article/drupal8-region-specific-menu-theme-hook-suggestion
   // bootstrap_barrio_preprocess_block(&$variables)
   if (isset($variables['attributes']['block'])) {
-    $hook = str_replace(array('block-', '-'), array('', '_'), $variables['attributes']['block']);
+    $hook = str_replace(['block-', '-'], ['', '_'], $variables['attributes']['block']);
     $suggestions[] = $variables['theme_hook_original'] . '__' . $hook;
   }
 }
@@ -553,7 +553,7 @@ function bootstrap_barrio_form_node_form_alter(&$form, FormStateInterface $form_
 function bootstrap_barrio_theme_suggestions_links_alter(array &$suggestions, array $variables) {
   // ToDo get from core a variable to flag inline links.
   if (isset($variables['attributes']['class'])) {
-    if ( in_array('inline', $variables['attributes']['class']) ) {
+    if (in_array('inline', $variables['attributes']['class'])) {
       $suggestions[] = 'links__inline';
     }
   }
