@@ -1,16 +1,22 @@
 bb_cardbasic:
   label: Card basic
   category: Barrio
-  template: templates/ds/layout--ds-card-basic
-  class: '\Drupal\bootstrap_extras\Plugin\BarrioLayout'
+  path: layouts
+  template: card-basic
+  default_region: first
+  icon_map:
+    - [first]
   regions:
     first:
       label: Content
 bb_cardtopimage:
   label: Card top image
   category: Barrio
-  template: templates/ds/layout--ds-card-top-image
-  class: '\Drupal\bootstrap_extras\Plugin\BarrioLayout'
+  path: layouts
+  template: card-top-image
+  default_region: second
+  icon_map:
+    - [top, middle]
   regions:
     first:
       label: Image
@@ -19,8 +25,11 @@ bb_cardtopimage:
 bb_cardimageoverlay:
   label: Card image overlay
   category: Barrio
-  template: templates/ds/layout--ds-card-image-overlay
-  class: '\Drupal\bootstrap_extras\Plugin\BarrioLayout'
+  path: layouts
+  template: card-image-overlay
+  default_region: second
+  icon_map:
+    - [top, middle]
   regions:
     first:
       label: Image
@@ -29,8 +38,11 @@ bb_cardimageoverlay:
 bb_cardheaderfooter:
   label: Card header footer
   category: Barrio
-  template: templates/ds/layout--ds-card-header-footer
-  class: '\Drupal\bootstrap_extras\Plugin\BarrioLayout'
+  path: layouts
+  template: card-header-footer
+  default_region: second
+  icon_map:
+    - [top, middle, bottom]
   regions:
     first:
       label: Header
@@ -41,8 +53,11 @@ bb_cardheaderfooter:
 bb_card3stack:
   label: Card three block stacked
   category: Barrio
-  template: templates/ds/layout--ds-card-3stack
-  class: '\Drupal\bootstrap_extras\Plugin\BarrioLayout'
+  path: layouts
+  template: card-3stack
+  default_region: second
+  icon_map:
+    - [top, middle, bottom]
   regions:
     first:
       label: First
@@ -53,8 +68,11 @@ bb_card3stack:
 bb_media:
   label: Media
   category: Barrio
-  template: templates/ds/layout--ds-media
-  class: '\Drupal\bootstrap_extras\Plugin\BarrioLayout'
+  path: layouts
+  template: media
+  default_region: second
+  icon_map:
+    - [first, second]
   regions:
     first:
       label: Image
