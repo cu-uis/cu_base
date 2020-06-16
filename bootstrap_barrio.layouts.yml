@@ -1,6 +1,6 @@
-bb_cardbasic:
+barrio_cardbasic:
   label: Card basic
-  category: Barrio
+  category: Barrio Cards
   path: layouts
   template: card-basic
   default_region: first
@@ -9,9 +9,9 @@ bb_cardbasic:
   regions:
     first:
       label: Content
-bb_cardtopimage:
+barrio_cardtopimage:
   label: Card top image
-  category: Barrio
+  category: Barrio Cards
   path: layouts
   template: card-top-image
   default_region: second
@@ -23,9 +23,9 @@ bb_cardtopimage:
       label: Image
     second:
       label: Content
-bb_cardimageoverlay:
+barrio_cardimageoverlay:
   label: Card image overlay
-  category: Barrio
+  category: Barrio Cards
   path: layouts
   template: card-image-overlay
   default_region: second
@@ -37,9 +37,9 @@ bb_cardimageoverlay:
       label: Image
     second:
       label: Content
-bb_cardheaderfooter:
+barrio_cardheaderfooter:
   label: Card header footer
-  category: Barrio
+  category: Barrio Cards
   path: layouts
   template: card-header-footer
   default_region: second
@@ -54,9 +54,9 @@ bb_cardheaderfooter:
       label: Content
     third:
       label: Footer
-bb_card3stack:
+barrio_card3stack:
   label: Card three block stacked
-  category: Barrio
+  category: Barrio Cards
   path: layouts
   template: card-3stack
   default_region: second
@@ -71,9 +71,9 @@ bb_card3stack:
       label: Image
     third:
       label: Second
-bb_media:
+barrio_media:
   label: Media
-  category: Barrio
+  category: Barrio Media
   path: layouts
   template: media
   default_region: second
@@ -84,69 +84,97 @@ bb_media:
       label: Image
     second:
       label: Content
-bb_col2-equal:
+barrio_col2-equal:
   label: 2 Columns Equal
-  category: Barrio
+  category: Barrio Columns
   path: layouts
   template: col2-equal
   default_region: first
   icon_map:
+    - [top]
     - [first, second]
+    - [bottom]
   regions:
+    top:
+      label: Top
     first:
       label: First
     second:
       label: Second
-bb_col2-3-9:
+    bottom:
+      label: Bottom
+barrio_col2-3-9:
   label: 2 Columns 3 and 9
-  category: Barrio
+  category: Barrio Columns
   path: layouts
   template: col2-3-9
   default_region: first
   icon_map:
+    - [top]
     - [first, second]
+    - [bottom]
   regions:
+    top:
+      label: Top
     first:
       label: First
     second:
       label: Second
-bb_col2-9-3:
+    bottom:
+      label: Bottom
+barrio_col2-9-3:
   label: 2 Columns 9 and 3
-  category: Barrio
+  category: Barrio Columns
   path: layouts
   template: col2-9-3
   default_region: first
   icon_map:
+    - [top]
     - [first, second]
+    - [bottom]
   regions:
+    top:
+      label: Top
     first:
       label: First
     second:
       label: Second
-bb_col3-equal:
+    bottom:
+      label: Bottom
+barrio_col3-equal:
   label: 3 Columns Equal
-  category: Barrio
+  category: Barrio Columns
   path: layouts
   template: col3-equal
   default_region: first
   icon_map:
+    - [top]
     - [first, second, third]
+    - [bottom]
   regions:
+    top:
+      label: Top
     first:
       label: First
     second:
       label: Second
     third:
       label: Third
-bb_col4-equal:
+    bottom:
+      label: Bottom
+barrio_col4-equal:
   label: 4 Columns Equal
-  category: Barrio
+  category: Barrio Columns
   path: layouts
   template: col4-equal
   default_region: first
   icon_map:
+    - [top]
     - [first, second, third, fourth]
+    - [bottom]
   regions:
+    top:
+      label: Top
     first:
       label: First
     second:
@@ -155,3 +183,67 @@ bb_col4-equal:
       label: Third
     fourth:
       label: Fourth
+    bottom:
+      label: Bottom
+bb_cardbasic:
+  label: Card basic (Display Suite)
+  category: Barrio DS
+  template: templates/ds/layout--ds-card-basic
+  class: '\Drupal\ds\Plugin\DsLayout'
+  regions:
+    first:
+      label: Content
+bb_cardtopimage:
+  label: Card top image (Display Suite)
+  category: Barrio DS
+  template: templates/ds/layout--ds-card-top-image
+  class: '\Drupal\ds\Plugin\DsLayout'
+  regions:
+    first:
+      label: Image
+    second:
+      label: Content
+bb_cardimageoverlay:
+  label: Card image overlay (Display Suite)
+  category: Barrio DS
+  template: templates/ds/layout--ds-card-image-overlay
+  class: '\Drupal\ds\Plugin\DsLayout'
+  regions:
+    first:
+      label: Image
+    second:
+      label: Content
+bb_cardheaderfooter:
+  label: Card header footer (Display Suite)
+  category: Barrio DS
+  template: templates/ds/layout--ds-card-header-footer
+  class: '\Drupal\ds\Plugin\DsLayout'
+  regions:
+    first:
+      label: Header
+    second:
+      label: Content
+    third:
+      label: Footer
+bb_card3stack:
+  label: Card three block stacked (Display Suite)
+  category: Barrio DS
+  template: templates/ds/layout--ds-card-3stack
+  class: '\Drupal\ds\Plugin\DsLayout'
+  regions:
+    first:
+      label: First
+    second:
+      label: Image
+    third:
+      label: Second
+bb_media:
+  label: Media (Display Suite)
+  category: Barrio DS
+  template: templates/ds/layout--ds-media
+  class: '\Drupal\ds\Plugin\DsLayout'
+  regions:
+    first:
+      label: Image
+    second:
+      label: Content
