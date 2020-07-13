@@ -109,6 +109,12 @@ maintenance_page:
     - system/maintenance
     - bootstrap_barrio/global-styling
 
+navigation:
+  version: VERSION
+  css:
+    theme:
+      css/navigation.css: {}
+
 node:
   version: VERSION
   css:
