@@ -279,10 +279,12 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#description' => t('Select size for navbar to collapse.'),
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_toggle'),
     '#options' => [
+      'navbar-toggleable-xl' => t('Extra Large'),
       'navbar-toggleable-lg' => t('Large'),
       'navbar-toggleable-md' => t('Medium'),
       'navbar-toggleable-sm' => t('Small'),
       'navbar-toggleable-xs' => t('Extra small'),
+      'navbar-toggleable-all' => t('All screens'),
     ],
   ];
   $form['components']['navbar']['bootstrap_barrio_navbar_top_navbar'] = [

@@ -243,6 +243,10 @@ function bootstrap_barrio_preprocess_page(&$variables) {
 
   // Define navigation toggle size.
   switch (theme_get_setting('bootstrap_barrio_navbar_toggle')) {
+    case 'navbar-toggleable-xl':
+      $variables['navbar_attributes']['class'][] = 'navbar-expand-xl';
+      break;
+
     case 'navbar-toggleable-lg':
       $variables['navbar_attributes']['class'][] = 'navbar-expand-lg';
       break;
@@ -257,6 +261,10 @@ function bootstrap_barrio_preprocess_page(&$variables) {
 
     case 'navbar-toggleable-xs':
       $variables['navbar_attributes']['class'][] = 'navbar-expand-xs';
+      break;
+
+    case 'navbar-toggleable-all':
+      $variables['navbar_attributes']['class'][] = '';
       break;
 
     default:
