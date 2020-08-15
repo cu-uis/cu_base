@@ -305,7 +305,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#type' => 'checkbox',
     '#title' => t('Apply img-fluid style to all content images'),
     '#default_value' => theme_get_setting('bootstrap_barrio_image_fluid'),
-    '#description' => t('Adds a img-fluid style to all ".content img" elements');
+    '#description' => t('Adds a img-fluid style to all ".content img" elements'),
   ];
 
   // Navbar.
