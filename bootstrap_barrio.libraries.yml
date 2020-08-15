@@ -94,11 +94,11 @@ form:
     component:
       css/components/form.css: {}
 
-image-fluid:
+image_fluid:
   version: VERSION
   css:
     component:
-      css/components/image-fluid.css: {}
+      css/components/img-fluid.css: {}
 
 indented:
   version: VERSION

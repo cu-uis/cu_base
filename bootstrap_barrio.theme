@@ -132,7 +132,7 @@ function bootstrap_barrio_preprocess_page(&$variables) {
 
   $img_fluid = theme_get_setting('bootstrap_barrio_image_fluid');
   if ($img_fluid) {
-    $variables['#attached']['library'][] = 'bootstrap_barrio/image-fluid';
+    $variables['#attached']['library'][] = 'bootstrap_barrio/image_fluid';
   }
 
   $flyout = theme_get_setting('bootstrap_barrio_navbar_flyout');
