@@ -294,6 +294,20 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     ]),
   ];
 
+  // Images.
+  $form['components']['images'] = [
+    '#type' => 'details',
+    '#title' => t('Images'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  ];
+  $form['components']['images']['bootstrap_barrio_image_fluid'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Apply img-fluid style to all content images'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_image_fluid'),
+    '#description' => t('Adds a img-fluid style to all ".content img" elements');
+  ];
+
   // Navbar.
   $form['components']['navbar'] = [
     '#type' => 'details',
