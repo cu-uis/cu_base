@@ -29,6 +29,12 @@
         position = scroll;
       });
 
+      $('.dropdown-item a.dropdown-toggle').on("click", function(e){
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+      });
+      
     }
   };
 

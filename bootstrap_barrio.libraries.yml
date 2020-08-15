@@ -119,7 +119,7 @@ navigation:
   version: VERSION
   css:
     theme:
-      css/navigation.css: {}
+      css/components/navigation.css: {}
 
 node:
   version: VERSION
