@@ -45,6 +45,40 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
       ['@bootstrap_library_link' => Link::fromTextAndUrl('Bootstrap Library Settings', Url::fromRoute('bootstrap_library.admin'))->toString()]),
     ];
   }
+  else {
+    $form['bootstrap_barrio_source'] = [
+      '#type' => 'select',
+      '#title' => t('Load library'),
+      '#default_value' => theme_get_setting('bootstrap_barrio_source'),
+      '#options' => [
+        'bootstrap_barrio/bootstrap' => t('Local'),
+        'bootstrap_barrio/bootstrap_cdn' => t('CDN'),
+        'bootstrap_barrio/bootswatch_cerulean' => t('Bootswatch Cerulean'),
+        'bootstrap_barrio/bootswatch_cosmo' => t('Bootswatch Cosmo'),
+        'bootstrap_barrio/bootswatch_cyborg' => t('Bootswatch Cyborg'),
+        'bootstrap_barrio/bootswatch_darkly' => t('Bootswatch Darkly'),
+        'bootstrap_barrio/bootswatch_flaty' => t('Bootswatch Flatly'),
+        'bootstrap_barrio/bootswatch_journal' => t('Bootswatch Journal'),
+        'bootstrap_barrio/bootswatch_litera' => t('Bootswatch Litera'),
+        'bootstrap_barrio/bootswatch_lumen' => t('Bootswatch Lumen'),
+        'bootstrap_barrio/bootswatch_lux' => t('Bootswatch Lux'),
+        'bootstrap_barrio/bootswatch_materia' => t('Bootswatch Materia'),
+        'bootstrap_barrio/bootswatch_minty' => t('Bootswatch Minty'),
+        'bootstrap_barrio/bootswatch_pulse' => t('Bootswatch Pulse'),
+        'bootstrap_barrio/bootswatch_sandstone' => t('Bootswatch Sandstone'),
+        'bootstrap_barrio/bootswatch_simplex' => t('Bootswatch Simplex'),
+        'bootstrap_barrio/bootswatch_sketchy' => t('Bootswatch Sketchy'),
+        'bootstrap_barrio/bootswatch_slate' => t('Bootswatch Slate'),
+        'bootstrap_barrio/bootswatch_solar' => t('Bootswatch Solar'),
+        'bootstrap_barrio/bootswatch_spacelab' => t('Bootswatch Spacelab'),
+        'bootstrap_barrio/bootswatch_superhero' => t('Bootswatch Superhero'),
+        'bootstrap_barrio/bootswatch_united' => t('Bootswatch United'),
+        'bootstrap_barrio/bootswatch_yeti' => t('Bootswatch Yeti'),
+      ],
+      '#empty_option' => t('None'),
+      '#empty_value' => false,
+    ];
+  }
 
   // Vertical tabs.
   $form['bootstrap'] = [
@@ -357,6 +391,11 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
       'bg-dark' => t('Dark'),
     ],
     '#empty_option' => t('Default'),
+  ];
+  $form['components']['navbar']['bootstrap_barrio_navbar_flyout'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Flyout style main menu'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_flyout'),
   ];
   // Allow custom classes on Navbars.
   $form['components']['navbar']['bootstrap_barrio_navbar_top_class'] = [

@@ -123,6 +123,17 @@ function bootstrap_barrio_preprocess_page(&$variables) {
 
     }
   }
+  else {
+    $source = theme_get_setting('bootstrap_barrio_source');
+    if ($source) {
+      $variables['#attached']['library'][] = $source;
+    }
+  }
+
+  $flyout = theme_get_setting('bootstrap_barrio_navbar_flyout');
+  if ($flyout) {
+    $variables['#attached']['library'][] = 'bootstrap_barrio/navigation';
+  }
 
   $fonts = theme_get_setting('bootstrap_barrio_google_fonts');
   if ($fonts) {
