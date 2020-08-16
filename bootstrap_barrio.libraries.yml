@@ -127,6 +127,12 @@ node:
     component:
       css/components/node.css: { weight: -10 }
 
+slide_nav:
+  version: VERSION
+  css:
+    theme:
+      css/components/slide-nav.css: {}
+
 sidebar_collapse:
   version: VERSION
   js:

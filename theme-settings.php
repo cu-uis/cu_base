@@ -311,7 +311,7 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
   // Navbar.
   $form['components']['navbar'] = [
     '#type' => 'details',
-    '#title' => t('Navbar'),
+    '#title' => t('Navbar structure'),
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   ];
@@ -406,11 +406,6 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     ],
     '#empty_option' => t('Default'),
   ];
-  $form['components']['navbar']['bootstrap_barrio_navbar_flyout'] = [
-    '#type' => 'checkbox',
-    '#title' => t('Flyout style main menu'),
-    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_flyout'),
-  ];
   // Allow custom classes on Navbars.
   $form['components']['navbar']['bootstrap_barrio_navbar_top_class'] = [
     '#type' => 'textfield',
@@ -425,6 +420,25 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_class'),
     '#size' => 40,
     '#maxlength' => 40,
+  ];
+
+  // Navbar behaviour.
+  $form['components']['navbar_behaviour'] = [
+    '#type' => 'details',
+    '#title' => t('Navbar behaviour'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  ];
+  $form['components']['navbar_behaviour']['bootstrap_barrio_navbar_flyout'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Flyout style main menu'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_flyout'),
+  ];
+  $form['components']['navbar_behaviour']['bootstrap_barrio_navbar_slide'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Sliding navbar'),
+    '#description' => t('Collapsed navbar will slide left to right'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_navbar_slide'),
   ];
 
   // Messages.
