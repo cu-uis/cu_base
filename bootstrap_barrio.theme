@@ -473,6 +473,17 @@ function bootstrap_barrio_preprocess_menu_local_task(&$variables) {
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function bootstrap_barrio_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+  if ($variables['menu_name'] == "tools") {
+    switch (theme_get_setting('bootstrap_barrio_tabs_style')) {
+      case 'full':
+        $suggestions[] = 'menu_local_tasks_full';
+        break;
+  
+      case 'pills':
+        $suggestions[] = 'menu_local_tasks_pills';
+        break;
+    }
+  }
   // Taken from http://kristiankaa.dk/article/drupal8-region-specific-menu-theme-hook-suggestion
   // bootstrap_barrio_preprocess_block(&$variables)
   if (isset($variables['attributes']['block'])) {

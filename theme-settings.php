@@ -441,6 +441,25 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
     '#default_value' => theme_get_setting('bootstrap_barrio_navbar_slide'),
   ];
 
+  // Tabs.
+  $form['components']['tabs'] = [
+    '#type' => 'details',
+    '#title' => t('Tabs (local tasks)'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  ];
+
+  $form['components']['tabs']['bootstrap_barrio_tabs_style'] = [
+    '#type' => 'select',
+    '#title' => t('Tabs style'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_tabs_style'),
+    '#options' => [
+      'full' => t('Full width blocks'),
+      'pills' => t('Pills'),
+    ],
+    '#empty_option' => t('Default'),
+  ];
+
   // Messages.
   $form['components']['alerts'] = [
     '#type' => 'details',
