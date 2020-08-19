@@ -147,6 +147,12 @@ tabs:
     component:
       css/components/tabs.css: {}
 
+tabs_full:
+  version: VERSION
+  css:
+    component:
+      css/components/tabs-full.css: {}
+
 toast:
   version: VERSION
   js:

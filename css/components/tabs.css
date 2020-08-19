@@ -4,23 +4,5 @@
  */
 
 nav.tabs {
-  margin-bottom: 20px;
-}
-
-nav.tabs ul {
-  background: #e9ecef;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; 
-}
-nav.tabs ul .nav-item {
-  flex-grow: 1; 
-}
-nav.tabs ul .nav-item a {
-  color: #e9ecef;
-  text-align: center;
-}
-nav.tabs ul .nav-item.active a {
-  background: #303030;
+  margin-bottom: 1rem;
 }
