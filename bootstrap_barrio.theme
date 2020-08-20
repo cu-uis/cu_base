@@ -145,6 +145,12 @@ function bootstrap_barrio_preprocess_page(&$variables) {
     $variables['#attached']['library'][] = 'bootstrap_barrio/slide_nav';
   }
 
+  switch (theme_get_setting('bootstrap_barrio_tabs_style')) {
+    case 'full':
+      $variables['#attached']['library'][] = 'bootstrap_barrio/tabs_full';
+      break;
+  }
+
   $fonts = theme_get_setting('bootstrap_barrio_google_fonts');
   if ($fonts) {
     $variables['#attached']['library'][] = 'bootstrap_barrio/' . $fonts;
@@ -467,23 +473,20 @@ function bootstrap_barrio_preprocess_menu_local_task(&$variables) {
   $options = $url->getOptions();
   $url->setOptions($options + $link['localized_options']);
   $variables['item'] = Link::fromTextAndUrl($link['title'], $url);
+  switch (theme_get_setting('bootstrap_barrio_tabs_style')) {
+    case 'pills':
+      $variables['nav-style'] = 'nav-pills';
+      break;
+    default:
+      $variables['nav-style'] = 'nav-tabs';
+      break;
+  }
 }
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function bootstrap_barrio_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
-  if ($variables['menu_name'] == "tools") {
-    switch (theme_get_setting('bootstrap_barrio_tabs_style')) {
-      case 'full':
-        $suggestions[] = 'menu_local_tasks_full';
-        break;
-  
-      case 'pills':
-        $suggestions[] = 'menu_local_tasks_pills';
-        break;
-    }
-  }
   // Taken from http://kristiankaa.dk/article/drupal8-region-specific-menu-theme-hook-suggestion
   // bootstrap_barrio_preprocess_block(&$variables)
   if (isset($variables['attributes']['block'])) {
