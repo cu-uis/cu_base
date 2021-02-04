@@ -245,21 +245,6 @@ bootstrap_barrio.settings:
       type: text
       label: 'Messages widget'
 
-    # Form.
-    # ----------------------------
-    bootstrap_barrio_radio:
-      type: text
-      label: 'Radio widget'
-    bootstrap_barrio_checkbox:
-      type: text
-      label: 'Checkbox widget'
-    bootstrap_barrio_select:
-      type: text
-      label: 'Select widget'
-    bootstrap_barrio_file:
-      type: text
-      label: 'File widget'
-
     # Affix.
     # ----------------------------
     bootstrap_barrio_navbar_top_affix:
