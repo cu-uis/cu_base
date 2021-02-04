@@ -51,7 +51,7 @@
     }
   %}
   <div aria-label="{{ status_headings[type] }}" {{ attributes|without('role', 'aria-label').addClass(classes).setAttribute('role', role[type]) }}>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <button type="button" class="btn-close" data-dismiss="alert" aria-label="btn-close">
       <span aria-hidden="true">&times;</span>
     </button>
     {% if is_message_with_title or is_message_with_icon %}
