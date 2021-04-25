@@ -18,7 +18,6 @@ global-styling:
       css/components/image-button.css: {}
       css/components/item-list.css: {}
       css/components/list-group.css: {}
-      css/components/node-preview.css: {}
       css/components/page.css: {}
       css/components/search-form.css: {}
       css/components/shortcut.css: {}
@@ -471,3 +470,8 @@ bootswatch_yeti:
       //stackpath.bootstrapcdn.com/bootswatch/4.5.2/yeti/bootstrap.min.css: {}
   dependencies:
     - bootstrap_barrio/bootstrap_js
+
+drupal.node.preview:
+  css:
+    component:
+      css/components/node-preview.css: {}
