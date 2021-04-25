@@ -7,7 +7,6 @@ global-styling:
     component:
       css/components/affix.css: {}
       css/components/book.css: {}
-      css/components/comments.css: {}
       css/components/contextual.css: {}
       # @see https://www.drupal.org/node/2389735
       css/components/feed-icon.css: {}
@@ -72,6 +71,11 @@ breadcrumb:
   css:
     component:
       css/components/breadcrumb.css: {}
+
+comments:
+  css:
+    component:
+      css/components/comments.css: {}
 
 dropbutton:
   version: VERSION
@@ -167,6 +171,13 @@ commerce:
   css:
     component:
       css/components/commerce.css: {}
+
+# Core
+
+drupal.node.preview:
+  css:
+    component:
+      css/components/node-preview.css: {}
 
 # Fonts
 
@@ -470,8 +481,3 @@ bootswatch_yeti:
       //stackpath.bootstrapcdn.com/bootswatch/4.5.2/yeti/bootstrap.min.css: {}
   dependencies:
     - bootstrap_barrio/bootstrap_js
-
-drupal.node.preview:
-  css:
-    component:
-      css/components/node-preview.css: {}
