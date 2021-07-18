@@ -360,6 +360,12 @@ bootstrap_cdn:
 
 # Bootswatch
 
+bootswatch_cerulean:
+  css:
+    component:
+      //stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css: { type: external, minified: true }
+  dependencies:
+    - bootstrap_barrio/bootstrap_js 
 bootswatch_cosmo:
   css:
     component:
@@ -370,6 +376,8 @@ bootswatch_cyborg:
   css:
     component:
       //stackpath.bootstrapcdn.com/bootswatch/4.5.2/cyborg/bootstrap.min.css: { type: external, minified: true }
+  dependencies:
+    - bootstrap_barrio/bootstrap_js 
 bootswatch_darkly:
   css:
     component:
