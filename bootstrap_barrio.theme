@@ -45,8 +45,8 @@ function bootstrap_barrio_preprocess_html(&$variables) {
 
   // Scroll Spy info added to body.
   if ($scroll_spy = theme_get_setting('bootstrap_barrio_scroll_spy')) {
-    $variables['attributes']['data-target'] = $scroll_spy;
-    $variables['attributes']['data-spy'] = "scroll";
+    $variables['attributes']['data-bs-target'] = $scroll_spy;
+    $variables['attributes']['data-bs-spy'] = "scroll";
   }
 
   // Page specific info.
