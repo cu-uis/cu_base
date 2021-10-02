@@ -97,6 +97,18 @@ form:
     component:
       css/components/form.css: {}
 
+forum:
+  version: VERSION
+  css:
+    component:
+      css/components/forum.css: { weight: -10 }
+
+image-widget:
+  version: VERSION
+  css:
+    component:
+      css/components/image-widget.css: {}
+
 image_fluid:
   version: VERSION
   css:
