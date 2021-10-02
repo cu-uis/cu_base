@@ -352,8 +352,7 @@ bootstrap:
       /libraries/bootstrap/dist/css/bootstrap.min.css: {}
 bootstrap_cdn:
   js:
-    //cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js: { type: external, minified: true }
-    //cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js: { type: external, minified: true }
+    //cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js: { type: external, minified: true }
   css:
     component:
       //cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css: { type: external, minified: true }
