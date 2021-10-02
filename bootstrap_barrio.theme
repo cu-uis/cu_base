@@ -423,6 +423,24 @@ function bootstrap_barrio_preprocess_form_element(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_select() for adding classes to select elements.
+ */
+function bootstrap_barrio_preprocess_select(&$variables) {
+  if (isset($variables['attributes']['class'])) {
+    if (is_object($variables['attributes']['class'])) {
+      if (in_array('error', $variables['attributes']['class']->value())) {
+        $variables['attributes']['class']->addClass('is-invalid');
+      }
+    }
+    elseif (is_array($variables['attributes']['class'])) {
+      if (in_array('error', $variables['attributes']['class'])) {
+        $variables['attributes']['class'][] = 'is-invalid';
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_preprocess_HOOK() for form-element-label.html.twig.
  */
 function bootstrap_barrio_preprocess_form_element_label(&$variables) {
