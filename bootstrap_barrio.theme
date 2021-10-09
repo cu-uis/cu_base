@@ -365,9 +365,8 @@ function bootstrap_barrio_preprocess_node(&$variables) {
   if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {
     unset($variables['content']['links']['comment']['#links']['comment-add']);
   }
-//  $variables['label'] = theme_get_setting('bootstrap_barrio_hide_node_label');
+  // Hide label on all nodes
   if (theme_get_setting('bootstrap_barrio_hide_node_label') != NULL) {
-    
     unset($variables['label']);
   }
 }
