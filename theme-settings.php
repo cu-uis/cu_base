@@ -263,6 +263,20 @@ function bootstrap_barrio_form_system_theme_settings_alter(&$form, FormStateInte
   ];
 
   // Buttons.
+  $form['components']['node'] = [
+    '#type' => 'details',
+    '#title' => t('Node'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  ];
+  $form['components']['node']['bootstrap_barrio_hide_node_label'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Hide node label'),
+    '#default_value' => theme_get_setting('bootstrap_barrio_hide_node_label'),
+    '#description' => t('Hide node label for all display. Usefull when using f.e. Layout Builder and you want full control of your output'),
+  ];
+
+  // Buttons.
   $form['components']['buttons'] = [
     '#type' => 'details',
     '#title' => t('Buttons'),

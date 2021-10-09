@@ -365,6 +365,11 @@ function bootstrap_barrio_preprocess_node(&$variables) {
   if ($variables['teaser'] || !empty($variables['content']['comments']['comment_form'])) {
     unset($variables['content']['links']['comment']['#links']['comment-add']);
   }
+//  $variables['label'] = theme_get_setting('bootstrap_barrio_hide_node_label');
+  if (theme_get_setting('bootstrap_barrio_hide_node_label') != NULL) {
+    
+    unset($variables['label']);
+  }
 }
 
 /**
@@ -395,7 +400,6 @@ function bootstrap_barrio_preprocess_region(&$variables) {
 function bootstrap_barrio_preprocess_block(&$variables) {
   if ($variables['base_plugin_id'] == 'system_menu_block' && isset($variables['attributes']['id'])) {
     $variables['content']['#attributes']['id'] = $variables['attributes']['id'];
-    $variables['content']['#attributes']['block'] = $variables['attributes']['id'];
   }
   // Add a clearfix class to system branding blocks.
   if ($variables['plugin_id'] == 'system_branding_block') {
@@ -420,24 +424,6 @@ function bootstrap_barrio_preprocess_form_element(&$variables) {
   }
   if (isset($variables['element']['#attributes'])) {
     $variables['input_attributes'] = new Attribute($variables['element']['#attributes']);
-  }
-}
-
-/**
- * Implements hook_preprocess_select() for adding classes to select elements.
- */
-function bootstrap_barrio_preprocess_select(&$variables) {
-  if (isset($variables['attributes']['class'])) {
-    if (is_object($variables['attributes']['class'])) {
-      if (in_array('error', $variables['attributes']['class']->value())) {
-        $variables['attributes']['class']->addClass('is-invalid');
-      }
-    }
-    elseif (is_array($variables['attributes']['class'])) {
-      if (in_array('error', $variables['attributes']['class'])) {
-        $variables['attributes']['class'][] = 'is-invalid';
-      }
-    }
   }
 }
 
@@ -734,24 +720,3 @@ function bootstrap_barrio_preprocess_input(&$variables) {
     $variables['safe_value_label'] = Xss::filter($variables['attributes']['value']);
   }
 }
-
-/**
- * Implements hook_preprocess_textarea() for adding classes to textareas.
- *
- * hook_preprocess_input() hook does not launched for textareas.
- */
-function bootstrap_barrio_preprocess_textarea(&$variables) {
-  if (isset($variables['attributes']['class'])) {
-    if (is_object($variables['attributes']['class'])) {
-      if (in_array('error', $variables['attributes']['class']->value())) {
-        $variables['wrapper_attributes']->addClass('is-invalid');
-      }
-    }
-    elseif (is_array($variables['attributes']['class'])) {
-      if (in_array('error', $variables['attributes']['class'])) {
-        $variables['wrapper_attributes']['class'][] = 'is-invalid';
-      }
-    }
-  }
-}
-
