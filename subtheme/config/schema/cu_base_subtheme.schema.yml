@@ -1,0 +1,5 @@
+# Schema for the configuration files of the CU Base Subtheme.
+
+cu_base_subtheme.settings:
+  type: cu_base.settings
+  label: 'CU Base settings'

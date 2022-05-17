@@ -1,0 +1,312 @@
+# Schema for the configuration files of the CU Base Subtheme.
+
+cu_base.settings:
+  type: theme_settings
+  label: 'CU Base settings'
+  mapping:
+
+    # Library.
+    # ----------------------------
+    cu_base_library:
+      type: text
+      label: 'Load library'
+    cu_base_source:
+      type: string
+      label: 'Load library'
+
+    # Container.
+    # ----------------------------
+    cu_base_fluid_container:
+      type: integer
+      label: 'Fluid container'
+
+    # Region.
+    # ----------------------------
+    cu_base_region_clean_top_header:
+      type: integer
+      label: 'Clean wrapper for Top header region'
+    cu_base_region_class_top_header:
+      type: text
+      label: 'Classes for Top header region'
+    cu_base_region_clean_top_header_form:
+      type: integer
+      label: 'Clean wrapper for Top header form region'
+    cu_base_region_class_top_header_form:
+      type: text
+      label: 'Classes for Top header form region'
+    cu_base_region_clean_header:
+      type: integer
+      label: 'Clean wrapper for Header region'
+    cu_base_region_class_header:
+      type: text
+      label: 'Classes for Header region'
+    cu_base_region_clean_header_form:
+      type: integer
+      label: 'Clean wrapper for Header form region'
+    cu_base_region_class_header_form:
+      type: text
+      label: 'Classes for Header form region'
+    cu_base_region_clean_primary_menu:
+      type: integer
+      label: 'Clean wrapper for Primary menu region'
+    cu_base_region_class_primary_menu:
+      type: text
+      label: 'Classes for Primary menu region'
+    cu_base_region_clean_secondary_menu:
+      type: integer
+      label: 'Clean wrapper for Secondary menu region'
+    cu_base_region_class_secondary_menu:
+      type: text
+      label: 'Classes for Secondary menu region'
+    cu_base_region_clean_page_top:
+      type: integer
+      label: 'Clean wrapper for Page top region'
+    cu_base_region_class_page_top:
+      type: text
+      label: 'Classes for Page top region'
+    cu_base_region_clean_page_bottom:
+      type: integer
+      label: 'Clean wrapper for Page bottom region'
+    cu_base_region_class_page_bottom:
+      type: text
+      label: 'Classes for Page bottom region'
+    cu_base_region_clean_highlighted:
+      type: integer
+      label: 'Clean wrapper for Highlighted region'
+    cu_base_region_class_highlighted:
+      type: text
+      label: 'Classes for Highlighted region'
+    cu_base_region_clean_featured_top:
+      type: integer
+      label: 'Clean wrapper for Featured top region'
+    cu_base_region_class_featured_top:
+      type: text
+      label: 'Classes for Featured top region'
+    cu_base_region_clean_breadcrumb:
+      type: integer
+      label: 'Clean wrapper for Breadcrumb region'
+    cu_base_region_class_breadcrumb:
+      type: text
+      label: 'Classes for Breadcrumb region'
+    cu_base_region_clean_content:
+      type: integer
+      label: 'Clean wrapper for Content region'
+    cu_base_region_class_content:
+      type: text
+      label: 'Classes for Content region'
+    cu_base_region_clean_sidebar_first:
+      type: integer
+      label: 'Clean wrapper for Sidebar first region'
+    cu_base_region_class_sidebar_first:
+      type: text
+      label: 'Classes for Sidebar first region'
+    cu_base_region_clean_sidebar_second:
+      type: integer
+      label: 'Clean wrapper for Sidebar second region'
+    cu_base_region_class_sidebar_second:
+      type: text
+      label: 'Classes for Sidebar second region'
+    cu_base_region_clean_featured_bottom_first:
+      type: integer
+      label: 'Clean wrapper for Featured bottom first region'
+    cu_base_region_class_featured_bottom_first:
+      type: text
+      label: 'Classes for Featured bottom first region'
+    cu_base_region_clean_featured_bottom_second:
+      type: integer
+      label: 'Clean wrapper for Featured bottom second region'
+    cu_base_region_class_featured_bottom_second:
+      type: text
+      label: 'Classes for Featured bottom second region'
+    cu_base_region_clean_featured_bottom_third:
+      type: integer
+      label: 'Clean wrapper for Featured bottom third region'
+    cu_base_region_class_featured_bottom_third:
+      type: text
+      label: 'Classes for Featured bottom third region'
+    cu_base_region_clean_footer_first:
+      type: integer
+      label: 'Clean wrapper for Footer first region'
+    cu_base_region_class_footer_first:
+      type: text
+      label: 'Classes for Footer first region'
+    cu_base_region_clean_footer_second:
+      type: integer
+      label: 'Clean wrapper for Footer second region'
+    cu_base_region_class_footer_second:
+      type: text
+      label: 'Classes for Footer second region'
+    cu_base_region_clean_footer_third:
+      type: integer
+      label: 'Clean wrapper for Footer third region'
+    cu_base_region_class_footer_third:
+      type: text
+      label: 'Classes for Footer third region'
+    cu_base_region_clean_footer_fourth:
+      type: integer
+      label: 'Clean wrapper for Footer fourth region'
+    cu_base_region_class_footer_fourth:
+      type: text
+      label: 'Classes for Footer fourth region'
+    cu_base_region_clean_footer_fifth:
+      type: integer
+      label: 'Clean wrapper for Footer fifth region'
+    cu_base_region_class_footer_fifth:
+      type: text
+      label: 'Classes for Footer fifth region'
+
+    # Sidebar position.
+    # ----------------------------
+    cu_base_sidebar_position:
+      type: text
+      label: 'Sidebar position'
+    cu_base_content_offset:
+      type: integer
+      label: 'Content offset'
+
+    # Sidebar first layout.
+    # ----------------------------
+    cu_base_sidebar_collapse:
+      type: integer
+      label: 'Sidebar collapse'
+    cu_base_sidebar_first_width:
+      type: integer
+      label: 'Sidebar first width'
+    cu_base_sidebar_first_offset:
+      type: integer
+      label: 'Sidebar first offset'
+
+    # Sidebar second layout.
+    # ----------------------------
+    cu_base_sidebar_second_width:
+      type: integer
+      label: 'Sidebar second width'
+    cu_base_sidebar_second_offset:
+      type: integer
+      label: 'Sidebar second layout'
+
+    # Buttons.
+    # ----------------------------
+    cu_base_button:
+      type: integer
+      label: 'Convert input submit to button element'
+    cu_base_button_size:
+      type: text
+      label: 'Default button size'
+    cu_base_button_outline:
+      type: integer
+      label: 'Button with outline format'
+
+    # Navbar.
+    # ----------------------------
+    cu_base_navbar_container:
+      type: text
+      label: 'Navbar width container'
+    cu_base_navbar_toggle:
+      type: text
+      label: 'Navbar toggle size'
+    cu_base_navbar_top_navbar:
+      type: integer
+      label: 'Navbar top is navbar'
+    cu_base_navbar_top_class:
+      type: text
+      label: 'Class for navbar top'
+    cu_base_navbar_class:
+      type: text
+      label: 'Class for navbar'
+    cu_base_navbar_top_position:
+      type: text
+      label: 'Navbar top position'
+    cu_base_navbar_top_color:
+      type: text
+      label: 'Navbar top link color'
+    cu_base_navbar_top_background:
+      type: text
+      label: 'Navbar top background color'
+    cu_base_navbar_position:
+      type: text
+      label: 'Navbar position'
+    cu_base_navbar_color:
+      type: text
+      label: 'Navbar link color'
+    cu_base_navbar_background:
+      type: text
+      label: 'Navbar background color'
+    cu_base_navbar_flyout:
+      type: boolean
+      label: 'Flyout style main menu'
+    cu_base_navbar_slide:
+      type: boolean
+      label: 'Sliding navbar'
+
+    # Messages.
+    # ----------------------------
+    cu_base_messages_widget:
+      type: text
+      label: 'Messages widget'
+
+    # Affix.
+    # ----------------------------
+    cu_base_navbar_top_affix:
+      type: integer
+      label: 'Affix navbar top'
+    cu_base_navbar_affix:
+      type: integer
+      label: 'Affix navbar'
+    cu_base_sidebar_first_affix:
+      type: integer
+      label: 'Affix sidebar first'
+    cu_base_sidebar_second_affix:
+      type: integer
+      label: 'Affix sidebar first'
+
+    # Scrollspy.
+    # ----------------------------
+    cu_base_scroll_spy:
+      type: text
+      label: 'Scrollspy element ID'
+
+    # Fonts.
+    # ----------------------------
+    cu_base_google_fonts:
+      type: text
+      label: 'Google Fonts combination'
+
+    # Icons.
+    # ----------------------------
+    cu_base_bootstrap_icons:
+      type: integer
+      label: 'Use Bootstrap icons'
+    cu_base_icons:
+      type: text
+      label: 'Icon set'
+
+    # System messages.
+    # ----------------------------
+    cu_base_system_messages:
+      type: text
+      label: 'System messages color scheme'
+
+    # Tables.
+    # ----------------------------
+    cu_base_table_style:
+      type: text
+      label: 'Table cell style'
+    cu_base_table_hover:
+      type: integer
+      label: 'Hover effect over table cells'
+    cu_base_table_head:
+      type: text
+      label: 'Table header color scheme'
+
+    # Image fluid.
+    # ----------------------------
+    cu_base_image_fluid:
+      type: boolean
+      label: 'Apply img-fluid style to all content images'
+
+    # Tabs.
+    # ----------------------------
+    cu_base_tabs_style:
+      type: string
+      label: 'Tabs style'
