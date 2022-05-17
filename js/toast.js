@@ -7,7 +7,7 @@
 
   'use strict';
 
-  Drupal.behaviors.bootstrap_barrio_toast = {
+  Drupal.behaviors.cu_base_toast = {
     attach: function (context, settings) {
       $('.toast').toast('show');
     }

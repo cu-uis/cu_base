@@ -1,14 +1,17 @@
 {
-  "name": "drupal/bootstrap_barrio",
-  "description": "Bootstrap 4 base theme.",
+  "name": "cu/cu_base",
+  "description": "Default Drupal theme used with the CU Drupal Starter Kit, based on Bootstrap Barrio 5",
   "type": "drupal-theme",
   "license": "GPL-2.0-or-later",
-  "homepage": "https://www.drupal.org/project/bootstrap_barrio",
+  "homepage": "",
   "require": {
     "twbs/bootstrap": "^5.0.0"
   },
-  "authors": [{
-    "name": "Alberto Siles",
-    "email": "alberto@siles.pe"
-  }]
+  "authors": [
+    {
+      "name": "University of Colorado: Systems",
+      "homepage": "https://www.cu.edu/",
+      "role": "Maintainer"
+    }
+  ]
 }

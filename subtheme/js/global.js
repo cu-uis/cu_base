@@ -7,7 +7,7 @@
 
   'use strict';
 
-  Drupal.behaviors.bootstrap_barrio_subtheme = {
+  Drupal.behaviors.cu_base_subtheme = {
     attach: function (context, settings) {
 
     }

@@ -1,9 +1,9 @@
 Bootstrap theme for Drupal 8
 
-Bootstrap Barrio is a theme based on 
+CU Base is a theme based on 
 Bootstrap 4, a sleek, intuitive, and powerful front-end framework 
 for faster and easier web development.
-Bootstrap Barrio focus on layout flexibility 
+CU Base focus on layout flexibility 
 and customization using theme parameters.
 
 - Layout is handle by Bootstrap.

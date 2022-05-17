@@ -8,7 +8,7 @@
 
   'use strict';
 
-  Drupal.behaviors.bootstrap_barrio_sidebar = {
+  Drupal.behaviors.cu_base_sidebar = {
     attach: function (context, settings) {
       $('[data-toggle=offcanvas]').click(function () {
         $('.row-offcanvas').toggleClass('active');

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Lists available colors and color schemes for the Bootstrap Barrio theme.
+ * Lists available colors and color schemes for the CU Base theme.
  */
 
 $info = [
@@ -115,7 +115,7 @@ $info = [
   ],
 
   // Preview files.
-  'preview_library' => 'bootstrap_barrio_subtheme/color.preview',
+  'preview_library' => 'cu_base_subtheme/color.preview',
   'preview_html' => 'color/preview.html',
 
   // Attachments.
@@ -123,7 +123,7 @@ $info = [
     'drupalSettings' => [
       'color' => [
         // Put the logo path into JavaScript for the live preview.
-        'logo' => theme_get_setting('logo.url', 'bootstrap_barrio_subtheme'),
+        'logo' => theme_get_setting('logo.url', 'cu_base_subtheme'),
       ],
     ],
   ],
