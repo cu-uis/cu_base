@@ -443,10 +443,20 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   ];
+  $form['components']['navbar_behaviour']['cu_base_navbar_offcanvas'] = [
+    '#type' => 'select',
+    '#title' => t('Default/Bootstrap Offcanvas Collapse'),
+    '#default_value' => theme_get_setting('cu_base_navbar_offcanvas'),
+    '#options' => [
+      'offcanvas-collapse' => t('Offcanvas'),
+    ],
+    '#empty_option' => t('Default'),
+  ];
   $form['components']['navbar_behaviour']['cu_base_navbar_flyout'] = [
     '#type' => 'checkbox',
     '#title' => t('Flyout style main menu'),
     '#default_value' => theme_get_setting('cu_base_navbar_flyout'),
+    '#description' => t('DO NOT USE IN NEW SITES. Removed in favor of Bootstrap Offcanvas.'),
   ];
   $form['components']['navbar_behaviour']['cu_base_navbar_slide'] = [
     '#type' => 'checkbox',
