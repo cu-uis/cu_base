@@ -1,6 +1,12 @@
 # Library.
 # ----------------------------
 cu_base_library: 'production'
+# Source
+# ----------------------------
+cu_base_source: 'cu_base/bootswatch_cu'
+# Fonts
+# ----------------------------
+cu_base_google_fonts: 'roboto'
 # Layout.
 # ----------------------------
 cu_base_sidebar_position: 'both'
