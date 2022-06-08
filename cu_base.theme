@@ -124,7 +124,7 @@ function cu_base_preprocess_page(&$variables) {
     }
   }
   else {
-    $source = theme_get_setting('cu_base_source');
+    $source = theme_get_setting('cu_base_source');dpm($source);
     if ($source) {
       $variables['#attached']['library'][] = $source;
     }

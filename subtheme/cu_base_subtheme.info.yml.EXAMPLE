@@ -6,7 +6,7 @@ core_version_requirement: ^8 || ^9
 base theme: cu_base
 
 libraries:
-  - cu_base_subtheme/bootstrap_cdn
+  #- cu_base_subtheme/bootstrap_cdn
   - cu_base_subtheme/global-styling
 
 regions:

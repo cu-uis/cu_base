@@ -374,7 +374,7 @@ bootstrap_cdn:
 bootswatch_cu:
   css:
     component:
-      bootswatch/cu_base/bootstrap.min.css: { type: external, minified: true }
+      bootswatch/cu_base/bootstrap.min.css: { type: internal, minified: true }
   dependencies:
     - cu_base/bootstrap_cdn
 bootswatch_cerulean:

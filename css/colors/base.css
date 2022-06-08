@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+/**
+ * @file
+ * Styles for CUSys Bootstrap Barrio's colors.
+ */
+.bg-cu-gold {
+  background-color: var(--cu-gold) !important;
+}
+
+.bg-cu-black {
+  background-color: var(--cu-black) !important;
+}
+
+.bg-cu-light-gray {
+  background-color: #adb5bd !important;
+}
+
+.bg-cu-dark-gray {
+  background-color: var(--cu-dark-gray) !important;
+}
+
+.br-cu-gold {
+  border-color: var(--cu-gold) !important;
+}
+
+.br-cu-black {
+  border-color: var(--cu-black) !important;
+}
+
+.br-cu-light-gray {
+  border-color: var(--cu-light-gray) !important;
+}
+
+.br-cu-dark-gray {
+  border-color: var(--cu-dark-gray) !important;
+}
+
+.text-cu-gold {
+  color: var(--cu-gold);
+}
+
+.text-cu-black {
+  color: var(--cu-black);
+}
+
+body.node-unpublished {
+  background-color: rgba(255, 255, 0, 0.50);
+}
+
+/** Hero */
+
+/* Forms */
+
+/* Tables */
+
+/** Footer */
