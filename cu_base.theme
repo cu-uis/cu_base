@@ -124,7 +124,7 @@ function cu_base_preprocess_page(&$variables) {
     }
   }
   else {
-    $source = theme_get_setting('cu_base_source');
+    $source = theme_get_setting('cu_base_source');dpm($source);
     if ($source) {
       $variables['#attached']['library'][] = $source;
     }
@@ -204,6 +204,18 @@ function cu_base_preprocess_page(&$variables) {
   }
   if (theme_get_setting('cu_base_navbar_class') !== NULL) {
     $variables['navbar_attributes']['class'][] = theme_get_setting('cu_base_navbar_class');
+  }
+
+  switch (theme_get_setting('cu_base_navbar_offcanvas')) {
+    case 'offcanvas-collapse':
+      $variables['navbar_offcanvas'] = TRUE;
+      $variables['navbar_collapse_class'] = "offcanvas offcanvas-end";
+      $variables['navbar_collapse_btn_data'] = "offcanvas";
+      break;
+    default:
+      $variables['navbar _offcanvas'] = TRUE; 
+      $variables['navbar_collapse_class'] = 'collapse navbar-collapse justify-content-end';
+      $variables['navbar_collapse_btn_data'] = "collapse";
   }
 
   // Affix.
