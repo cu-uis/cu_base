@@ -4,7 +4,6 @@
  */
 
 .site-footer {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 35px 0 30px;
 }
 .site-footer .layout-container {
@@ -22,7 +21,8 @@
 }
 @media all and (min-width: 560px) and (max-width: 850px) {
   .site-footer .region {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
   .site-footer__top .region:nth-child(2n+1) {
     padding-right: 10px; /* LTR */

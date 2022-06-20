@@ -37,6 +37,8 @@ global-styling:
       css/components/ui-dialog.css: {}
       css/components/progress.css: { weight: -10 }
     theme:
+      css/base/variables.css: { weight: -11 }
+      css/colors/base.css: { weight: -11 }
       css/print.css: { media: print }
   dependencies:
     - core/jquery
@@ -374,7 +376,7 @@ bootstrap_cdn:
 bootswatch_cu:
   css:
     component:
-      bootswatch/cu_base/bootstrap.min.css: { type: internal, minified: true }
+      bootswatch/cu_base/bootstrap.min.css: { minified: true }
   dependencies:
     - cu_base/bootstrap_cdn
 bootswatch_cerulean:
@@ -503,3 +505,12 @@ bootswatch_yeti:
       //stackpath.bootstrapcdn.com/bootswatch/4.5.2/yeti/bootstrap.min.css: { type: external, minified: true }
   dependencies:
     - cu_base/bootstrap_cdn
+
+# Styleguide
+
+styleguide:
+  version: VERSION
+  css:
+    component:
+      css/styleguide/styleguide.css: {}
+      css/styleguide/docs.css: {}
