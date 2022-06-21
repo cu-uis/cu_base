@@ -3,9 +3,9 @@
 
 echo '
 +------------------------------------------------------------------------+
-| With this script you could quickly create cu base sub-theme             |
+| With this script you could quickly create CU Base sub-theme            |
 | In order to use this:                                                  |
-| - cu_base theme (this folder) should be in the contrib folder |
+| - cu_base theme (this folder) should be in the custom folder           |
 +------------------------------------------------------------------------+
 '
 echo 'The machine name of your custom theme? [e.g. cu_system]'
