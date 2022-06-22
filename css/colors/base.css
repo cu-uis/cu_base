@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Styles for CUSys Bootstrap Barrio's colors.
+ * Styles for CU Base colors.
  */
 .bg-cu-gold {
   background-color: var(--cu-gold) !important;
@@ -47,11 +47,3 @@
 body.node-unpublished {
   background-color: rgba(255, 255, 0, 0.50);
 }
-
-/** Hero */
-
-/* Forms */
-
-/* Tables */
-
-/** Footer */

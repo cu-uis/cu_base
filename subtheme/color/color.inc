@@ -19,11 +19,29 @@ $info = [
     'titleslogan' => t('Title and slogan'),
     'text' => t('Text color'),
     'link' => t('Link color'),
+    'base' => t('Base color'),
   ],
   // Pre-defined color schemes.
   'schemes' => [
     'default' => [
-      'title' => t('Blue Lagoon (default)'),
+      'title' => t('CU Base (default)'),
+      'colors' => [
+        'top' => '#000000',
+        'bottom' => '#424242',
+        'bg' => '#ffffff',
+        'sidebar' => '#dddddd',
+        'sidebarborders' => '#f9f9f9',
+        'footer' => '#000000',
+        'button' => '#cfb87c',
+        'buttonhover' => '#c5a960',
+        'titleslogan' => '#000000',
+        'text' => '#000000',
+        'link' => '#007bff',
+        'base' => '#cfb87c',
+      ],
+    ],
+    'blue_lagoon' => [
+      'title' => t('Blue Lagoon'),
       'colors' => [
         'top' => '#055a8e',
         'bottom' => '#1d84c3',
@@ -34,8 +52,9 @@ $info = [
         'button' => '#007bff',
         'buttonhover' => '#0256b1',
         'titleslogan' => '#fffeff',
-        'text' => '#3b3b3b',
-        'link' => '#0071b3',
+        'text' => '#000000',
+        'link' => '#007bff',
+        'base' => '#007bff',
       ],
     ],
     'firehouse' => [
@@ -52,6 +71,7 @@ $info = [
         'titleslogan' => '#fffeff',
         'text' => '#888888',
         'link' => '#d6121f',
+        'base' => '#d6121f',
       ],
     ],
     'ice' => [
@@ -68,6 +88,7 @@ $info = [
         'titleslogan' => '#000000',
         'text' => '#4a4a4a',
         'link' => '#019dbf',
+        'base' => '#019dbf',
       ],
     ],
     'plum' => [
@@ -84,6 +105,7 @@ $info = [
         'titleslogan' => '#ffffff',
         'text' => '#301313',
         'link' => '#9d408d',
+        'base' => '#9d408d',
       ],
     ],
     'slate' => [
@@ -100,6 +122,7 @@ $info = [
         'titleslogan' => '#ffffff',
         'text' => '#3b3b3b',
         'link' => '#0073b6',
+        'base' => '#0073b6',
       ],
     ],
   ],

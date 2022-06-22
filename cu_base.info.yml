@@ -5,6 +5,9 @@ core: 8.x
 core_version_requirement: ^8 || ^9|| ^10
 base theme: false
 
+dependencies:
+  - drupal:cusk_content_bundle
+
 libraries:
   - cu_base/global-styling
 

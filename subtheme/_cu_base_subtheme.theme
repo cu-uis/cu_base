@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Functions to support theming in the SASS Starterkit subtheme.
+ * Functions to support theming in the subtheme.
  */
 
 use Drupal\Core\Form\FormStateInterface;
