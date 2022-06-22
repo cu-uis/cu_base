@@ -77,11 +77,21 @@
           <div class="container">
           {% endif %}
               {{ page.top_header }}
-              {{ page.secondary_menu }}
-              {% if page.top_header_form %}
-                <div class="form-inline navbar-form ml-auto">
-                  {{ page.top_header_form }}
+              {% if page.secondary_menu %}
+                <div class="ms-auto">
+                  {{ page.secondary_menu }}
                 </div>
+                {% if page.top_header_form %}
+                  <div class="form-inline navbar-form ms-3">
+                    {{ page.top_header_form }}
+                  </div>
+                {% endif %}
+              {% elseif %}
+                {% if page.top_header_form %}
+                  <div class="form-inline navbar-form ms-auto">
+                    {{ page.top_header_form }}
+                  </div>
+                {% endif %}
               {% endif %}
           {% if container_navbar %}
           </div>
