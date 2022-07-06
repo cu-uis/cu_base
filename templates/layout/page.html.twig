@@ -71,38 +71,50 @@
   <div id="page">
     <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t}}">
       {% block head %}
-        {% if page.secondary_menu or page.top_header or page.top_header_form %}
+        {% if page.top_header or page.top_header_form %}
           <nav{{ navbar_top_attributes }}>
+            {% if container_navbar %}
+            <div class="container">
+            {% endif %}
+            {{ page.top_header }}
+            {% if page.top_header_form %}
+              <div class="form-inline navbar-form ms-auto">
+                {{ page.top_header_form }}
+              </div>
+            {% endif %}
+            {% if container_navbar %}
+            </div>
+            {% endif %}
+          </nav>
+        {% endif %}
+        {% if page.header %}
+          <div class="navbar">
           {% if container_navbar %}
           <div class="container">
           {% endif %}
-              {{ page.top_header }}
-              {% if page.secondary_menu %}
-                <div class="ms-auto">
-                  {{ page.secondary_menu }}
-                </div>
-                {% if page.top_header_form %}
-                  <div class="form-inline navbar-form ms-3">
-                    {{ page.top_header_form }}
-                  </div>
-                {% endif %}
-              {% elseif %}
-                {% if page.top_header_form %}
-                  <div class="form-inline navbar-form ms-auto">
-                    {{ page.top_header_form }}
-                  </div>
-                {% endif %}
-              {% endif %}
+          {{ page.header }}
           {% if container_navbar %}
           </div>
           {% endif %}
+          </div>
+        {% endif %}
+        {% if page.secondary_menu %}
+          <nav{{ navbar_mid_attributes }}>
+            {% if container_navbar %}
+            <div class="container">
+            {% endif %}
+              <div class="ms-auto">
+                {{ page.secondary_menu }}
+              </div>
+            {% if container_navbar %}
+            </div>
+            {% endif %}
           </nav>
         {% endif %}
         <nav{{ navbar_attributes }}>
           {% if container_navbar %}
           <div class="container">
           {% endif %}
-            {{ page.header }}
             {% if page.primary_menu or page.header_form %}
               <button class="navbar-toggler collapsed" type="button" data-bs-toggle="{{ navbar_collapse_btn_data }}" data-bs-target="#CollapsingNavbar" aria-controls="CollapsingNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
               <div class="{{ navbar_collapse_class }}" id="CollapsingNavbar">
@@ -114,7 +126,7 @@
                 {% endif %}
                 {{ page.primary_menu }}
                 {% if page.header_form %}
-                  <div class="form-inline navbar-form justify-content-end">
+                  <div class="form-inline navbar-form ms-auto">
                     {{ page.header_form }}
                   </div>
                 {% endif %}
@@ -151,8 +163,9 @@
     <div id="main-wrapper" class="layout-main-wrapper clearfix">
       {% block content %}
         <div id="main" class="{{ container }}">
+          {{ page.hero }}
           {{ page.breadcrumb }}
-          <div class="row row-offcanvas row-offcanvas-left clearfix">
+          <div class="row row-offcanvas row-offcanvas-left ">
               <main{{ content_attributes }}>
                 <section class="section">
                   <a id="main-content" tabindex="-1"></a>
@@ -190,7 +203,7 @@
       {% block footer %}
         <div class="{{ container }}">
           {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
-            <div class="site-footer__top clearfix">
+            <div class="site-footer__top row ">
               {{ page.footer_first }}
               {{ page.footer_second }}
               {{ page.footer_third }}

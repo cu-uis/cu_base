@@ -180,6 +180,10 @@ function cu_base_preprocess_page(&$variables) {
     'class' => ['navbar'],
     'id' => ['navbar-top'],
   ];
+  $variables['navbar_mid_attributes'] = [
+    'class' => ['navbar'],
+    'id' => ['navbar-mid'],
+  ];
   $variables['navbar_attributes'] = [
     'class' => ['navbar'],
     'id' => ['navbar-main'],
@@ -202,6 +206,9 @@ function cu_base_preprocess_page(&$variables) {
   if (theme_get_setting('cu_base_navbar_top_class') !== NULL) {
     $variables['navbar_top_attributes']['class'][] = theme_get_setting('cu_base_navbar_top_class');
   }
+  if (theme_get_setting('cu_base_navbar_mid_class') !== NULL) {
+    $variables['navbar_mid_attributes']['class'][] = theme_get_setting('cu_base_navbar_mid_class');
+  }
   if (theme_get_setting('cu_base_navbar_class') !== NULL) {
     $variables['navbar_attributes']['class'][] = theme_get_setting('cu_base_navbar_class');
   }
@@ -214,19 +221,23 @@ function cu_base_preprocess_page(&$variables) {
       break;
     default:
       $variables['navbar _offcanvas'] = TRUE; 
-      $variables['navbar_collapse_class'] = 'collapse navbar-collapse justify-content-end';
+      $variables['navbar_collapse_class'] = 'collapse navbar-collapse';
       $variables['navbar_collapse_btn_data'] = "collapse";
   }
 
   // Affix.
   $affix_navbar_top = theme_get_setting('cu_base_navbar_top_affix');
+  $affix_navbar_mid = theme_get_setting('cu_base_navbar_mid_affix');
   $affix_navbar = theme_get_setting('cu_base_navbar_affix');
   $affix_sidebar_first = theme_get_setting('cu_base_sidebar_first_affix');
   $affix_sidebar_second = theme_get_setting('cu_base_sidebar_second_affix');
-  if ($affix_navbar_top || $affix_navbar || $affix_sidebar_first || $affix_sidebar_second) {
+  if ($affix_navbar_top || $affix_navbar_mid || $affix_navbar || $affix_sidebar_first || $affix_sidebar_second) {
     $variables['#attached']['library'][] = 'cu_base/affix';
     if ($affix_navbar_top) {
       $variables['navbar_top_attributes']['data-toggle'] = 'affix';
+    }
+    if ($affix_navbar_mid) {
+      $variables['navbar_mid_attributes']['data-toggle'] = 'affix';
     }
     if ($affix_navbar) {
       $variables['navbar_attributes']['data-toggle'] = 'affix';
@@ -270,14 +281,17 @@ function cu_base_preprocess_page(&$variables) {
 
   // Define navigation position.
   $variables['navbar_top_attributes']['class'][] = theme_get_setting('cu_base_navbar_top_position');
+  $variables['navbar_mid_attributes']['class'][] = theme_get_setting('cu_base_navbar_mid_position');
   $variables['navbar_attributes']['class'][] = theme_get_setting('cu_base_navbar_position');
 
   // Define navigation color scheme.
   $variables['navbar_top_attributes']['class'][] = theme_get_setting('cu_base_navbar_top_color');
+  $variables['navbar_mid_attributes']['class'][] = theme_get_setting('cu_base_navbar_mid_color');
   $variables['navbar_attributes']['class'][] = theme_get_setting('cu_base_navbar_color');
 
   // Define navigation background classes.
   $variables['navbar_top_attributes']['class'][] = theme_get_setting('cu_base_navbar_top_background');
+  $variables['navbar_mid_attributes']['class'][] = theme_get_setting('cu_base_navbar_mid_background');
   $variables['navbar_attributes']['class'][] = theme_get_setting('cu_base_navbar_background');
 
   // Define navigation toggle size.
@@ -319,6 +333,7 @@ function cu_base_preprocess_page(&$variables) {
 
   // Declare region attributes.
   $variables['navbar_top_attributes'] = new Attribute($variables['navbar_top_attributes']);
+  $variables['navbar_mid_attributes'] = new Attribute($variables['navbar_mid_attributes']);
   $variables['navbar_attributes'] = new Attribute($variables['navbar_attributes']);
   $variables['content_attributes'] = new Attribute($variables['content_attributes']);
   $variables['sidebar_first_attributes'] = new Attribute($variables['sidebar_first_attributes']);
@@ -392,7 +407,6 @@ function cu_base_preprocess_region(&$variables) {
     'highlighted',
     'content',
     'primary_menu',
-    'header',
     'sidebar_first',
     'sidebar_second',
   ];
@@ -531,6 +545,7 @@ function cu_base_preprocess_views_view_table(&$variables) {
  */
 function cu_base_theme_suggestions_region_alter(array &$suggestions, array $variables) {
   $nowrap = [
+    'hero',
     'breadcrumb',
     'highlighted',
     'content',
