@@ -70,6 +70,12 @@ cu_base.settings:
     cu_base_region_class_page_bottom:
       type: text
       label: 'Classes for Page bottom region'
+    cu_base_region_clean_hero:
+      type: integer
+      label: 'Clean wrapper for Hero region'
+    cu_base_region_class_hero:
+      type: text
+      label: 'Classes for Hero region'
     cu_base_region_clean_highlighted:
       type: integer
       label: 'Clean wrapper for Highlighted region'
@@ -211,9 +217,6 @@ cu_base.settings:
     cu_base_navbar_top_class:
       type: text
       label: 'Class for navbar top'
-    cu_base_navbar_class:
-      type: text
-      label: 'Class for navbar'
     cu_base_navbar_top_position:
       type: text
       label: 'Navbar top position'
@@ -223,6 +226,24 @@ cu_base.settings:
     cu_base_navbar_top_background:
       type: text
       label: 'Navbar top background color'
+    cu_base_navbar_mid_navbar:
+      type: integer
+      label: 'Navbar mid is navbar'
+    cu_base_navbar_mid_class:
+      type: text
+      label: 'Class for navbar mid'
+    cu_base_navbar_mid_position:
+      type: text
+      label: 'Navbar mid position'
+    cu_base_navbar_mid_color:
+      type: text
+      label: 'Navbar mid link color'
+    cu_base_navbar_mid_background:
+      type: text
+      label: 'Navbar mid background color'
+    cu_base_navbar_class:
+      type: text
+      label: 'Class for navbar'
     cu_base_navbar_position:
       type: text
       label: 'Navbar position'
@@ -250,6 +271,9 @@ cu_base.settings:
     cu_base_navbar_top_affix:
       type: integer
       label: 'Affix navbar top'
+    cu_base_navbar_mid_affix:
+      type: integer
+      label: 'Affix navbar mid'
     cu_base_navbar_affix:
       type: integer
       label: 'Affix navbar'

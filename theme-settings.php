@@ -121,7 +121,6 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     'highlighted',
     'content',
     'primary_menu',
-    'header',
     'sidebar_first',
     'sidebar_second',
   ];
@@ -389,6 +388,45 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     ],
     '#empty_option' => t('Default'),
   ];
+  $form['components']['navbar']['cu_base_navbar_mid_navbar'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Navbar mid is navbar'),
+    '#description' => t('Check if navbar mid .navbar class should be added.'),
+    '#default_value' => theme_get_setting('cu_base_navbar_mid_navbar'),
+  ];
+  $form['components']['navbar']['cu_base_navbar_mid_position'] = [
+    '#type' => 'select',
+    '#title' => t('Navbar mid position'),
+    '#description' => t('Select your navbar mid position.'),
+    '#default_value' => theme_get_setting('cu_base_navbar_mid_position'),
+    '#options' => [
+      'fixed-top' => t('Fixed top'),
+      'fixed-bottom' => t('Fixed bottom'),
+      'sticky-top' => t('Sticky top'),
+    ],
+    '#empty_option' => t('Normal'),
+  ];
+  $form['components']['navbar']['cu_base_navbar_mid_color'] = [
+    '#type' => 'select',
+    '#title' => t('Navbar mid link color'),
+    '#default_value' => theme_get_setting('cu_base_navbar_mid_color'),
+    '#options' => [
+      'navbar-light' => t('Light'),
+      'navbar-dark' => t('Dark'),
+    ],
+    '#empty_option' => t('Default'),
+  ];
+  $form['components']['navbar']['cu_base_navbar_mid_background'] = [
+    '#type' => 'select',
+    '#title' => t('Navbar mid background color'),
+    '#default_value' => theme_get_setting('cu_base_navbar_mid_background'),
+    '#options' => [
+      'bg-primary' => t('Primary'),
+      'bg-light' => t('Light'),
+      'bg-dark' => t('Dark'),
+    ],
+    '#empty_option' => t('Default'),
+  ];
   $form['components']['navbar']['cu_base_navbar_position'] = [
     '#type' => 'select',
     '#title' => t('Navbar position'),
@@ -426,6 +464,13 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#type' => 'textfield',
     '#title' => t('Custom classes for Navbar Top'),
     '#default_value' => theme_get_setting('cu_base_navbar_top_class'),
+    '#size' => 40,
+    '#maxlength' => 40,
+  ];
+  $form['components']['navbar']['cu_base_navbar_mid_class'] = [
+    '#type' => 'textfield',
+    '#title' => t('Custom classes for Navbar Mid'),
+    '#default_value' => theme_get_setting('cu_base_navbar_mid_class'),
     '#size' => 40,
     '#maxlength' => 40,
   ];
@@ -546,6 +591,45 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
   '#states' => [
   'invisible' => [
   'input[name="cu_base_navbar_top_affix"]' => ['checked' => FALSE],
+  ],
+  ],
+  ];
+   */
+  $form['affix']['navbar_mid'] = [
+    '#type' => 'details',
+    '#title' => t('Affix navbar mid'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  ];
+  $form['affix']['navbar_mid']['cu_base_navbar_mid_affix'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Affix navbar mid'),
+    '#default_value' => theme_get_setting('cu_base_navbar_mid_affix'),
+  ];
+  /*
+  $form['affix']['navbar_mid']['cu_base_navbar_mid_affix_top'] = [
+  '#type' => 'textfield',
+  '#title' => t('Affix top'),
+  '#default_value' => theme_get_setting('cu_base_navbar_mid_affix_top'),
+  '#prefix' => '<div id="navbar-mid-affix">',
+  '#size' => 6,
+  '#maxlength' => 3,
+  '#states' => [
+  'invisible' => [
+  'input[name="cu_base_navbar_mid_affix"]' => ['checked' => FALSE],
+  ],
+  ],
+  ];
+  $form['affix']['navbar_mid']['cu_base_navbar_mid_affix_bottom'] = [
+  '#type' => 'textfield',
+  '#title' => t('Affix bottom'),
+  '#default_value' => theme_get_setting('cu_base_navbar_mid_affix_bottom'),
+  '#suffix' => '</div>',
+  '#size' => 6,
+  '#maxlength' => 3,
+  '#states' => [
+  'invisible' => [
+  'input[name="cu_base_navbar_mid_affix"]' => ['checked' => FALSE],
   ],
   ],
   ];
