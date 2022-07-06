@@ -118,9 +118,9 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
   // Only for initial setup if not defined on install.
   $nowrap = [
     'breadcrumb',
+    'hero',
     'highlighted',
     'content',
-    'primary_menu',
     'sidebar_first',
     'sidebar_second',
   ];

@@ -404,9 +404,9 @@ function cu_base_preprocess_node(&$variables) {
 function cu_base_preprocess_region(&$variables) {
   $nowrap = [
     'breadcrumb',
+    'hero',
     'highlighted',
     'content',
-    'primary_menu',
     'sidebar_first',
     'sidebar_second',
   ];
