@@ -17,6 +17,7 @@ global-styling:
       css/components/image-button.css: {}
       css/components/item-list.css: {}
       css/components/list-group.css: {}
+      css/components/navbar.css: {}
       css/components/page.css: {}
       css/components/search-form.css: {}
       css/components/shortcut.css: {}
@@ -376,7 +377,8 @@ bootstrap_cdn:
 bootswatch_cu:
   css:
     component:
-      bootswatch/cu_base/bootstrap.min.css: { minified: true }
+      # bootswatch/cu_base/bootstrap.min.css: { minified: true }
+      bootswatch/cu_base/bootstrap.css: {}
   dependencies:
     - cu_base/bootstrap_cdn
 bootswatch_cerulean:

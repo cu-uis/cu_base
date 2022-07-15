@@ -372,8 +372,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#title' => t('Navbar top link color'),
     '#default_value' => theme_get_setting('cu_base_navbar_top_color'),
     '#options' => [
+      'navbar-white' => t('White'),
       'navbar-light' => t('Light'),
       'navbar-dark' => t('Dark'),
+      'navbar-black' => t('Black'),
     ],
     '#empty_option' => t('Default'),
   ];
@@ -383,8 +385,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#default_value' => theme_get_setting('cu_base_navbar_top_background'),
     '#options' => [
       'bg-primary' => t('Primary'),
+      'bg-white' => t('White'),
       'bg-light' => t('Light'),
       'bg-dark' => t('Dark'),
+      'bg-black' => t('Black'),
     ],
     '#empty_option' => t('Default'),
   ];
@@ -411,8 +415,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#title' => t('Navbar mid link color'),
     '#default_value' => theme_get_setting('cu_base_navbar_mid_color'),
     '#options' => [
+      'navbar-white' => t('White'),
       'navbar-light' => t('Light'),
       'navbar-dark' => t('Dark'),
+      'navbar-black' => t('Black'),
     ],
     '#empty_option' => t('Default'),
   ];
@@ -422,8 +428,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#default_value' => theme_get_setting('cu_base_navbar_mid_background'),
     '#options' => [
       'bg-primary' => t('Primary'),
+      'bg-white' => t('White'),
       'bg-light' => t('Light'),
       'bg-dark' => t('Dark'),
+      'bg-black' => t('Black'),
     ],
     '#empty_option' => t('Default'),
   ];
@@ -443,8 +451,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#title' => t('Navbar link color'),
     '#default_value' => theme_get_setting('cu_base_navbar_color'),
     '#options' => [
+      'navbar-white' => t('White'),
       'navbar-light' => t('Light'),
       'navbar-dark' => t('Dark'),
+      'navbar-black' => t('Black'),
     ],
     '#empty_option' => t('Default'),
   ];
@@ -454,8 +464,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#default_value' => theme_get_setting('cu_base_navbar_background'),
     '#options' => [
       'bg-primary' => t('Primary'),
+      'bg-white' => t('White'),
       'bg-light' => t('Light'),
       'bg-dark' => t('Dark'),
+      'bg-black' => t('Black'),
     ],
     '#empty_option' => t('Default'),
   ];
