@@ -746,3 +746,10 @@ function cu_base_preprocess_input(&$variables) {
     $variables['safe_value_label'] = Xss::filter($variables['attributes']['value']);
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK() for styleguide.
+ */
+function cu_base_preprocess_simple_styleguide(&$variables) {
+  $variables['#attached']['library'][] = 'cu_base/styleguide';
+}
