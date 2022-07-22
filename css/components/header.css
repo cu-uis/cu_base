@@ -22,6 +22,20 @@
   margin-right: 1rem;
 }
 
+/* Navbar-top */
+#navbar-top {
+  min-height: 50px;
+}
+
+#navbar-top .navbar-brand {
+  padding-top: 9px;
+  padding-bottom: 9px;
+}
+
+#navbar-top .navbar-brand .site-logo {
+  max-height: 32px;
+}
+
 @media (max-width: 33.9em) {
   .navbar-toggleable-xs .navbar-nav .nav-item+.nav-item,
   .navbar-toggleable-xs.collapse.in .navbar-nav .nav-item {

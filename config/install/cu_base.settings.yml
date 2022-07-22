@@ -47,7 +47,7 @@ cu_base_navbar_background: 'bg-light'
 
 # Messages.
 # ----------------------------
-cu_base_messages_widget: 'toasts'
+cu_base_messages_widget: 'default'
 
 # Colors.
 # ----------------------------

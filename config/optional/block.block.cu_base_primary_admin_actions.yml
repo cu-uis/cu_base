@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - cu_base
+id: cu_base_primary_admin_actions
+theme: cu_base
+region: highlighted
+weight: -5
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'CU Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }
