@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - cu_base
+id: cu_base_help
+theme: cu_base
+region: top_header_form
+weight: -1
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: 'CU Help'
+  label_display: '0'
+  provider: help
+visibility: {  }

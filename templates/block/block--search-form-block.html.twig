@@ -1,4 +1,3 @@
-{% extends "@cu_base/block/block.html.twig" %}
 {#
 /**
  * @file
@@ -16,8 +15,21 @@
  * @ingroup themeable
  */
 #}
-{% block content %}
-  <div{{ content_attributes.addClass('content', 'container-inline') }}>
-    {{ parent() }}
-  </div>
-{% endblock %}
+{%
+  set classes = [
+    'block',
+    'block-search',
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}>{{ label }}</h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    <div{{ content_attributes.addClass('content', 'container-inline', 'align-middle') }}>
+      {{ content }}
+    </div>
+  {% endblock %}
+</div>
