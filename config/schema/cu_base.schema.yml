@@ -58,6 +58,12 @@ cu_base.settings:
     cu_base_region_class_secondary_menu:
       type: text
       label: 'Classes for Secondary menu region'
+    cu_base_region_clean_footer_menu:
+      type: integer
+      label: 'Clean wrapper for Footer menu region'
+    cu_base_region_class_footer_menu:
+      type: text
+      label: 'Classes for Footer menu region'
     cu_base_region_clean_page_top:
       type: integer
       label: 'Clean wrapper for Page top region'
@@ -160,6 +166,12 @@ cu_base.settings:
     cu_base_region_class_footer_fifth:
       type: text
       label: 'Classes for Footer fifth region'
+    cu_base_region_clean_footer_sixth:
+      type: integer
+      label: 'Clean wrapper for Footer sixth region'
+    cu_base_region_class_footer_sixth:
+      type: text
+      label: 'Classes for Footer sixth region'
 
     # Sidebar position.
     # ----------------------------
@@ -253,6 +265,21 @@ cu_base.settings:
     cu_base_navbar_background:
       type: text
       label: 'Navbar background color'
+    cu_base_navbar_footer_navbar:
+      type: integer
+      label: 'Navbar footer is navbar'
+    cu_base_navbar_footer_class:
+      type: text
+      label: 'Class for navbar footer'
+    cu_base_navbar_footer_position:
+      type: text
+      label: 'Navbar footer position'
+    cu_base_navbar_footer_color:
+      type: text
+      label: 'Navbar footer link color'
+    cu_base_navbar_footer_background:
+      type: text
+      label: 'Navbar footer background color'
     cu_base_navbar_flyout:
       type: boolean
       label: 'Flyout style main menu'

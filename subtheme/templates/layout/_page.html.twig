@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * CU Base's theme implementation to display a single page.
+ * CU Base's subtheme implementation to display a single page.
  *
  * The doctype, html, head and body tags are not in this template. Instead they
  * can be found in the html.html.twig template normally located in the
@@ -52,6 +52,7 @@
  * - page.footer_third: Items for the third footer column.
  * - page.footer_fourth: Items for the fourth footer column.
  * - page.footer_fifth: Items for the fifth footer column.
+ * - page.footer_sixth: Items for the sixth footer column.
  * - page.breadcrumb: Items for the breadcrumb region.
  *
  * Theme variables:
@@ -199,24 +200,44 @@
         </aside>
       </div>
     {% endif %}
-    <footer class="site-footer">
+    {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth or page.footer_fifth or page.footer_sixth %}
+    <footer class="site-footer bg-light">
       {% block footer %}
-        <div class="{{ container }}">
-          {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
-            <div class="site-footer__top row ">
-              {{ page.footer_first }}
-              {{ page.footer_second }}
-              {{ page.footer_third }}
-              {{ page.footer_fourth }}
+        {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth %}
+          <div class="region-top">
+            <div class="{{ container }}">
+              <div class="site-footer__top row justify-content-evenly clearfix">
+                {{ page.footer_first }}
+                {{ page.footer_second }}
+                {{ page.footer_third }}
+                {{ page.footer_fourth }}
+              </div>
             </div>
-          {% endif %}
-          {% if page.footer_fifth %}
-            <div class="site-footer__bottom">
-              {{ page.footer_fifth }}
+          </div>
+        {% endif %}
+        {% if page.footer_menu %}
+          <nav{{ navbar_footer_attributes }}>
+            {% if container_navbar %}
+            <div class="container">
+            {% endif %}
+              {{ page.footer_menu }}
+            {% if container_navbar %}
             </div>
-          {% endif %}
+            {% endif %}
+          </nav>
+        {% endif %}
+        {% if page.footer_fifth or page.footer_sixth %}
+        <div class="region-bottom bg-black">
+          <div class="container">
+            <div class="site-footer__bottom row clearfix">
+            {{ page.footer_fifth }}
+            {{ page.footer_sixth }}
+            </div>
+          </div>
         </div>
+        {% endif %}
       {% endblock %}
     </footer>
+    {% endif %}
   </div>
 </div>

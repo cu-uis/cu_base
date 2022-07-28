@@ -4,7 +4,9 @@
  */
 
 .site-footer {
-  padding: 35px 0 30px;
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 .site-footer .layout-container {
   padding: 0 15px;
@@ -97,10 +99,8 @@
   color: rgba(255, 255, 255, 0.95);
 }
 .site-footer .block {
-  margin: 20px 0;
-  border: 1px solid #444;
-  border-color: rgba(255, 255, 255, 0.1);
-  padding: 10px;
+  margin: auto;
+  border: none;
 }
 .site-footer table {
   font-size: 1em;
@@ -156,11 +156,8 @@
   background-color: rgba(255, 255, 255, 0.05);
   text-decoration: none;
 }
-.site-footer__top .block-menu,
-.site-footer__bottom .block {
-  margin: 0;
-  padding: 0;
-  border: none;
+.site-footer__top .block-menu {
+  padding: 1.5rem 0.5rem;
 }
 
 /* Footer Bottom Styling. */

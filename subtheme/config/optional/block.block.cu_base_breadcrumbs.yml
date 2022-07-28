@@ -1,19 +1,19 @@
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
   theme:
     - cu_base
-id: cu_base_powered
+id: cu_base_breadcrumbs
 theme: cu_base
-region: footer_fifth
-weight: -4
+region: breadcrumb
+weight: 0
 provider: null
-plugin: system_powered_by_block
+plugin: system_breadcrumb_block
 settings:
-  id: system_powered_by_block
-  label: 'CU Powered by Drupal'
+  id: system_breadcrumb_block
+  label: 'CU Breadcrumbs'
   label_display: '0'
   provider: system
 visibility: {  }

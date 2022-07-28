@@ -1,19 +1,19 @@
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
   theme:
     - cu_base
-id: cu_base_powered
+id: cu_base_messages
 theme: cu_base
-region: footer_fifth
-weight: -4
+region: highlighted
+weight: -5
 provider: null
-plugin: system_powered_by_block
+plugin: system_messages_block
 settings:
-  id: system_powered_by_block
-  label: 'CU Powered by Drupal'
+  id: system_messages_block
+  label: 'CU Status messages'
   label_display: '0'
   provider: system
 visibility: {  }
