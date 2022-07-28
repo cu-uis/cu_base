@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * CU Base's minified search form block template.
+ *
+ * Available variables:
+ * - content: The content of this block.
+ * - content_attributes: A list of HTML attributes applied to the main content
+ *   tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ * @see search_preprocess_block()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'block',
+    'block-search',
+  ]
+%}
+  {% block content %}
+<div{{ attributes.addClass(classes) }}>
+    <div{{ content_attributes.addClass('content', 'container-inline', 'align-middle') }}>
+      <a class="btn btn-link text-primary" data-bs-toggle="collapse" href="#collapseSearchMin" role="button" aria-expanded="false" aria-controls="collapseSearchMin"><i class="bi-search"></i></a>
+    </div>
+</div>
+      <div class="collapse" id="collapseSearchMin">
+      {{ content }}
+      </div>
+  {% endblock %}

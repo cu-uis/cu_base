@@ -23,5 +23,5 @@ for file in *cu_base_subtheme.*; do mv $file ${file//cu_base_subtheme/$CUSTOM_CU
 for file in config/*/*cu_base_subtheme.*; do mv $file ${file//cu_base_subtheme/$CUSTOM_CU}; done
 mv {_,}$CUSTOM_CU.theme
 grep -Rl cu_base_subtheme .|xargs sed -i '' -e "s/cu_base_subtheme/$CUSTOM_CU/"
-sed -i -e "s/CU Base Subtheme/$CUSTOM_CU_NAME/" $CUSTOM_CU.info.yml
+sed -i -e "s/CU Base Subtheme/$CUSTOM_CU_NAME/" $CUSTOM_CU.info.yml.EXAMPLE
 echo "# Check the themes/custom folder for your new sub-theme."

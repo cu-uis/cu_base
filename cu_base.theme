@@ -188,6 +188,10 @@ function cu_base_preprocess_page(&$variables) {
     'class' => ['navbar'],
     'id' => ['navbar-main'],
   ];
+  $variables['navbar_footer_attributes'] = [
+    'class' => ['navbar'],
+    'id' => ['navbar-footer'],
+  ];
   $variables['content_attributes'] = [
     'class' => ['main-content', $content_width],
     'id' => ['content'],
@@ -211,6 +215,9 @@ function cu_base_preprocess_page(&$variables) {
   }
   if (theme_get_setting('cu_base_navbar_class') !== NULL) {
     $variables['navbar_attributes']['class'][] = theme_get_setting('cu_base_navbar_class');
+  }
+  if (theme_get_setting('cu_base_navbar_footer_class') !== NULL) {
+    $variables['navbar_footer_attributes']['class'][] = theme_get_setting('cu_base_navbar_footer_class');
   }
 
   switch (theme_get_setting('cu_base_navbar_offcanvas')) {
@@ -283,16 +290,19 @@ function cu_base_preprocess_page(&$variables) {
   $variables['navbar_top_attributes']['class'][] = theme_get_setting('cu_base_navbar_top_position');
   $variables['navbar_mid_attributes']['class'][] = theme_get_setting('cu_base_navbar_mid_position');
   $variables['navbar_attributes']['class'][] = theme_get_setting('cu_base_navbar_position');
+  $variables['navbar_footer_attributes']['class'][] = theme_get_setting('cu_base_navbar_footer_position');
 
   // Define navigation color scheme.
   $variables['navbar_top_attributes']['class'][] = theme_get_setting('cu_base_navbar_top_color');
   $variables['navbar_mid_attributes']['class'][] = theme_get_setting('cu_base_navbar_mid_color');
   $variables['navbar_attributes']['class'][] = theme_get_setting('cu_base_navbar_color');
+  $variables['navbar_footer_attributes']['class'][] = theme_get_setting('cu_base_navbar_footer_color');
 
   // Define navigation background classes.
   $variables['navbar_top_attributes']['class'][] = theme_get_setting('cu_base_navbar_top_background');
   $variables['navbar_mid_attributes']['class'][] = theme_get_setting('cu_base_navbar_mid_background');
   $variables['navbar_attributes']['class'][] = theme_get_setting('cu_base_navbar_background');
+  $variables['navbar_footer_attributes']['class'][] = theme_get_setting('cu_base_navbar_footer_background');
 
   // Define navigation toggle size.
   switch (theme_get_setting('cu_base_navbar_toggle')) {
@@ -335,6 +345,7 @@ function cu_base_preprocess_page(&$variables) {
   $variables['navbar_top_attributes'] = new Attribute($variables['navbar_top_attributes']);
   $variables['navbar_mid_attributes'] = new Attribute($variables['navbar_mid_attributes']);
   $variables['navbar_attributes'] = new Attribute($variables['navbar_attributes']);
+  $variables['navbar_footer_attributes'] = new Attribute($variables['navbar_footer_attributes']);
   $variables['content_attributes'] = new Attribute($variables['content_attributes']);
   $variables['sidebar_first_attributes'] = new Attribute($variables['sidebar_first_attributes']);
   $variables['sidebar_second_attributes'] = new Attribute($variables['sidebar_second_attributes']);
@@ -425,6 +436,12 @@ function cu_base_preprocess_region(&$variables) {
 function cu_base_preprocess_block(&$variables) {
   if ($variables['base_plugin_id'] == 'system_menu_block' && isset($variables['attributes']['id'])) {
     $variables['content']['#attributes']['id'] = $variables['attributes']['id'];
+
+    /* Footer menus */
+    /*kpr($variables['derivative_plugin_id']);*/
+    if ($variables['derivative_plugin_id'] == 'footer-first' || $variables['derivative_plugin_id'] == 'footer-second' || $variables['derivative_plugin_id'] == 'footer-third' || $variables['derivative_plugin_id'] == 'footer-fourth') {
+      $variables['content']['#attributes']['class'][] = 'flex-column';
+    }
   }
   // Add a clearfix class to system branding blocks.
   if ($variables['plugin_id'] == 'system_branding_block') {

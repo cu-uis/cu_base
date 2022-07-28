@@ -471,7 +471,50 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     ],
     '#empty_option' => t('Default'),
   ];
-  // Allow custom classes on Navbars.
+  $form['components']['navbar']['cu_base_navbar_footer_navbar'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Navbar footer is navbar'),
+    '#description' => t('Check if navbar footer .navbar class should be added.'),
+    '#default_value' => theme_get_setting('cu_base_navbar_footer_navbar'),
+  ];
+  $form['components']['navbar']['cu_base_navbar_footer_position'] = [
+    '#type' => 'select',
+    '#title' => t('Navbar footer position'),
+    '#description' => t('Select your navbar footer position.'),
+    '#default_value' => theme_get_setting('cu_base_navbar_footer_position'),
+    '#options' => [
+      'fixed-top' => t('Fixed top'),
+      'fixed-bottom' => t('Fixed bottom'),
+      'sticky-top' => t('Sticky top'),
+    ],
+    '#empty_option' => t('Normal'),
+  ];
+  $form['components']['navbar']['cu_base_navbar_footer_color'] = [
+    '#type' => 'select',
+    '#title' => t('Navbar footer link color'),
+    '#default_value' => theme_get_setting('cu_base_navbar_footer_color'),
+    '#options' => [
+      'navbar-white' => t('White'),
+      'navbar-light' => t('Light'),
+      'navbar-dark' => t('Dark'),
+      'navbar-black' => t('Black'),
+    ],
+    '#empty_option' => t('Default'),
+  ];
+  $form['components']['navbar']['cu_base_navbar_footer_background'] = [
+    '#type' => 'select',
+    '#title' => t('Navbar footer background color'),
+    '#default_value' => theme_get_setting('cu_base_navbar_footer_background'),
+    '#options' => [
+      'bg-primary' => t('Primary'),
+      'bg-white' => t('White'),
+      'bg-light' => t('Light'),
+      'bg-dark' => t('Dark'),
+      'bg-black' => t('Black'),
+    ],
+    '#empty_option' => t('Default'),
+  ];
+// Allow custom classes on Navbars.
   $form['components']['navbar']['cu_base_navbar_top_class'] = [
     '#type' => 'textfield',
     '#title' => t('Custom classes for Navbar Top'),
@@ -490,6 +533,13 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#type' => 'textfield',
     '#title' => t('Custom classes for Navbar'),
     '#default_value' => theme_get_setting('cu_base_navbar_class'),
+    '#size' => 40,
+    '#maxlength' => 40,
+  ];
+  $form['components']['navbar']['cu_base_navbar_footer_class'] = [
+    '#type' => 'textfield',
+    '#title' => t('Custom classes for Navbar Footer'),
+    '#default_value' => theme_get_setting('cu_base_navbar_footer_class'),
     '#size' => 40,
     '#maxlength' => 40,
   ];

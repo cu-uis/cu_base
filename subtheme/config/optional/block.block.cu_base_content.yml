@@ -1,19 +1,19 @@
 langcode: en
-status: false
+status: true
 dependencies:
   module:
     - system
   theme:
     - cu_base
-id: cu_base_powered
+id: cu_base_content
 theme: cu_base
-region: footer_fifth
-weight: -4
+region: content
+weight: 0
 provider: null
-plugin: system_powered_by_block
+plugin: system_main_block
 settings:
-  id: system_powered_by_block
-  label: 'CU Powered by Drupal'
+  id: system_main_block
+  label: 'CU Main page content'
   label_display: '0'
   provider: system
 visibility: {  }
