@@ -15,7 +15,7 @@ cu_base_sidebar_first_width: 4
 cu_base_sidebar_first_offset: 0
 cu_base_sidebar_second_width: 4
 cu_base_sidebar_second_offset: 0
-cu_base_region_class_footer_first: 'col-12 col-lg-3 text-lg-start mb-5 mb-lg-0'
+cu_base_region_class_footer_first: 'col-12 col-md-4 col-lg-3 mb-3 mb-md-0'
 cu_base_region_class_footer_second: 'col-12 col-md-4 col-lg-3 mb-3 mb-md-0'
 cu_base_region_class_footer_third: 'col-12 col-md-4 col-lg-3 mb-3 mb-md-0'
 cu_base_region_class_footer_fourth: 'col-12 col-md-4 col-lg-3 mb-3 mb-md-0'

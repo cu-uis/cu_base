@@ -160,6 +160,16 @@
   padding: 1.5rem 0.5rem;
 }
 
+/* region-footer-menu */
+.region-footer-menu .navbar-nav .nav-link {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.region-footer-menu .navbar-nav .nav-item:first-child .nav-link {
+  padding-left: 0;
+}
+
 /* Footer Bottom Styling. */
 .site-footer__bottom .block {
   margin: 0.5em 0;

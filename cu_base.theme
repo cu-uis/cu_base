@@ -437,8 +437,12 @@ function cu_base_preprocess_block(&$variables) {
   if ($variables['base_plugin_id'] == 'system_menu_block' && isset($variables['attributes']['id'])) {
     $variables['content']['#attributes']['id'] = $variables['attributes']['id'];
 
-    /* Footer menus */
-    /*kpr($variables['derivative_plugin_id']);*/
+    /**
+     * Footer menus 
+     * In order to apply classes to menus in the regions Footer First-Fourth, the menu names need to match the region.
+     * This is due to the fact that we can only identify blocks by name.
+     */
+    //kpr($variables);
     if ($variables['derivative_plugin_id'] == 'footer-first' || $variables['derivative_plugin_id'] == 'footer-second' || $variables['derivative_plugin_id'] == 'footer-third' || $variables['derivative_plugin_id'] == 'footer-fourth') {
       $variables['content']['#attributes']['class'][] = 'flex-column';
     }
