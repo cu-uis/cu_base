@@ -1,6 +1,10 @@
 .views-field-variations > span > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .views-field-variations > span > div > div {
   display: inline-block;
@@ -17,6 +21,8 @@
     padding-left: 1rem;
   }
   .commerce-order-item-variation-cart-form-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     max-width: 100%;
     .field--name-purchased-entity {
@@ -59,12 +65,18 @@
   }
   .views-row {
     border-bottom: 1px solid $gray-400;
-    margin-top: $spacer / 2;
+    margin-top: calc($spacer / 2);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     .views-field-title {
       width: 320px;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      align-items: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
       color: $accent-dark;
     }
   }
@@ -96,7 +108,7 @@
   color: $white;
   font-size: $font-size-xs;
   .cart-block--offcanvas-contents__links {
-    padding: $spacer/2 $spacer;
+    padding: calc($spacer / 2) $spacer;
     a {
       color: $white;
       text-decoration: none;
@@ -107,7 +119,7 @@
   }
   .btn-close {
     color: $white;
-    padding: $spacer / 4;
+    padding: calc($spacer / 4);
   }
   table {
     color: $white;
@@ -116,10 +128,10 @@
     }
     td.cart-block--offcanvas-cart-table__title,
     td.cart-block--offcanvas-cart-table__price {
-      padding: $spacer/2 $spacer/4 !important;
+      padding: calc($spacer / 2) calc($spacer / 4) !important;
     }
     td.cart-block--offcanvas-cart-table__quantity {
-      padding: $spacer/4 !important;
+      padding: calc($spacer / 4) !important;
     }
     .btn {
       color: $white;
@@ -134,7 +146,7 @@
         color: white;
         border-color: white;
         font-size: $font-size-xs;
-        margin-top: $spacer/2;
+        margin-top: calc($spacer / 2);
       }
       .btn:hover {
         background: $primary-shade;
