@@ -564,13 +564,13 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#type' => 'checkbox',
     '#title' => t('Flyout style main menu'),
     '#default_value' => theme_get_setting('cu_base_navbar_flyout'),
-    '#description' => t('DO NOT USE IN NEW SITES. Removed in favor of Bootstrap Offcanvas.'),
   ];
   $form['components']['navbar_behaviour']['cu_base_navbar_slide'] = [
     '#type' => 'checkbox',
     '#title' => t('Sliding navbar'),
     '#description' => t('Collapsed navbar will slide left to right'),
     '#default_value' => theme_get_setting('cu_base_navbar_slide'),
+    '#description' => t('DO NOT USE IN NEW SITES. Removed in favor of Bootstrap Offcanvas.'),
   ];
 
   // Tabs.

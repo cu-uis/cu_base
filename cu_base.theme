@@ -703,21 +703,33 @@ function cu_base_theme_suggestions_input_alter(array &$suggestions, array $varia
  */
 
 /**
- * Implements hook_preprocess_input() for adding classes to inputs.
+ * Implements hook_preprocess().
  */
-function cu_base_preprocess_input(&$variables) {
+function cu_base_preprocess(&$variables, $hook) {
   if (isset($variables['attributes']['class'])) {
+    $class = 'is-invalid';
+
     if (is_object($variables['attributes']['class'])) {
       if (in_array('error', $variables['attributes']['class']->value())) {
-        $variables['attributes']['class']->addClass('is-invalid');
+        $variables['attributes']->addClass($class);
+        // If there is a wrapper, add class too.
+        if (isset($variables["wrapper_attributes"])) {
+          $variables['wrapper_attributes']->addClass($class);
+        }
       }
     }
     elseif (is_array($variables['attributes']['class'])) {
       if (in_array('error', $variables['attributes']['class'])) {
-        $variables['attributes']['class'][] = 'is-invalid';
+        $variables['attributes']['class'][] = $class;
       }
     }
   }
+}
+
+/**
+ * Implements hook_preprocess_input() for adding classes to inputs.
+ */
+function cu_base_preprocess_input(&$variables) {
   if ($variables['element']['#type'] == 'submit') {
     $button_size = theme_get_setting('cu_base_button_size');
     $button_types = [
@@ -773,4 +785,22 @@ function cu_base_preprocess_input(&$variables) {
  */
 function cu_base_preprocess_simple_styleguide(&$variables) {
   $variables['#attached']['library'][] = 'cu_base/styleguide';
+}
+
+/**
+ * Implements hook_preprocess_select() for adding classes to select boxes.
+ */
+function cu_base_preprocess_select(&$variables) {
+  if (isset($variables['attributes']['class'])) {
+    if (is_object($variables['attributes']['class'])) {
+      if (in_array('error', $variables['attributes']['class']->value())) {
+        $variables['attributes']['class']->addClass('is-invalid');
+      }
+    }
+    elseif (is_array($variables['attributes']['class'])) {
+      if (in_array('error', $variables['attributes']['class'])) {
+        $variables['attributes']['class'][] = 'is-invalid';
+      }
+    }
+  }
 }
