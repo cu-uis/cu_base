@@ -1,9 +1,9 @@
 {
-  "name": "cu-uis/cu_base",
+  "name": "cu-uis/cu_theme_base",
   "description": "Default Drupal theme used with the CU Drupal Starter Kit, based on Bootstrap Barrio 5",
   "type": "drupal-custom-theme",
   "license": "GPL-2.0-or-later",
-  "homepage": "https://github.com/cu-uis/cu_base",
+  "homepage": "https://github.com/cu-uis/cu_theme_base",
   "require": {
     "twbs/bootstrap": "^5.0.0"
   },
@@ -15,7 +15,7 @@
     }
   ],
   "support": {
-    "issues": "https://github.com/cu-uis/cu_base/issues",
-    "source": "https://github.com/cu-uis/cu_base/"
+    "issues": "https://github.com/cu-uis/cu_theme_base/issues",
+    "source": "https://github.com/cu-uis/cu_theme_base/"
   }
 }

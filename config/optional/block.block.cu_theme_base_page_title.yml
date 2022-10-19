@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  theme:
+    - cu_theme_base
+id: cu_theme_base_page_title
+theme: cu_theme_base
+region: hero
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'CU Page title (hero)'
+  label_display: '0'
+  provider: core
+visibility: {  }

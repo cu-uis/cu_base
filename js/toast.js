@@ -6,7 +6,7 @@
 (function (Drupal) {
   'use strict';
 
-  Drupal.behaviors.cu_base_toast = {
+  Drupal.behaviors.cu_theme_base_toast = {
     attach: function () {
       var elements = [].slice.call(document.querySelectorAll('.toast'))
       var toasts = elements.map(function(toastEl) {

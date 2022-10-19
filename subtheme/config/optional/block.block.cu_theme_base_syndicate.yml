@@ -1,0 +1,20 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - node
+  theme:
+    - cu_theme_base
+id: cu_theme_base_syndicate
+theme: cu_theme_base
+region: footer_fifth
+weight: -5
+provider: null
+plugin: node_syndicate_block
+settings:
+  id: node_syndicate_block
+  label: 'CU RSS feed'
+  label_display: '0'
+  provider: node
+  block_count: 10
+visibility: {  }
