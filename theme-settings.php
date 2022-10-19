@@ -58,7 +58,7 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
         #'cu_base/bootswatch_cosmo' => t('Bootswatch Cosmo'),
         #'cu_base/bootswatch_cyborg' => t('Bootswatch Cyborg'),
         #'cu_base/bootswatch_darkly' => t('Bootswatch Darkly'),
-        #'cu_base/bootswatch_flaty' => t('Bootswatch Flatly'),
+        #'cu_base/bootswatch_flatly' => t('Bootswatch Flatly'),
         #'cu_base/bootswatch_journal' => t('Bootswatch Journal'),
         #'cu_base/bootswatch_litera' => t('Bootswatch Litera'),
         #'cu_base/bootswatch_lumen' => t('Bootswatch Lumen'),
