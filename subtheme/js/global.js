@@ -7,7 +7,7 @@
 
   'use strict';
 
-  Drupal.behaviors.cu_base_subtheme = {
+  Drupal.behaviors.cu_theme_base_subtheme = {
     attach: function (context, settings) {
 
     }

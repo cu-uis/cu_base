@@ -14,7 +14,7 @@ use Drupal\Core\Link;
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
+function cu_theme_base_form_system_theme_settings_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
 
   // General "alters" use a form id. Settings should not be set here. The only
   // thing useful about this is if you need to alter the form for the running
@@ -31,10 +31,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
 
   // Library settings.
   if (\Drupal::moduleHandler()->moduleExists('bootstrap_library')) {
-    $form['cu_base_library'] = [
+    $form['cu_theme_base_library'] = [
       '#type' => 'select',
       '#title' => t('Load library'),
-      '#default_value' => theme_get_setting('cu_base_library'),
+      '#default_value' => theme_get_setting('cu_theme_base_library'),
       '#options' => [
         'cdn' => t('CDN'),
         'development' => t('Local non-minimized (development)'),
@@ -46,35 +46,35 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     ];
   }
   else {
-    $form['cu_base_source'] = [
+    $form['cu_theme_base_source'] = [
       '#type' => 'select',
       '#title' => t('Load library'),
-      '#default_value' => theme_get_setting('cu_base_source'),
+      '#default_value' => theme_get_setting('cu_theme_base_source'),
       '#options' => [
-        'cu_base/bootstrap' => t('Local'),
-        'cu_base/bootstrap_cdn' => t('CDN'),
-        'cu_base/bootswatch_cu' => t('Bootswatch CU'),
-        #'cu_base/bootswatch_cerulean' => t('Bootswatch Cerulean'),
-        #'cu_base/bootswatch_cosmo' => t('Bootswatch Cosmo'),
-        #'cu_base/bootswatch_cyborg' => t('Bootswatch Cyborg'),
-        #'cu_base/bootswatch_darkly' => t('Bootswatch Darkly'),
-        #'cu_base/bootswatch_flatly' => t('Bootswatch Flatly'),
-        #'cu_base/bootswatch_journal' => t('Bootswatch Journal'),
-        #'cu_base/bootswatch_litera' => t('Bootswatch Litera'),
-        #'cu_base/bootswatch_lumen' => t('Bootswatch Lumen'),
-        #'cu_base/bootswatch_lux' => t('Bootswatch Lux'),
-        #'cu_base/bootswatch_materia' => t('Bootswatch Materia'),
-        #'cu_base/bootswatch_minty' => t('Bootswatch Minty'),
-        #'cu_base/bootswatch_pulse' => t('Bootswatch Pulse'),
-        #'cu_base/bootswatch_sandstone' => t('Bootswatch Sandstone'),
-        #'cu_base/bootswatch_simplex' => t('Bootswatch Simplex'),
-        #'cu_base/bootswatch_sketchy' => t('Bootswatch Sketchy'),
-        #'cu_base/bootswatch_slate' => t('Bootswatch Slate'),
-        #'cu_base/bootswatch_solar' => t('Bootswatch Solar'),
-        #'cu_base/bootswatch_spacelab' => t('Bootswatch Spacelab'),
-        #'cu_base/bootswatch_superhero' => t('Bootswatch Superhero'),
-        #'cu_base/bootswatch_united' => t('Bootswatch United'),
-        #'cu_base/bootswatch_yeti' => t('Bootswatch Yeti'),
+        'cu_theme_base/bootstrap' => t('Local'),
+        'cu_theme_base/bootstrap_cdn' => t('CDN'),
+        'cu_theme_base/bootswatch_cu' => t('Bootswatch CU'),
+        #'cu_theme_base/bootswatch_cerulean' => t('Bootswatch Cerulean'),
+        #'cu_theme_base/bootswatch_cosmo' => t('Bootswatch Cosmo'),
+        #'cu_theme_base/bootswatch_cyborg' => t('Bootswatch Cyborg'),
+        #'cu_theme_base/bootswatch_darkly' => t('Bootswatch Darkly'),
+        #'cu_theme_base/bootswatch_flatly' => t('Bootswatch Flatly'),
+        #'cu_theme_base/bootswatch_journal' => t('Bootswatch Journal'),
+        #'cu_theme_base/bootswatch_litera' => t('Bootswatch Litera'),
+        #'cu_theme_base/bootswatch_lumen' => t('Bootswatch Lumen'),
+        #'cu_theme_base/bootswatch_lux' => t('Bootswatch Lux'),
+        #'cu_theme_base/bootswatch_materia' => t('Bootswatch Materia'),
+        #'cu_theme_base/bootswatch_minty' => t('Bootswatch Minty'),
+        #'cu_theme_base/bootswatch_pulse' => t('Bootswatch Pulse'),
+        #'cu_theme_base/bootswatch_sandstone' => t('Bootswatch Sandstone'),
+        #'cu_theme_base/bootswatch_simplex' => t('Bootswatch Simplex'),
+        #'cu_theme_base/bootswatch_sketchy' => t('Bootswatch Sketchy'),
+        #'cu_theme_base/bootswatch_slate' => t('Bootswatch Slate'),
+        #'cu_theme_base/bootswatch_solar' => t('Bootswatch Solar'),
+        #'cu_theme_base/bootswatch_spacelab' => t('Bootswatch Spacelab'),
+        #'cu_theme_base/bootswatch_superhero' => t('Bootswatch Superhero'),
+        #'cu_theme_base/bootswatch_united' => t('Bootswatch United'),
+        #'cu_theme_base/bootswatch_yeti' => t('Bootswatch Yeti'),
       ],
       '#empty_option' => t('None'),
       '#empty_value' => false,
@@ -102,10 +102,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   ];
-  $form['layout']['container']['cu_base_fluid_container'] = [
+  $form['layout']['container']['cu_theme_base_fluid_container'] = [
     '#type' => 'checkbox',
     '#title' => t('Fluid container'),
-    '#default_value' => theme_get_setting('cu_base_fluid_container'),
+    '#default_value' => theme_get_setting('cu_theme_base_fluid_container'),
     '#description' => t('Use <code>.container-fluid</code> class. See @bootstrap_fluid_containers_link.', [
       '@bootstrap_fluid_containers_link' => Link::fromTextAndUrl('Containers in the Bootstrap 4 documentation', Url::fromUri('https://getbootstrap.com/docs/4.3/layout/overview/', ['absolute' => TRUE, 'fragment' => 'containers']))->toString(),
     ]),
@@ -133,14 +133,14 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsed' => TRUE,
   ];
   foreach ($region_list as $name => $description) {
-    if (theme_get_setting('cu_base_region_clean_' . $name) !== NULL) {
-      $region_clean = theme_get_setting('cu_base_region_clean_' . $name);
+    if (theme_get_setting('cu_theme_base_region_clean_' . $name) !== NULL) {
+      $region_clean = theme_get_setting('cu_theme_base_region_clean_' . $name);
     }
     else {
       $region_clean = in_array($name, $nowrap);
     }
-    if (theme_get_setting('cu_base_region_class_' . $name) !== NULL) {
-      $region_class = theme_get_setting('cu_base_region_class_' . $name);
+    if (theme_get_setting('cu_theme_base_region_class_' . $name) !== NULL) {
+      $region_class = theme_get_setting('cu_theme_base_region_class_' . $name);
     }
     else {
       $region_class = $region_clean ? NULL : 'row';
@@ -152,12 +152,12 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
       '#collapsible' => TRUE,
       '#collapsed' => TRUE,
     ];
-    $form['layout']['region'][$name]['cu_base_region_clean_' . $name] = [
+    $form['layout']['region'][$name]['cu_theme_base_region_clean_' . $name] = [
       '#type' => 'checkbox',
       '#title' => t('Clean wrapper for @description region', ['@description' => $description]),
       '#default_value' => $region_clean,
     ];
-    $form['layout']['region'][$name]['cu_base_region_class_' . $name] = [
+    $form['layout']['region'][$name]['cu_theme_base_region_class_' . $name] = [
       '#type' => 'textfield',
       '#title' => t('Classes for @description region', ['@description' => $description]),
       '#default_value' => $region_class,
@@ -173,20 +173,20 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   ];
-  $form['layout']['sidebar_position']['cu_base_sidebar_position'] = [
+  $form['layout']['sidebar_position']['cu_theme_base_sidebar_position'] = [
     '#type' => 'select',
     '#title' => t('Sidebars position'),
-    '#default_value' => theme_get_setting('cu_base_sidebar_position'),
+    '#default_value' => theme_get_setting('cu_theme_base_sidebar_position'),
     '#options' => [
       'left' => t('Left'),
       'both' => t('Both sides'),
       'right' => t('Right'),
     ],
   ];
-  $form['layout']['sidebar_position']['cu_base_content_offset'] = [
+  $form['layout']['sidebar_position']['cu_theme_base_content_offset'] = [
     '#type' => 'select',
     '#title' => t('Content offset'),
-    '#default_value' => theme_get_setting('cu_base_content_offset'),
+    '#default_value' => theme_get_setting('cu_theme_base_content_offset'),
     '#options' => [
       0 => t('None'),
       1 => t('1 cols'),
@@ -201,25 +201,25 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   ];
-  $form['layout']['sidebar_first']['cu_base_sidebar_collapse'] = [
+  $form['layout']['sidebar_first']['cu_theme_base_sidebar_collapse'] = [
     '#type' => 'checkbox',
     '#title' => t('Sidebar collapse'),
-    '#default_value' => theme_get_setting('cu_base_sidebar_collapse'),
+    '#default_value' => theme_get_setting('cu_theme_base_sidebar_collapse'),
   ];
-  $form['layout']['sidebar_first']['cu_base_sidebar_first_width'] = [
+  $form['layout']['sidebar_first']['cu_theme_base_sidebar_first_width'] = [
     '#type' => 'select',
     '#title' => t('Sidebar first width'),
-    '#default_value' => theme_get_setting('cu_base_sidebar_first_width'),
+    '#default_value' => theme_get_setting('cu_theme_base_sidebar_first_width'),
     '#options' => [
       2 => t('2 cols'),
       3 => t('3 cols'),
       4 => t('4 cols'),
     ],
   ];
-  $form['layout']['sidebar_first']['cu_base_sidebar_first_offset'] = [
+  $form['layout']['sidebar_first']['cu_theme_base_sidebar_first_offset'] = [
     '#type' => 'select',
     '#title' => t('Sidebar first offset'),
-    '#default_value' => theme_get_setting('cu_base_sidebar_first_offset'),
+    '#default_value' => theme_get_setting('cu_theme_base_sidebar_first_offset'),
     '#options' => [
       0 => t('None'),
       1 => t('1 cols'),
@@ -234,20 +234,20 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   ];
-  $form['layout']['sidebar_second']['cu_base_sidebar_second_width'] = [
+  $form['layout']['sidebar_second']['cu_theme_base_sidebar_second_width'] = [
     '#type' => 'select',
     '#title' => t('Sidebar second width'),
-    '#default_value' => theme_get_setting('cu_base_sidebar_second_width'),
+    '#default_value' => theme_get_setting('cu_theme_base_sidebar_second_width'),
     '#options' => [
       2 => t('2 cols'),
       3 => t('3 cols'),
       4 => t('4 cols'),
     ],
   ];
-  $form['layout']['sidebar_second']['cu_base_sidebar_second_offset'] = [
+  $form['layout']['sidebar_second']['cu_theme_base_sidebar_second_offset'] = [
     '#type' => 'select',
     '#title' => t('Sidebar second offset'),
-    '#default_value' => theme_get_setting('cu_base_sidebar_second_offset'),
+    '#default_value' => theme_get_setting('cu_theme_base_sidebar_second_offset'),
     '#options' => [
       0 => t('None'),
       1 => t('1 cols'),
@@ -269,10 +269,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   ];
-  $form['components']['node']['cu_base_hide_node_label'] = [
+  $form['components']['node']['cu_theme_base_hide_node_label'] = [
     '#type' => 'checkbox',
     '#title' => t('Hide node label'),
-    '#default_value' => theme_get_setting('cu_base_hide_node_label'),
+    '#default_value' => theme_get_setting('cu_theme_base_hide_node_label'),
     '#description' => t('Hide node label for all display. Usefull when using f.e. Layout Builder and you want full control of your output'),
   ];
 
@@ -283,26 +283,26 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   ];
-  $form['components']['buttons']['cu_base_button'] = [
+  $form['components']['buttons']['cu_theme_base_button'] = [
     '#type' => 'checkbox',
     '#title' => t('Convert input submit to button element'),
-    '#default_value' => theme_get_setting('cu_base_button'),
+    '#default_value' => theme_get_setting('cu_theme_base_button'),
     '#description' => t('There is a known issue where Ajax exposed filters do not if this setting is enabled.'),
   ];
-  $form['components']['buttons']['cu_base_button_size'] = [
+  $form['components']['buttons']['cu_theme_base_button_size'] = [
     '#type' => 'select',
     '#title' => t('Default button size'),
-    '#default_value' => theme_get_setting('cu_base_button_size'),
+    '#default_value' => theme_get_setting('cu_theme_base_button_size'),
     '#empty_option' => t('Normal'),
     '#options' => [
       'btn-sm' => t('Small'),
       'btn-lg' => t('Large'),
     ],
   ];
-  $form['components']['buttons']['cu_base_button_outline'] = [
+  $form['components']['buttons']['cu_theme_base_button_outline'] = [
     '#type' => 'checkbox',
     '#title' => t('Button with outline format'),
-    '#default_value' => theme_get_setting('cu_base_button_outline'),
+    '#default_value' => theme_get_setting('cu_theme_base_button_outline'),
     '#description' => t('Use <code>.btn-default-outline</code> class. See @bootstrap_outline_buttons_link.', [
       '@bootstrap_outline_buttons_link' => Link::fromTextAndUrl('Outline buttons in the Bootstrap 4 documentation', Url::fromUri('https://getbootstrap.com/docs/4.3/components/buttons/', ['absolute' => TRUE, 'fragment' => 'outline-buttons']))->toString(),
     ]),
@@ -315,10 +315,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   ];
-  $form['components']['images']['cu_base_image_fluid'] = [
+  $form['components']['images']['cu_theme_base_image_fluid'] = [
     '#type' => 'checkbox',
     '#title' => t('Apply img-fluid style to all content images'),
-    '#default_value' => theme_get_setting('cu_base_image_fluid'),
+    '#default_value' => theme_get_setting('cu_theme_base_image_fluid'),
     '#description' => t('Adds a img-fluid style to all ".content img" elements'),
   ];
 
@@ -329,17 +329,17 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   ];
-  $form['components']['navbar']['cu_base_navbar_container'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_container'] = [
     '#type' => 'checkbox',
     '#title' => t('Navbar width container'),
     '#description' => t('Check if navbar width will be inside container or fluid width.'),
-    '#default_value' => theme_get_setting('cu_base_navbar_container'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_container'),
   ];
-  $form['components']['navbar']['cu_base_navbar_toggle'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_toggle'] = [
     '#type' => 'select',
     '#title' => t('Navbar toggle size'),
     '#description' => t('Select size for navbar to collapse.'),
-    '#default_value' => theme_get_setting('cu_base_navbar_toggle'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_toggle'),
     '#options' => [
       'navbar-toggleable-xl' => t('Extra Large'),
       'navbar-toggleable-lg' => t('Large'),
@@ -349,17 +349,17 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
       'navbar-toggleable-all' => t('All screens'),
     ],
   ];
-  $form['components']['navbar']['cu_base_navbar_top_navbar'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_top_navbar'] = [
     '#type' => 'checkbox',
     '#title' => t('Navbar top is navbar'),
     '#description' => t('Check if navbar top .navbar class should be added.'),
-    '#default_value' => theme_get_setting('cu_base_navbar_top_navbar'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_top_navbar'),
   ];
-  $form['components']['navbar']['cu_base_navbar_top_position'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_top_position'] = [
     '#type' => 'select',
     '#title' => t('Navbar top position'),
     '#description' => t('Select your navbar top position.'),
-    '#default_value' => theme_get_setting('cu_base_navbar_top_position'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_top_position'),
     '#options' => [
       'fixed-top' => t('Fixed top'),
       'fixed-bottom' => t('Fixed bottom'),
@@ -367,10 +367,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     ],
     '#empty_option' => t('Normal'),
   ];
-  $form['components']['navbar']['cu_base_navbar_top_color'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_top_color'] = [
     '#type' => 'select',
     '#title' => t('Navbar top link color'),
-    '#default_value' => theme_get_setting('cu_base_navbar_top_color'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_top_color'),
     '#options' => [
       'navbar-white' => t('White'),
       'navbar-light' => t('Light'),
@@ -379,10 +379,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     ],
     '#empty_option' => t('Default'),
   ];
-  $form['components']['navbar']['cu_base_navbar_top_background'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_top_background'] = [
     '#type' => 'select',
     '#title' => t('Navbar top background color'),
-    '#default_value' => theme_get_setting('cu_base_navbar_top_background'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_top_background'),
     '#options' => [
       'bg-primary' => t('Primary'),
       'bg-white' => t('White'),
@@ -392,17 +392,17 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     ],
     '#empty_option' => t('Default'),
   ];
-  $form['components']['navbar']['cu_base_navbar_mid_navbar'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_mid_navbar'] = [
     '#type' => 'checkbox',
     '#title' => t('Navbar mid is navbar'),
     '#description' => t('Check if navbar mid .navbar class should be added.'),
-    '#default_value' => theme_get_setting('cu_base_navbar_mid_navbar'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_mid_navbar'),
   ];
-  $form['components']['navbar']['cu_base_navbar_mid_position'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_mid_position'] = [
     '#type' => 'select',
     '#title' => t('Navbar mid position'),
     '#description' => t('Select your navbar mid position.'),
-    '#default_value' => theme_get_setting('cu_base_navbar_mid_position'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_mid_position'),
     '#options' => [
       'fixed-top' => t('Fixed top'),
       'fixed-bottom' => t('Fixed bottom'),
@@ -410,10 +410,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     ],
     '#empty_option' => t('Normal'),
   ];
-  $form['components']['navbar']['cu_base_navbar_mid_color'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_mid_color'] = [
     '#type' => 'select',
     '#title' => t('Navbar mid link color'),
-    '#default_value' => theme_get_setting('cu_base_navbar_mid_color'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_mid_color'),
     '#options' => [
       'navbar-white' => t('White'),
       'navbar-light' => t('Light'),
@@ -422,10 +422,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     ],
     '#empty_option' => t('Default'),
   ];
-  $form['components']['navbar']['cu_base_navbar_mid_background'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_mid_background'] = [
     '#type' => 'select',
     '#title' => t('Navbar mid background color'),
-    '#default_value' => theme_get_setting('cu_base_navbar_mid_background'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_mid_background'),
     '#options' => [
       'bg-primary' => t('Primary'),
       'bg-white' => t('White'),
@@ -435,10 +435,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     ],
     '#empty_option' => t('Default'),
   ];
-  $form['components']['navbar']['cu_base_navbar_position'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_position'] = [
     '#type' => 'select',
     '#title' => t('Navbar position'),
-    '#default_value' => theme_get_setting('cu_base_navbar_position'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_position'),
     '#options' => [
       'fixed-top' => t('Fixed top'),
       'fixed-bottom' => t('Fixed bottom'),
@@ -446,10 +446,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     ],
     '#empty_option' => t('Normal'),
   ];
-  $form['components']['navbar']['cu_base_navbar_color'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_color'] = [
     '#type' => 'select',
     '#title' => t('Navbar link color'),
-    '#default_value' => theme_get_setting('cu_base_navbar_color'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_color'),
     '#options' => [
       'navbar-white' => t('White'),
       'navbar-light' => t('Light'),
@@ -458,10 +458,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     ],
     '#empty_option' => t('Default'),
   ];
-  $form['components']['navbar']['cu_base_navbar_background'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_background'] = [
     '#type' => 'select',
     '#title' => t('Navbar background color'),
-    '#default_value' => theme_get_setting('cu_base_navbar_background'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_background'),
     '#options' => [
       'bg-primary' => t('Primary'),
       'bg-white' => t('White'),
@@ -471,17 +471,17 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     ],
     '#empty_option' => t('Default'),
   ];
-  $form['components']['navbar']['cu_base_navbar_footer_navbar'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_footer_navbar'] = [
     '#type' => 'checkbox',
     '#title' => t('Navbar footer is navbar'),
     '#description' => t('Check if navbar footer .navbar class should be added.'),
-    '#default_value' => theme_get_setting('cu_base_navbar_footer_navbar'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_footer_navbar'),
   ];
-  $form['components']['navbar']['cu_base_navbar_footer_position'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_footer_position'] = [
     '#type' => 'select',
     '#title' => t('Navbar footer position'),
     '#description' => t('Select your navbar footer position.'),
-    '#default_value' => theme_get_setting('cu_base_navbar_footer_position'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_footer_position'),
     '#options' => [
       'fixed-top' => t('Fixed top'),
       'fixed-bottom' => t('Fixed bottom'),
@@ -489,10 +489,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     ],
     '#empty_option' => t('Normal'),
   ];
-  $form['components']['navbar']['cu_base_navbar_footer_color'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_footer_color'] = [
     '#type' => 'select',
     '#title' => t('Navbar footer link color'),
-    '#default_value' => theme_get_setting('cu_base_navbar_footer_color'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_footer_color'),
     '#options' => [
       'navbar-white' => t('White'),
       'navbar-light' => t('Light'),
@@ -501,10 +501,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     ],
     '#empty_option' => t('Default'),
   ];
-  $form['components']['navbar']['cu_base_navbar_footer_background'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_footer_background'] = [
     '#type' => 'select',
     '#title' => t('Navbar footer background color'),
-    '#default_value' => theme_get_setting('cu_base_navbar_footer_background'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_footer_background'),
     '#options' => [
       'bg-primary' => t('Primary'),
       'bg-white' => t('White'),
@@ -515,31 +515,31 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#empty_option' => t('Default'),
   ];
 // Allow custom classes on Navbars.
-  $form['components']['navbar']['cu_base_navbar_top_class'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_top_class'] = [
     '#type' => 'textfield',
     '#title' => t('Custom classes for Navbar Top'),
-    '#default_value' => theme_get_setting('cu_base_navbar_top_class'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_top_class'),
     '#size' => 40,
     '#maxlength' => 40,
   ];
-  $form['components']['navbar']['cu_base_navbar_mid_class'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_mid_class'] = [
     '#type' => 'textfield',
     '#title' => t('Custom classes for Navbar Mid'),
-    '#default_value' => theme_get_setting('cu_base_navbar_mid_class'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_mid_class'),
     '#size' => 40,
     '#maxlength' => 40,
   ];
-  $form['components']['navbar']['cu_base_navbar_class'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_class'] = [
     '#type' => 'textfield',
     '#title' => t('Custom classes for Navbar'),
-    '#default_value' => theme_get_setting('cu_base_navbar_class'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_class'),
     '#size' => 40,
     '#maxlength' => 40,
   ];
-  $form['components']['navbar']['cu_base_navbar_footer_class'] = [
+  $form['components']['navbar']['cu_theme_base_navbar_footer_class'] = [
     '#type' => 'textfield',
     '#title' => t('Custom classes for Navbar Footer'),
-    '#default_value' => theme_get_setting('cu_base_navbar_footer_class'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_footer_class'),
     '#size' => 40,
     '#maxlength' => 40,
   ];
@@ -551,25 +551,25 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   ];
-  $form['components']['navbar_behaviour']['cu_base_navbar_offcanvas'] = [
+  $form['components']['navbar_behaviour']['cu_theme_base_navbar_offcanvas'] = [
     '#type' => 'select',
     '#title' => t('Default/Bootstrap Offcanvas Collapse'),
-    '#default_value' => theme_get_setting('cu_base_navbar_offcanvas'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_offcanvas'),
     '#options' => [
       'offcanvas-collapse' => t('Offcanvas'),
     ],
     '#empty_option' => t('Default'),
   ];
-  $form['components']['navbar_behaviour']['cu_base_navbar_flyout'] = [
+  $form['components']['navbar_behaviour']['cu_theme_base_navbar_flyout'] = [
     '#type' => 'checkbox',
     '#title' => t('Flyout style main menu'),
-    '#default_value' => theme_get_setting('cu_base_navbar_flyout'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_flyout'),
   ];
-  $form['components']['navbar_behaviour']['cu_base_navbar_slide'] = [
+  $form['components']['navbar_behaviour']['cu_theme_base_navbar_slide'] = [
     '#type' => 'checkbox',
     '#title' => t('Sliding navbar'),
     '#description' => t('Collapsed navbar will slide left to right'),
-    '#default_value' => theme_get_setting('cu_base_navbar_slide'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_slide'),
     '#description' => t('DO NOT USE IN NEW SITES. Removed in favor of Bootstrap Offcanvas.'),
   ];
 
@@ -581,10 +581,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsed' => TRUE,
   ];
 
-  $form['components']['tabs']['cu_base_tabs_style'] = [
+  $form['components']['tabs']['cu_theme_base_tabs_style'] = [
     '#type' => 'select',
     '#title' => t('Tabs style'),
-    '#default_value' => theme_get_setting('cu_base_tabs_style'),
+    '#default_value' => theme_get_setting('cu_theme_base_tabs_style'),
     '#options' => [
       'full' => t('Full width blocks'),
       'pills' => t('Pills'),
@@ -599,10 +599,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   ];
-  $form['components']['alerts']['cu_base_messages_widget'] = [
+  $form['components']['alerts']['cu_theme_base_messages_widget'] = [
     '#type' => 'select',
     '#title' => t('Messages widget'),
-    '#default_value' => theme_get_setting('cu_base_messages_widget'),
+    '#default_value' => theme_get_setting('cu_theme_base_messages_widget'),
     '#options' => [
       'default' => t('Alerts classic'),
       'alerts' => t('Alerts bottom'),
@@ -622,37 +622,37 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   ];
-  $form['affix']['navbar_top']['cu_base_navbar_top_affix'] = [
+  $form['affix']['navbar_top']['cu_theme_base_navbar_top_affix'] = [
     '#type' => 'checkbox',
     '#title' => t('Affix navbar top'),
-    '#default_value' => theme_get_setting('cu_base_navbar_top_affix'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_top_affix'),
   ];
   /*
-  $form['affix']['navbar_top']['cu_base_navbar_top_affix_top'] = [
+  $form['affix']['navbar_top']['cu_theme_base_navbar_top_affix_top'] = [
   '#type' => 'textfield',
   '#title' => t('Affix top'),
-  '#default_value' => theme_get_setting('cu_base_navbar_top_affix_top'
+  '#default_value' => theme_get_setting('cu_theme_base_navbar_top_affix_top'
   ),
   '#prefix' => '<div id="navbar-top-affix">',
   '#size' => 6,
   '#maxlength' => 3,
   '#states' => [
   'invisible' => [
-  'input[name="cu_base_navbar_top_affix"]' => ['checked' => FALSE],
+  'input[name="cu_theme_base_navbar_top_affix"]' => ['checked' => FALSE],
   ],
   ],
   ];
-  $form['affix']['navbar_top']['cu_base_navbar_top_affix_bottom'] = [
+  $form['affix']['navbar_top']['cu_theme_base_navbar_top_affix_bottom'] = [
   '#type' => 'textfield',
   '#title' => t('Affix bottom'),
   '#default_value' => theme_get_setting(
-  'cu_base_navbar_top_affix_bottom'),
+  'cu_theme_base_navbar_top_affix_bottom'),
   '#suffix' => '</div>',
   '#size' => 6,
   '#maxlength' => 3,
   '#states' => [
   'invisible' => [
-  'input[name="cu_base_navbar_top_affix"]' => ['checked' => FALSE],
+  'input[name="cu_theme_base_navbar_top_affix"]' => ['checked' => FALSE],
   ],
   ],
   ];
@@ -663,35 +663,35 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   ];
-  $form['affix']['navbar_mid']['cu_base_navbar_mid_affix'] = [
+  $form['affix']['navbar_mid']['cu_theme_base_navbar_mid_affix'] = [
     '#type' => 'checkbox',
     '#title' => t('Affix navbar mid'),
-    '#default_value' => theme_get_setting('cu_base_navbar_mid_affix'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_mid_affix'),
   ];
   /*
-  $form['affix']['navbar_mid']['cu_base_navbar_mid_affix_top'] = [
+  $form['affix']['navbar_mid']['cu_theme_base_navbar_mid_affix_top'] = [
   '#type' => 'textfield',
   '#title' => t('Affix top'),
-  '#default_value' => theme_get_setting('cu_base_navbar_mid_affix_top'),
+  '#default_value' => theme_get_setting('cu_theme_base_navbar_mid_affix_top'),
   '#prefix' => '<div id="navbar-mid-affix">',
   '#size' => 6,
   '#maxlength' => 3,
   '#states' => [
   'invisible' => [
-  'input[name="cu_base_navbar_mid_affix"]' => ['checked' => FALSE],
+  'input[name="cu_theme_base_navbar_mid_affix"]' => ['checked' => FALSE],
   ],
   ],
   ];
-  $form['affix']['navbar_mid']['cu_base_navbar_mid_affix_bottom'] = [
+  $form['affix']['navbar_mid']['cu_theme_base_navbar_mid_affix_bottom'] = [
   '#type' => 'textfield',
   '#title' => t('Affix bottom'),
-  '#default_value' => theme_get_setting('cu_base_navbar_mid_affix_bottom'),
+  '#default_value' => theme_get_setting('cu_theme_base_navbar_mid_affix_bottom'),
   '#suffix' => '</div>',
   '#size' => 6,
   '#maxlength' => 3,
   '#states' => [
   'invisible' => [
-  'input[name="cu_base_navbar_mid_affix"]' => ['checked' => FALSE],
+  'input[name="cu_theme_base_navbar_mid_affix"]' => ['checked' => FALSE],
   ],
   ],
   ];
@@ -702,35 +702,35 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   ];
-  $form['affix']['navbar']['cu_base_navbar_affix'] = [
+  $form['affix']['navbar']['cu_theme_base_navbar_affix'] = [
     '#type' => 'checkbox',
     '#title' => t('Affix navbar'),
-    '#default_value' => theme_get_setting('cu_base_navbar_affix'),
+    '#default_value' => theme_get_setting('cu_theme_base_navbar_affix'),
   ];
   /*
-  $form['affix']['navbar']['cu_base_navbar_affix_top'] = [
+  $form['affix']['navbar']['cu_theme_base_navbar_affix_top'] = [
   '#type' => 'textfield',
   '#title' => t('Affix top'),
-  '#default_value' => theme_get_setting('cu_base_navbar_affix_top'),
+  '#default_value' => theme_get_setting('cu_theme_base_navbar_affix_top'),
   '#prefix' => '<div id="navbar-affix">',
   '#size' => 6,
   '#maxlength' => 3,
   '#states' => [
   'invisible' => [
-  'input[name="cu_base_navbar_affix"]' => ['checked' => FALSE],
+  'input[name="cu_theme_base_navbar_affix"]' => ['checked' => FALSE],
   ],
   ],
   ];
-  $form['affix']['navbar']['cu_base_navbar_affix_bottom'] = [
+  $form['affix']['navbar']['cu_theme_base_navbar_affix_bottom'] = [
   '#type' => 'textfield',
   '#title' => t('Affix bottom'),
-  '#default_value' => theme_get_setting('cu_base_navbar_affix_bottom'),
+  '#default_value' => theme_get_setting('cu_theme_base_navbar_affix_bottom'),
   '#suffix' => '</div>',
   '#size' => 6,
   '#maxlength' => 3,
   '#states' => [
   'invisible' => [
-  'input[name="cu_base_navbar_affix"]' => ['checked' => FALSE],
+  'input[name="cu_theme_base_navbar_affix"]' => ['checked' => FALSE],
   ],
   ],
   ];
@@ -741,39 +741,39 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   ];
-  $form['affix']['sidebar_first']['cu_base_sidebar_first_affix'] = [
+  $form['affix']['sidebar_first']['cu_theme_base_sidebar_first_affix'] = [
     '#type' => 'checkbox',
     '#title' => t('Affix sidebar first'),
-    '#default_value' => theme_get_setting('cu_base_sidebar_first_affix'),
+    '#default_value' => theme_get_setting('cu_theme_base_sidebar_first_affix'),
   ];
   /*
   $form['affix']['sidebar_first'][
-  'cu_base_sidebar_first_affix_top'] = array(
+  'cu_theme_base_sidebar_first_affix_top'] = array(
   '#type' => 'textfield',
   '#title' => t('Affix top'),
   '#default_value' => theme_get_setting(
-  'cu_base_sidebar_first_affix_top'),
+  'cu_theme_base_sidebar_first_affix_top'),
   '#prefix' => '<div id="sidebar-first-affix">',
   '#size' => 6,
   '#maxlength' => 3,
   '#states' => [
   'invisible' => [
-  'input[name="cu_base_sidebar_first_affix"]' => ['checked' => FALSE],
+  'input[name="cu_theme_base_sidebar_first_affix"]' => ['checked' => FALSE],
   ],
   ],
   );
   $form['affix']['sidebar_first'][
-  'cu_base_sidebar_first_affix_bottom'] = array(
+  'cu_theme_base_sidebar_first_affix_bottom'] = array(
   '#type' => 'textfield',
   '#title' => t('Affix bottom'),
   '#default_value' => theme_get_setting(
-  'cu_base_sidebar_first_affix_bottom'),
+  'cu_theme_base_sidebar_first_affix_bottom'),
   '#suffix' => '</div>',
   '#size' => 6,
   '#maxlength' => 3,
   '#states' => [
   'invisible' => [
-  'input[name="cu_base_sidebar_first_affix"]' => ['checked' => FALSE],
+  'input[name="cu_theme_base_sidebar_first_affix"]' => ['checked' => FALSE],
   ],
   ],
   ); */
@@ -783,39 +783,39 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
   ];
-  $form['affix']['sidebar_second']['cu_base_sidebar_second_affix'] = [
+  $form['affix']['sidebar_second']['cu_theme_base_sidebar_second_affix'] = [
     '#type' => 'checkbox',
     '#title' => t('Affix sidebar second'),
-    '#default_value' => theme_get_setting('cu_base_sidebar_second_affix'),
+    '#default_value' => theme_get_setting('cu_theme_base_sidebar_second_affix'),
   ];
   /*
   $form['affix']['sidebar_second'][
-  'cu_base_sidebar_second_affix_top'] = [
+  'cu_theme_base_sidebar_second_affix_top'] = [
   '#type' => 'textfield',
   '#title' => t('Affix top'),
   '#default_value' => theme_get_setting(
-  'cu_base_sidebar_second_affix_top'),
+  'cu_theme_base_sidebar_second_affix_top'),
   '#prefix' => '<div id="sidebar-second-affix">',
   '#size' => 6,
   '#maxlength' => 3,
   '#states' => [
   'invisible' => [
-  'input[name="cu_base_sidebar_second_affix"]' => ['checked' => FALSE],
+  'input[name="cu_theme_base_sidebar_second_affix"]' => ['checked' => FALSE],
   ],
   ],
   ];
   $form['affix']['sidebar_second'][
-  'cu_base_sidebar_second_affix_bottom'] = [
+  'cu_theme_base_sidebar_second_affix_bottom'] = [
   '#type' => 'textfield',
   '#title' => t('Affix bottom'),
   '#default_value' => theme_get_setting(
-  'cu_base_sidebar_second_affix_bottom'),
+  'cu_theme_base_sidebar_second_affix_bottom'),
   '#suffix' => '</div>',
   '#size' => 6,
   '#maxlength' => 3,
   '#states' => [
   'invisible' => [
-  'input[name="cu_base_sidebar_second_affix"]' => ['checked' => FALSE],
+  'input[name="cu_theme_base_sidebar_second_affix"]' => ['checked' => FALSE],
   ],
   ],
   ];
@@ -826,11 +826,11 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#title' => t('Scroll Spy'),
     '#group' => 'bootstrap',
   ];
-  $form['scroll_spy']['cu_base_scroll_spy'] = [
+  $form['scroll_spy']['cu_theme_base_scroll_spy'] = [
     '#type' => 'textfield',
     '#title' => t('Scrollspy element ID'),
     '#description' => t('Specify a valid jQuery ID for the element containing a .nav that will behave with scrollspy.'),
-    '#default_value' => theme_get_setting('cu_base_scroll_spy'),
+    '#default_value' => theme_get_setting('cu_theme_base_scroll_spy'),
     '#size' => 40,
     '#maxlength' => 40,
   ];
@@ -847,10 +847,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,
   ];
-  $form['fonts']['fonts']['cu_base_google_fonts'] = [
+  $form['fonts']['fonts']['cu_theme_base_google_fonts'] = [
     '#type' => 'select',
     '#title' => t('Google Fonts combination'),
-    '#default_value' => theme_get_setting('cu_base_google_fonts'),
+    '#default_value' => theme_get_setting('cu_theme_base_google_fonts'),
     '#empty_option' => t('None'),
     '#options' => [
       'roboto' => t('Roboto Condensed, Roboto'),
@@ -875,10 +875,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,
   ];
-  $form['fonts']['bootstrap_icons']['cu_base_bootstrap_icons'] = [
+  $form['fonts']['bootstrap_icons']['cu_theme_base_bootstrap_icons'] = [
     '#type' => 'checkbox',
     '#title' => t('Use Bootstrap icons'),
-    '#default_value' => theme_get_setting('cu_base_bootstrap_icons'),
+    '#default_value' => theme_get_setting('cu_theme_base_bootstrap_icons'),
   ];
   $form['fonts']['icons'] = [
     '#type' => 'details',
@@ -886,10 +886,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,
   ];
-  $form['fonts']['icons']['cu_base_icons'] = [
+  $form['fonts']['icons']['cu_theme_base_icons'] = [
     '#type' => 'select',
     '#title' => t('Icon set'),
-    '#default_value' => theme_get_setting('cu_base_icons'),
+    '#default_value' => theme_get_setting('cu_theme_base_icons'),
     '#empty_option' => t('None'),
     '#options' => [
       'material_design_icons' => t('Material Design Icons'),
@@ -911,10 +911,10 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,
   ];
-  $form['colors']['alerts']['cu_base_system_messages'] = [
+  $form['colors']['alerts']['cu_theme_base_system_messages'] = [
     '#type' => 'select',
     '#title' => t('System messages color scheme'),
-    '#default_value' => theme_get_setting('cu_base_system_messages'),
+    '#default_value' => theme_get_setting('cu_theme_base_system_messages'),
     '#empty_option' => t('Default'),
     '#options' => [
       'messages_white' => t('White'),
@@ -930,25 +930,25 @@ function cu_base_form_system_theme_settings_alter(&$form, FormStateInterface $fo
     '#collapsible' => TRUE,
     '#collapsed' => FALSE,
   ];
-  $form['colors']['tables']['cu_base_table_style'] = [
+  $form['colors']['tables']['cu_theme_base_table_style'] = [
     '#type' => 'select',
     '#title' => t('Table cell style'),
-    '#default_value' => theme_get_setting('cu_base_table_style'),
+    '#default_value' => theme_get_setting('cu_theme_base_table_style'),
     '#empty_option' => t('Default'),
     '#options' => [
       'table-striped' => t('Striped'),
       'table-bordered' => t('Bordered'),
     ],
   ];
-  $form['colors']['tables']['cu_base_table_hover'] = [
+  $form['colors']['tables']['cu_theme_base_table_hover'] = [
     '#type' => 'checkbox',
     '#title' => t('Hover effect over table cells'),
-    '#default_value' => theme_get_setting('cu_base_table_hover'),
+    '#default_value' => theme_get_setting('cu_theme_base_table_hover'),
   ];
-  $form['colors']['tables']['cu_base_table_head'] = [
+  $form['colors']['tables']['cu_theme_base_table_head'] = [
     '#type' => 'select',
     '#title' => t('Table header color scheme'),
-    '#default_value' => theme_get_setting('cu_base_table_head'),
+    '#default_value' => theme_get_setting('cu_theme_base_table_head'),
     '#empty_option' => t('Default'),
     '#options' => [
       'thead-light' => t('Light'),

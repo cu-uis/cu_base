@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cu_theme_base
+id: cu_theme_base_messages
+theme: cu_theme_base
+region: highlighted
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'CU Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

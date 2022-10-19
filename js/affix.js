@@ -8,7 +8,7 @@
 
   'use strict';
 
-  Drupal.behaviors.cu_base_affix = {
+  Drupal.behaviors.cu_theme_base_affix = {
     attach: function (context, settings) {
       var toggleAffix = function (affixElement, scrollElement, wrapper) {
 
